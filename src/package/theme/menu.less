@@ -1,0 +1,38 @@
+@import "./base.less";
+
+.yi-menu{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+
+  .yi-menu-item{
+    cursor: pointer;
+    display: block;
+    padding: 12px 20px;
+    margin: 2px 0;
+    color: #313a46;
+
+    &.active{
+      color: @primary
+    }
+  }
+
+  .yi-menu-group{
+    .yi-menu-item;
+
+    .yi-menu-title{
+      position: relative;
+    }
+
+    & .yi-menu{
+      height: 0;
+      overflow: hidden;
+    }
+
+    &.is-opened .yi-menu{
+      height: inherit;
+      transition: height .4s ease;
+    }
+  }
+}
