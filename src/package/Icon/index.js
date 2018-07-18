@@ -1,7 +1,7 @@
-import YiIcon from './icon'
+import Element from './icon'
 
-YiIcon.install = function (Vue) {
-  Vue.component(YiIcon.name, YiIcon)
+Element.install = function (Vue) {
+  Vue.component(Element.name, Element)
 }
 
-export default YiIcon
+export default Element

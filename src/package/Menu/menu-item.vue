@@ -8,7 +8,7 @@
 import Menu from './menu-mixin'
 
 export default {
-  name: 'YiMenuItem',
+  name: 'MenuItem',
   mixins: [Menu],
   props: {
     name: String,
@@ -23,7 +23,7 @@ export default {
     this.$on('on-update-active-name', (name) => {
       if (name === this.name) {
         this.isActive = true
-        this.dispatch('YiSubmenu', 'item-click', this)
+        this.dispatch('Submenu', 'item-click', this)
       } else {
         this.isActive = false
       }
@@ -31,15 +31,9 @@ export default {
   },
   methods: {
     handleClick (e) {
-      this.dispatch('YiMenu', 'item-click', this)
+      this.dispatch('Menu', 'item-click', this)
       this.$emit('click', this)
     }
   }
-  // render () {
-  //   const className = ['yi-menu-item', {'active': this.isActive}]
-  //   return <li class={className} onClick={this.handleClick}>
-  //     {this.$slots.default}
-  //   </li>
-  // }
 }
 </script>

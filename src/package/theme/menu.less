@@ -6,15 +6,42 @@
   padding: 0;
   text-align: left;
 
-  .yi-menu-item{
+  &.transition{
+    transition: height .4s ease;
+  }
+
+  &>.yi-menu-item{
     cursor: pointer;
     display: block;
     padding: 12px 20px;
     margin: 2px 0;
     color: #313a46;
 
+    &>i{
+      margin-right: 5px;
+    }
+
     &.active{
       color: @primary
+    }
+
+    & .yi-menu-item,{
+      padding: 0;
+    }
+
+    &.yi-menu-group {
+     padding: 0 0 0 20px;
+    }
+
+  }
+
+  .yi-submenu {
+    padding: 12px 20px;
+    margin: 2px 0;
+    color: #313a46;
+
+    .yi-menu-title{
+      cursor: pointer;
     }
   }
 
@@ -23,16 +50,17 @@
 
     .yi-menu-title{
       position: relative;
-    }
-
-    & .yi-menu{
-      height: 0;
-      overflow: hidden;
-    }
-
-    &.is-opened .yi-menu{
-      height: inherit;
-      transition: height .4s ease;
+      cursor: auto;
+      color: #ccc
     }
   }
+}
+
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+
+.fade-enter, .fade-leave-to{
+  opacity: 0;
 }

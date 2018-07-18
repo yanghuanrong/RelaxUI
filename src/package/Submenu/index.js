@@ -1,7 +1,7 @@
-import YiSubmenu from '../Menu/submenu'
+import Element from '../Menu/submenu'
 
-YiSubmenu.install = function (Vue) {
-  Vue.component(YiSubmenu.name, YiSubmenu)
+Element.install = function (Vue) {
+  Vue.component(Element.name, Element)
 }
 
-export default YiSubmenu
+export default Element

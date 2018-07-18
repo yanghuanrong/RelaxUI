@@ -1,7 +1,7 @@
-import YiButtonGroup from './button-group'
+import Element from './button-group'
 
-YiButtonGroup.install = function (Vue) {
-  Vue.component(YiButtonGroup.name, YiButtonGroup)
+Element.install = function (Vue) {
+  Vue.component(Element.name, Element)
 }
 
-export default YiButtonGroup
+export default Element

@@ -1,7 +1,7 @@
-import YiMenu from './menu'
+import Element from './menu'
 
-YiMenu.install = function (Vue) {
-  Vue.component(YiMenu.name, YiMenu)
+Element.install = function (Vue) {
+  Vue.component(Element.name, Element)
 }
 
-export default YiMenu
+export default Element

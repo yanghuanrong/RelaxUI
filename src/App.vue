@@ -1,39 +1,37 @@
 <template>
 <div id="app">
   <div class="yi-sidebar-menu" style="width:200px">
-    <yi-menu active-name="2-1">
-      <yi-menu-item name="1">
-        <yi-icon type="home"></yi-icon>
+    <Menu active-name="2-1">
+      <MenuItem name="1">
+        <Icon type="home"></Icon>
         <span>首页</span>
-      </yi-menu-item>
-      <yi-submenu name="2">
+      </MenuItem>
+      <Submenu name="2">
         <template slot="title">
-          <yi-icon type="facebook"></yi-icon>
+          <Icon type="facebook"></Icon>
           <span>首页</span>
         </template>
-        <yi-menu-group>
-          <yi-menu-item name="2-1">首页</yi-menu-item>
-          <yi-menu-item name="2-2">首页</yi-menu-item>
-          <yi-menu-item name="2-3">首页</yi-menu-item>
-          <yi-menu-item name="2-4">首页</yi-menu-item>
-          <yi-menu-item name="2-5">首页</yi-menu-item>
-        </yi-menu-group>
-      </yi-submenu>
-      <yi-submenu name="3">
+        <MenuGroup title="牛逼啊">
+          <MenuItem name="2-1">首页</MenuItem>
+          <MenuItem name="2-2">首页</MenuItem>
+          <MenuItem name="2-3">首页</MenuItem>
+          <MenuItem name="2-4">首页</MenuItem>
+          <MenuItem name="2-5">首页</MenuItem>
+        </MenuGroup>
+      </Submenu>
+      <Submenu name="3">
         <template slot="title">
-          <yi-icon type="github"></yi-icon>
+          <Icon type="facebook"></Icon>
           <span>首页</span>
         </template>
-        <yi-menu-group>
-          <yi-menu-item name="3-1">首页</yi-menu-item>
-          <yi-menu-item name="3-2">首页</yi-menu-item>
-          <yi-menu-item name="3-3">首页</yi-menu-item>
-          <yi-menu-item name="3-4">首页</yi-menu-item>
-        </yi-menu-group>
-      </yi-submenu>
-
-    </yi-menu>
+        <MenuGroup>
+          <MenuItem name="3-1">首页</MenuItem>
+          <MenuItem name="3-2">首页</MenuItem>
+        </MenuGroup>
+      </Submenu>
+    </Menu>
   </div>
+
   <router-view/>
 </div>
 </template>

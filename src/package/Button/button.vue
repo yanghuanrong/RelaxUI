@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'YiButton',
+  name: 'Button',
   props: {
     type: {
       type: String,
@@ -45,7 +45,7 @@ export default {
       on: this.$listeners
     }
     return <button type="button" {...listeners} class='yi-btn' {...this.className()}>
-      {this.icon !== '' ? <yi-icon type={this.icon}></yi-icon> : ''}
+      {this.icon !== '' ? <i class={'yi-icon-' + this.icon}></i> : ''}
       {slots.length ? <span>{slots}</span> : ''}
     </button>
   }

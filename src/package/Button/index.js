@@ -1,7 +1,7 @@
-import YIButton from './button'
+import Element from './button'
 
-YIButton.install = function (Vue) {
-  Vue.component(YIButton.name, YIButton)
+Element.install = function (Vue) {
+  Vue.component(Element.name, Element)
 }
 
-export default YIButton
+export default Element

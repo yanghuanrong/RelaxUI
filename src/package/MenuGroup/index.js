@@ -1,7 +1,7 @@
-import YiMenuGroup from '../Menu/menu-group'
+import Element from '../Menu/menu-group'
 
-YiMenuGroup.install = function (Vue) {
-  Vue.component(YiMenuGroup.name, YiMenuGroup)
+Element.install = function (Vue) {
+  Vue.component(Element.name, Element)
 }
 
-export default YiMenuGroup
+export default Element

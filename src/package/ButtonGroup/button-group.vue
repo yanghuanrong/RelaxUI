@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'YiButtonGroup',
+  name: 'ButtonGroup',
   render () {
     return <div class='yi-btn-group'>{this.$slots.default}</div>
   }

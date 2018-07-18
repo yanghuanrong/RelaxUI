@@ -1,94 +1,94 @@
 <template lang="html">
   <div class="">
     <div style="margin-bottom:30px;">
-      <yi-button>default</yi-button>
-      <yi-button type='primary'>primary</yi-button>
-      <yi-button type='success'>success</yi-button>
-      <yi-button type='info'>info</yi-button>
-      <yi-button type='danger'>danger</yi-button>
-      <yi-button type='warning'>warning</yi-button>
+      <Button>default</Button>
+      <Button type='primary'>primary</Button>
+      <Button type='success'>success</Button>
+      <Button type='info'>info</Button>
+      <Button type='danger'>danger</Button>
+      <Button type='warning'>warning</Button>
     </div>
     <div style="margin-bottom:30px;">
-      <yi-button plain>default</yi-button>
-      <yi-button type='primary' plain>primary</yi-button>
-      <yi-button type='success' plain>success</yi-button>
-      <yi-button type='info' plain>info</yi-button>
-      <yi-button type='danger' plain>danger</yi-button>
-      <yi-button type='warning' plain>warning</yi-button>
+      <Button plain>default</Button>
+      <Button type='primary' plain>primary</Button>
+      <Button type='success' plain>success</Button>
+      <Button type='info' plain>info</Button>
+      <Button type='danger' plain>danger</Button>
+      <Button type='warning' plain>warning</Button>
     </div>
     <div style="margin-bottom:30px;">
-      <yi-button round>default</yi-button>
-      <yi-button type='primary' round>primary</yi-button>
-      <yi-button type='success' round>success</yi-button>
-      <yi-button type='info' round>info</yi-button>
-      <yi-button type='danger' round>danger</yi-button>
-      <yi-button type='warning' round>warning</yi-button>
+      <Button round>default</Button>
+      <Button type='primary' round>primary</Button>
+      <Button type='success' round>success</Button>
+      <Button type='info' round>info</Button>
+      <Button type='danger' round>danger</Button>
+      <Button type='warning' round>warning</Button>
     </div>
     <div style="margin-bottom:30px;">
-      <yi-button plain round>default</yi-button>
-      <yi-button type='primary' plain round>primary</yi-button>
-      <yi-button type='success' plain round>success</yi-button>
-      <yi-button type='info' plain round>info</yi-button>
-      <yi-button type='danger' plain round>danger</yi-button>
-      <yi-button type='warning' plain round>warning</yi-button>
+      <Button plain round>default</Button>
+      <Button type='primary' plain round>primary</Button>
+      <Button type='success' plain round>success</Button>
+      <Button type='info' plain round>info</Button>
+      <Button type='danger' plain round>danger</Button>
+      <Button type='warning' plain round>warning</Button>
     </div>
     <div style="margin-bottom:30px;">
-      <yi-button  round disabled>default</yi-button>
-      <yi-button type='primary' round disabled>primary</yi-button>
-      <yi-button type='success' round disabled>success</yi-button>
-      <yi-button type='info'  round disabled>info</yi-button>
-      <yi-button type='danger'  round disabled>danger</yi-button>
-      <yi-button type='warning'  round disabled>warning</yi-button>
+      <Button round disabled>default</Button>
+      <Button type='primary' round disabled>primary</Button>
+      <Button type='success' round disabled>success</Button>
+      <Button type='info'  round disabled>info</Button>
+      <Button type='danger'  round disabled>danger</Button>
+      <Button type='warning'  round disabled>warning</Button>
     </div>
     <div style="margin-bottom:30px;">
-      <yi-button plain round disabled>default</yi-button>
-      <yi-button type='primary' plain round disabled>primary</yi-button>
-      <yi-button type='success' plain round disabled>success</yi-button>
-      <yi-button type='info' plain round disabled>info</yi-button>
-      <yi-button type='danger' plain round disabled>danger</yi-button>
-      <yi-button type='warning' plain round disabled>warning</yi-button>
+      <Button plain round disabled>default</Button>
+      <Button type='primary' plain round disabled>primary</Button>
+      <Button type='success' plain round disabled>success</Button>
+      <Button type='info' plain round disabled>info</Button>
+      <Button type='danger' plain round disabled>danger</Button>
+      <Button type='warning' plain round disabled>warning</Button>
     </div>
     <div style="margin-bottom:30px;">
-      <yi-button type='primary' size='sm'>small</yi-button>
-      <yi-button type='warning'>normal</yi-button>
-      <yi-button size='lg'>large</yi-button>
+      <Button type='primary' size='sm'>small</Button>
+      <Button type='warning'>normal</Button>
+      <Button size='lg'>large</Button>
     </div>
     <div style="margin-bottom:30px;">
-      <yi-button type='text'>button</yi-button>
-      <yi-button type='text' disabled>button</yi-button>
+      <Button type='text'>button</Button>
+      <Button type='text' disabled>button</Button>
     </div>
     <div style="margin-bottom:30px;">
-      <yi-button icon="heart-on" circle></yi-button>
-      <yi-button type="primary" icon="x" circle></yi-button>
-      <yi-button type="info" icon="mic" circle></yi-button>
-      <yi-button type="danger" icon="music" circle></yi-button>
-      <yi-button type="warning" icon="thumbs-down" circle></yi-button>
-      <yi-button type="success" icon="thumbs-up" circle></yi-button>
+      <Button icon="heart-on" circle></Button>
+      <Button type="primary" icon="x" circle></Button>
+      <Button type="info" icon="mic" circle></Button>
+      <Button type="danger" icon="music" circle></Button>
+      <Button type="warning" icon="thumbs-down" circle></Button>
+      <Button type="success" icon="thumbs-up" circle></Button>
     </div>
     <div style="margin-bottom:30px;">
-      <yi-button icon="home">default</yi-button>
-      <yi-button type="primary" icon='star-on'>primary</yi-button>
-      <yi-button type='success' icon='search'>success</yi-button>
-      <yi-button type='info' icon="user">info</yi-button>
-      <yi-button type='danger' icon="zap">danger</yi-button>
-      <yi-button type='warning' icon="triangle">warning</yi-button>
+      <Button icon="home">default</Button>
+      <Button type="primary" icon='star-on'>primary</Button>
+      <Button type='success' icon='search'>success</Button>
+      <Button type='info' icon="user">info</Button>
+      <Button type='danger' icon="zap">danger</Button>
+      <Button type='warning' icon="triangle">warning</Button>
     </div>
     <div style="margin-bottom:30px;">
       <div style="width:200px; margin:0 auto">
-        <yi-button block>default</yi-button>
-        <yi-button type='primary' block>primary</yi-button>
-        <yi-button type='success' block>success</yi-button>
-        <yi-button type='info' block>info</yi-button>
-        <yi-button type='danger' block>danger</yi-button>
-        <yi-button type='warning' block>warning</yi-button>
+        <Button block>default</Button>
+        <Button type='primary' block>primary</Button>
+        <Button type='success' block>success</Button>
+        <Button type='info' block>info</Button>
+        <Button type='danger' block>danger</Button>
+        <Button type='warning' block>warning</Button>
       </div>
     </div>
     <div style="margin-bottom:30px;">
-      <yi-button-group>
-        <yi-button>primary</yi-button>
-        <yi-button>success</yi-button>
-        <yi-button>info</yi-button>
-      </yi-button-group>
+      <ButtonGroup>
+        <Button>primary</Button>
+        <Button>success</Button>
+        <Button>info</Button>
+      </ButtonGroup>
     </div>
   </div>
 </template>
