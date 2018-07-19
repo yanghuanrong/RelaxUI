@@ -25,5 +25,6 @@ export default {
   ButtonGroup,
   Menu,
   MenuGroup,
+  MenuItem,
   Submenu
 }
