@@ -26,6 +26,10 @@ export default {
     activeName: {
       type: String,
       default: ''
+    },
+    uniqueOpened: {
+      type: Boolean,
+      default: false
     }
   },
   mounted () {
@@ -43,7 +47,6 @@ export default {
     handleItemClick (item) {
       this.currentActiveName = item.name
       this.updateActiveName()
-      console.log(item.name)
     }
   },
   render () {

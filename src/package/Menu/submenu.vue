@@ -35,6 +35,14 @@ export default {
   methods: {
     handleClick () {
       this.$emit('click', this)
+
+      if (this.rootMenu.uniqueOpened) {
+        this.$parent.$children.map(item => {
+          if (item !== this) {
+            item.isActive = false
+          }
+        })
+      }
       this.isActive = !this.isActive
     }
   }
