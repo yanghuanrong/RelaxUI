@@ -1,14 +1,14 @@
 <script>
 export default {
-  name: 'MenuGroup',
+  name: 'ReMenuGroup',
   props: {
     title: String,
     default: ''
   },
   render () {
-    return <li class='yi-menu-group'>
-      {this.title !== '' ? <div class='yi-menu-title'>{ this.title }</div> : ''}
-      <ul class='yi-menu'>{this.$slots.default}</ul>
+    return <li class='re-menu-group'>
+      {this.title !== '' ? <div class='re-menu-title'>{ this.title }</div> : ''}
+      <ul class='re-menu'>{this.$slots.default}</ul>
     </li>
   }
 }

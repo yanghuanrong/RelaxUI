@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import yiui from './package'
-import './package/yi-ui.less'
+import './package/ui.less'
 
 Vue.config.productionTip = false
 

@@ -1,12 +1,12 @@
 @import "./base.less";
 
-.yi-btn-group{
+.re-btn-group{
   position: relative;
   display: -ms-inline-flexbox;
   display: inline-flex;
   vertical-align: middle;
 
-  &>.yi-btn{
+  &>.re-btn{
     position: relative;
     margin-left: -1px;
 
@@ -15,17 +15,17 @@
     }
   }
 
-  &>&:not(:last-child)>.yi-btn, &>.yi-btn:not(:last-child):not(.dropdown-toggle){
+  &>&:not(:last-child)>.re-btn, &>.re-btn:not(:last-child):not(.dropdown-toggle){
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
-  &>&:not(:first-child)>.yi-btn, &>.yi-btn:not(:first-child){
+  &>&:not(:first-child)>.re-btn, &>.re-btn:not(:first-child){
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
 }
 
-.yi-btn {
+.re-btn {
   display: inline-block;
   position: relative;
   max-width: 100%;
@@ -57,17 +57,17 @@
     outline: 0;
   }
 
-  &.yi-btn-lg {
+  &.re-btn-lg {
     padding: 0.7rem 1.6rem;
     font-size: 1rem;
   }
 
-  &.yi-btn-sm {
+  &.re-btn-sm {
     padding: 0.2rem 0.8rem;
     font-size: 0.75rem;
   }
 
-  &.yi-btn-text{
+  &.re-btn-text{
     background-color: transparent;
     color: @primary;
     padding-left: 0;
@@ -83,7 +83,7 @@
     }
   }
 
-  &.yi-btn-default {
+  &.re-btn-default {
     @color:#444;
     color:@color;
     border-color: @default;
@@ -107,7 +107,7 @@
     }
   }
 
-  &.yi-btn-info {
+  &.re-btn-info {
     border-color: @info;
     background-color: @info;
     &.is-plain {
@@ -129,7 +129,7 @@
     }
   }
 
-  &.yi-btn-success {
+  &.re-btn-success {
     border-color: @success;
     background-color: @success;
     &.is-plain {
@@ -151,7 +151,7 @@
     }
   }
 
-  &.yi-btn-primary {
+  &.re-btn-primary {
     border-color: @primary;
     background-color: @primary;
     &.is-plain {
@@ -173,7 +173,7 @@
     }
   }
 
-  &.yi-btn-warning {
+  &.re-btn-warning {
     border-color: @warning;
     background-color: @warning;
     &.is-plain {
@@ -195,7 +195,7 @@
     }
   }
 
-  &.yi-btn-danger {
+  &.re-btn-danger {
     border-color: @danger;
     background-color: @danger;
     &.is-plain {
@@ -255,7 +255,7 @@
     width: 100%;
   }
 
-  & [class*=yi-icon-]+span{
+  & [class*=re-icon-]+span{
     margin-left: 5px;
   }
 }

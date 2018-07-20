@@ -1,11 +1,11 @@
 <script>
 export default {
-  name: 'Icon',
+  name: 'ReIcon',
   props: {
     type: String
   },
   render () {
-    return <i class={'yi-icon-' + this.type}></i>
+    return <i class={'re-icon-' + this.type}></i>
   }
 }
 </script>

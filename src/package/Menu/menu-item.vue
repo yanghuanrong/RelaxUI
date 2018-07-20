@@ -1,5 +1,5 @@
 <template>
-  <li class='yi-menu-item' @click.stop='handleClick' :class="{'active': isActive}">
+  <li class='re-menu-item' @click.stop='handleClick' :class="{'active': isActive}">
     <slot></slot>
   </li>
 </template>
@@ -8,7 +8,7 @@
 import Menu from './menu-mixin'
 
 export default {
-  name: 'MenuItem',
+  name: 'ReMenuItem',
   mixins: [Menu],
   props: {
     name: String,
@@ -23,7 +23,7 @@ export default {
     this.$on('on-update-active-name', (name) => {
       if (name === this.name) {
         this.isActive = true
-        this.dispatch('Submenu', 'item-click', this)
+        this.dispatch('ReSubmenu', 'item-click', this)
       } else {
         this.isActive = false
       }
@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     handleClick (e) {
-      this.dispatch('Menu', 'item-click', this)
+      this.dispatch('ReMenu', 'item-click', this)
       this.$emit('click', this)
     }
   }

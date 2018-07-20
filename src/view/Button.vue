@@ -1,94 +1,94 @@
 <template lang="html">
   <div class="">
     <div style="margin-bottom:30px;">
-      <Button>default</Button>
-      <Button type='primary'>primary</Button>
-      <Button type='success'>success</Button>
-      <Button type='info'>info</Button>
-      <Button type='danger'>danger</Button>
-      <Button type='warning'>warning</Button>
+      <re-button>default</re-button>
+      <re-button type='primary'>primary</re-button>
+      <re-button type='success'>success</re-button>
+      <re-button type='info'>info</re-button>
+      <re-button type='danger'>danger</re-button>
+      <re-button type='warning'>warning</re-button>
     </div>
     <div style="margin-bottom:30px;">
-      <Button plain>default</Button>
-      <Button type='primary' plain>primary</Button>
-      <Button type='success' plain>success</Button>
-      <Button type='info' plain>info</Button>
-      <Button type='danger' plain>danger</Button>
-      <Button type='warning' plain>warning</Button>
+      <re-button plain>default</re-button>
+      <re-button type='primary' plain>primary</re-button>
+      <re-button type='success' plain>success</re-button>
+      <re-button type='info' plain>info</re-button>
+      <re-button type='danger' plain>danger</re-button>
+      <re-button type='warning' plain>warning</re-button>
     </div>
     <div style="margin-bottom:30px;">
-      <Button round>default</Button>
-      <Button type='primary' round>primary</Button>
-      <Button type='success' round>success</Button>
-      <Button type='info' round>info</Button>
-      <Button type='danger' round>danger</Button>
-      <Button type='warning' round>warning</Button>
+      <re-button round>default</re-button>
+      <re-button type='primary' round>primary</re-button>
+      <re-button type='success' round>success</re-button>
+      <re-button type='info' round>info</re-button>
+      <re-button type='danger' round>danger</re-button>
+      <re-button type='warning' round>warning</re-button>
     </div>
     <div style="margin-bottom:30px;">
-      <Button plain round>default</Button>
-      <Button type='primary' plain round>primary</Button>
-      <Button type='success' plain round>success</Button>
-      <Button type='info' plain round>info</Button>
-      <Button type='danger' plain round>danger</Button>
-      <Button type='warning' plain round>warning</Button>
+      <re-button plain round>default</re-button>
+      <re-button type='primary' plain round>primary</re-button>
+      <re-button type='success' plain round>success</re-button>
+      <re-button type='info' plain round>info</re-button>
+      <re-button type='danger' plain round>danger</re-button>
+      <re-button type='warning' plain round>warning</re-button>
     </div>
     <div style="margin-bottom:30px;">
-      <Button round disabled>default</Button>
-      <Button type='primary' round disabled>primary</Button>
-      <Button type='success' round disabled>success</Button>
-      <Button type='info'  round disabled>info</Button>
-      <Button type='danger'  round disabled>danger</Button>
-      <Button type='warning'  round disabled>warning</Button>
+      <re-button round disabled>default</re-button>
+      <re-button type='primary' round disabled>primary</re-button>
+      <re-button type='success' round disabled>success</re-button>
+      <re-button type='info'  round disabled>info</re-button>
+      <re-button type='danger'  round disabled>danger</re-button>
+      <re-button type='warning'  round disabled>warning</re-button>
     </div>
     <div style="margin-bottom:30px;">
-      <Button plain round disabled>default</Button>
-      <Button type='primary' plain round disabled>primary</Button>
-      <Button type='success' plain round disabled>success</Button>
-      <Button type='info' plain round disabled>info</Button>
-      <Button type='danger' plain round disabled>danger</Button>
-      <Button type='warning' plain round disabled>warning</Button>
+      <re-button plain round disabled>default</re-button>
+      <re-button type='primary' plain round disabled>primary</re-button>
+      <re-button type='success' plain round disabled>success</re-button>
+      <re-button type='info' plain round disabled>info</re-button>
+      <re-button type='danger' plain round disabled>danger</re-button>
+      <re-button type='warning' plain round disabled>warning</re-button>
     </div>
     <div style="margin-bottom:30px;">
-      <Button type='primary' size='sm'>small</Button>
-      <Button type='warning'>normal</Button>
-      <Button size='lg'>large</Button>
+      <re-button type='primary' size='sm'>small</re-button>
+      <re-button type='warning'>normal</re-button>
+      <re-button size='lg'>large</re-button>
     </div>
     <div style="margin-bottom:30px;">
-      <Button type='text'>button</Button>
-      <Button type='text' disabled>button</Button>
+      <re-button type='text'>re-button</re-button>
+      <re-button type='text' disabled>re-button</re-button>
     </div>
     <div style="margin-bottom:30px;">
-      <Button icon="heart-on" circle></Button>
-      <Button type="primary" icon="x" circle></Button>
-      <Button type="info" icon="mic" circle></Button>
-      <Button type="danger" icon="music" circle></Button>
-      <Button type="warning" icon="thumbs-down" circle></Button>
-      <Button type="success" icon="thumbs-up" circle></Button>
+      <re-button icon="heart-on" circle></re-button>
+      <re-button type="primary" icon="x" circle></re-button>
+      <re-button type="info" icon="mic" circle></re-button>
+      <re-button type="danger" icon="music" circle></re-button>
+      <re-button type="warning" icon="thumbs-down" circle></re-button>
+      <re-button type="success" icon="thumbs-up" circle></re-button>
     </div>
     <div style="margin-bottom:30px;">
-      <Button icon="home">default</Button>
-      <Button type="primary" icon='star-on'>primary</Button>
-      <Button type='success' icon='search'>success</Button>
-      <Button type='info' icon="user">info</Button>
-      <Button type='danger' icon="zap">danger</Button>
-      <Button type='warning' icon="triangle">warning</Button>
+      <re-button icon="home">default</re-button>
+      <re-button type="primary" icon='star-on'>primary</re-button>
+      <re-button type='success' icon='search'>success</re-button>
+      <re-button type='info' icon="user">info</re-button>
+      <re-button type='danger' icon="zap">danger</re-button>
+      <re-button type='warning' icon="triangle">warning</re-button>
     </div>
     <div style="margin-bottom:30px;">
       <div style="width:200px; margin:0 auto">
-        <Button block>default</Button>
-        <Button type='primary' block>primary</Button>
-        <Button type='success' block>success</Button>
-        <Button type='info' block>info</Button>
-        <Button type='danger' block>danger</Button>
-        <Button type='warning' block>warning</Button>
+        <re-button block>default</re-button>
+        <re-button type='primary' block>primary</re-button>
+        <re-button type='success' block>success</re-button>
+        <re-button type='info' block>info</re-button>
+        <re-button type='danger' block>danger</re-button>
+        <re-button type='warning' block>warning</re-button>
       </div>
     </div>
     <div style="margin-bottom:30px;">
-      <ButtonGroup>
-        <Button>primary</Button>
-        <Button>success</Button>
-        <Button>info</Button>
-      </ButtonGroup>
+      <re-button-group>
+        <re-button>primary</re-button>
+        <re-button>success</re-button>
+        <re-button>info</re-button>
+      </re-button-group>
     </div>
   </div>
 </template>

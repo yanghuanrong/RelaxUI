@@ -1,6 +1,5 @@
 class Transition {
   beforeEnter (el) {
-    console.log(el)
     if (!el.dataset) {
       el.dataset = {}
     }
@@ -28,7 +27,6 @@ class Transition {
   }
 
   afterEnter (el) {
-    // for safari: remove class then reset height is necessary
     el.style.height = ''
     el.style.overflow = el.dataset.oldOverflow
   }

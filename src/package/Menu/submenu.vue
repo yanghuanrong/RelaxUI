@@ -1,10 +1,10 @@
 <template>
-  <li class='yi-submenu' @click.stop='handleClick' :class="{'is-opened': isActive}">
-    <div class="yi-menu-title">
+  <li class='re-submenu' @click.stop='handleClick' :class="{'is-opened': isActive}">
+    <div class="re-menu-title">
       <slot name="title"></slot>
     </div>
     <slider-transition>
-      <ul class="yi-menu" v-show="isActive">
+      <ul class="re-menu" v-show="isActive">
         <slot></slot>
       </ul>
     </slider-transition>
@@ -16,7 +16,7 @@ import Menu from './menu-mixin'
 import sliderTransition from '../transition/slider'
 
 export default {
-  name: 'Submenu',
+  name: 'ReSubmenu',
   mixins: [Menu],
   data () {
     return {

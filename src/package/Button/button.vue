@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'Button',
+  name: 'ReButton',
   props: {
     type: {
       type: String,
@@ -26,8 +26,8 @@ export default {
     className () {
       return {
         class: [
-          this.type ? 'yi-btn-' + this.type : '',
-          this.size !== '' || this.size ? 'yi-btn-' + this.size : '',
+          this.type ? 're-btn-' + this.type : '',
+          this.size !== '' || this.size ? 're-btn-' + this.size : '',
           {
             'is-plain': this.plain,
             'is-round': this.round,
@@ -44,8 +44,8 @@ export default {
     const listeners = {
       on: this.$listeners
     }
-    return <button type="button" {...listeners} class='yi-btn' {...this.className()}>
-      {this.icon !== '' ? <i class={'yi-icon-' + this.icon}></i> : ''}
+    return <button type="button" {...listeners} class='re-btn' {...this.className()}>
+      {this.icon !== '' ? <i class={'re-icon-' + this.icon}></i> : ''}
       {slots.length ? <span>{slots}</span> : ''}
     </button>
   }

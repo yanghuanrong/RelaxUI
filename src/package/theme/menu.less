@@ -1,6 +1,6 @@
 @import "./base.less";
 
-.yi-menu{
+.re-menu{
   list-style: none;
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@
     transition: height .4s ease;
   }
 
-  &>.yi-menu-item{
+  &>.re-menu-item{
     cursor: pointer;
     display: block;
     padding: 12px 20px;
@@ -25,42 +25,33 @@
       color: @primary
     }
 
-    & .yi-menu-item,{
+    & .re-menu-item,{
       padding: 0;
     }
 
-    &.yi-menu-group {
+    &.re-menu-group {
      padding: 0 0 0 20px;
     }
 
   }
 
-  .yi-submenu {
+  .re-submenu {
     padding: 12px 20px;
     margin: 2px 0;
     color: #313a46;
 
-    .yi-menu-title{
+    .re-menu-title{
       cursor: pointer;
     }
   }
 
-  .yi-menu-group{
-    .yi-menu-item;
+  .re-menu-group{
+    .re-menu-item;
 
-    .yi-menu-title{
+    .re-menu-title{
       position: relative;
       cursor: auto;
       color: #ccc
     }
   }
-}
-
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .2s;
-}
-
-.fade-enter, .fade-leave-to{
-  opacity: 0;
 }
