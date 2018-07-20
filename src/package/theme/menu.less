@@ -10,14 +10,19 @@
     transition: height .4s ease;
   }
 
+  &>.re-menu-item:hover{
+    background-color: fade(@primary,10%)
+  }
+
   &>.re-menu-item{
     cursor: pointer;
     display: block;
     padding: 12px 20px;
     margin: 2px 0;
     color: #313a46;
+    font-size: 14px;
 
-    &>i{
+    &>i[class*=re-icon-]{
       margin-right: 5px;
     }
 
@@ -25,23 +30,75 @@
       color: @primary
     }
 
-    & .re-menu-item,{
-      padding: 0;
+    & .re-menu-item{
+      padding: 8px 20px 8px 43px;
+      font-size: 12px;
     }
 
     &.re-menu-group {
-     padding: 0 0 0 20px;
+     padding: 0;
     }
-
   }
 
   .re-submenu {
-    padding: 12px 20px;
-    margin: 2px 0;
     color: #313a46;
 
-    .re-menu-title{
+    &>.re-menu-title{
       cursor: pointer;
+      padding: 12px 20px;
+      position: relative;
+
+      &:hover{
+        background-color: fade(@primary,10%)
+      }
+      &>i[class*=re-icon-]{
+        margin-right: 5px;
+      }
+      &>i.re-menu-arrow{
+        position: absolute;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 20px;
+        @color:#ccc;
+        &::after{
+          content: "";
+          position: absolute;
+          width:2px;
+          height: 7px;
+          background-color: @color;
+          left: 4px;
+          top: 2px;
+          transform: rotate(45deg);
+          transform-origin: top center;
+          transition: all .4s ease
+        }
+        &::before{
+          content: "";
+          position: absolute;
+          width:2px;
+          height: 7px;
+          background-color: @color;
+          right: 4px;
+          top: 2px;
+          transform: rotate(-45deg);
+          transform-origin: top center;
+          transition: all .3s ease
+        }
+      }
+    }
+
+    &.is-opened>.re-menu-title>i.re-menu-arrow{
+      &::after{
+        top: 7px;
+        transform: rotate(135deg);
+      }
+      &::before{
+        top: 7px;
+        transform: rotate(-135deg);
+      }
     }
   }
 
@@ -51,7 +108,8 @@
     .re-menu-title{
       position: relative;
       cursor: auto;
-      color: #ccc
+      color: #ccc;
+      padding: 8px 20px 8px 43px;
     }
   }
 }

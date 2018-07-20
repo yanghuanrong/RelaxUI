@@ -2,6 +2,7 @@
   <li class='re-submenu' @click.stop='handleClick' :class="{'is-opened': isActive}">
     <div class="re-menu-title">
       <slot name="title"></slot>
+      <i class="re-menu-arrow"></i>
     </div>
     <slider-transition>
       <ul class="re-menu" v-show="isActive">

@@ -8,7 +8,7 @@
       </re-menu-item>
       <re-submenu name="2">
         <template slot="title">
-          <re-icon type="facebook"></re-icon>
+          <re-icon type="headphones"></re-icon>
           <span>首页</span>
         </template>
         <re-menu-group title="牛逼啊">
@@ -21,7 +21,7 @@
       </re-submenu>
       <re-submenu name="3">
         <template slot="title">
-          <re-icon type="facebook"></re-icon>
+          <re-icon type="twitter"></re-icon>
           <span>首页</span>
         </template>
         <re-menu-group>

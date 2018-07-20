@@ -1,15 +1,18 @@
+<template>
+  <li class='re-menu-group'>
+    <div class='re-menu-title' v-if="title && title !== ''" @click.stop="">{{title}}</div>
+    <ul class='re-menu'>
+      <slot></slot>
+    </ul>
+  </li>
+</template>
+
 <script>
 export default {
   name: 'ReMenuGroup',
   props: {
     title: String,
     default: ''
-  },
-  render () {
-    return <li class='re-menu-group'>
-      {this.title !== '' ? <div class='re-menu-title'>{ this.title }</div> : ''}
-      <ul class='re-menu'>{this.$slots.default}</ul>
-    </li>
   }
 }
 </script>
