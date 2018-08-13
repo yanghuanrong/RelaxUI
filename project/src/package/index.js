@@ -5,8 +5,10 @@ import Menu from './Menu'
 import MenuItem from './MenuItem'
 import MenuGroup from './MenuGroup'
 import Submenu from './Submenu'
+import Row from './Row'
+import Col from './Col'
 
-const components = [Button, Icon, ButtonGroup, Menu, MenuItem, MenuGroup, Submenu]
+const components = [Button, Icon, ButtonGroup, Menu, MenuItem, MenuGroup, Submenu, Row, Col]
 
 const install = Vue => {
   components.map(component => {
@@ -26,5 +28,7 @@ export default {
   Menu,
   MenuGroup,
   MenuItem,
-  Submenu
+  Submenu,
+  Row,
+  Col
 }

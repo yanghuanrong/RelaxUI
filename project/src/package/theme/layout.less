@@ -1,0 +1,31 @@
+.re-col(@index, @type, @num) when (@index > 0) {
+  .re-col(@index - 1, @type, @num);
+  .re-col-@{type}-@{index} {
+    width: 100% / @num * @index;
+    float: left;
+  }
+}
+
+.re-row{
+  &::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@media (min-width: 576px) {
+  .re-col(24,sm,24)
+}
+
+@media (min-width: 768px) {
+  .re-col(24,md,24)
+}
+
+@media (min-width: 992px) {
+  .re-col(24,lg,24)
+}
+
+@media (min-width: 1200px) {
+  .re-col(24,xl,24)
+}

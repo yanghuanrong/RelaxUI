@@ -1,5 +1,22 @@
 <template lang="html">
   <div class="">
+    <re-row :gutter='20'>
+      <re-col :span='16'>
+        <div style="background:#ccc">col-span-16</div>
+      </re-col>
+      <re-col :span='12'>
+        <div style="background:#ccc">col-span-12</div>
+      </re-col>
+      <re-col :xl='12' :sm='5' :md='7'>
+        <div style="background:#ccc">col-xl-12,col-sm-5,col-md-7</div>
+      </re-col>
+      <re-col :sm='12'>
+        <div style="background:#ccc">col-sm-12</div>
+      </re-col>
+      <re-col :md='12'>
+        <div style="background:#ccc">col-md-12</div>
+      </re-col>
+    </re-row>
     <div style="margin-bottom:30px;">
       <re-button>default</re-button>
       <re-button type='primary'>primary</re-button>
