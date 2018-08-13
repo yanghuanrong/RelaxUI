@@ -36,6 +36,11 @@ export default {
     this.$on('item-click', this.handleItemClick)
     this.updateActiveName()
   },
+  watch: {
+    currentActiveName (val) {
+      this.updateActiveName()
+    }
+  },
   methods: {
     broadcast (componentName, eventName, params) {
       broadcast.call(this, componentName, eventName, params)

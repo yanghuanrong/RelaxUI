@@ -9,6 +9,11 @@ export default new Router({
       path: '/button',
       name: 'button',
       component: () => import('@/view/Button')
+    },
+    {
+      path: '/icon',
+      name: 'icon',
+      component: () => import('@/view/Icon')
     }
   ]
 })

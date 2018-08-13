@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import yiui from './package'
 import './package/ui.less'
+import './viewTheme/global.less'
 
 Vue.config.productionTip = false
 

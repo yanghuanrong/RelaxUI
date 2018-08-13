@@ -1,6 +1,6 @@
 <template>
   <li class='re-menu-item' @click.stop='handleClick' :class="{'active': isActive}">
-    <slot></slot>
+      <slot></slot>
   </li>
 </template>
 
@@ -12,7 +12,7 @@ export default {
   mixins: [Menu],
   props: {
     name: String,
-    default: ''
+    to: String
   },
   data () {
     return {
@@ -24,6 +24,7 @@ export default {
       if (name === this.name) {
         this.isActive = true
         this.dispatch('ReSubmenu', 'item-click', this)
+        this.isRoute()
       } else {
         this.isActive = false
       }
@@ -33,6 +34,12 @@ export default {
     handleClick (e) {
       this.dispatch('ReMenu', 'item-click', this)
       this.$emit('click', this)
+      this.isRoute()
+    },
+    isRoute () {
+      if (this.to) {
+        this.$router.push(this.to)
+      }
     }
   }
 }
