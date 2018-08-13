@@ -19,14 +19,14 @@ export default {
   methods: {
     classNames () {
       const classList = {}
-      classList.style = { marginLeft: `-${this.gutter}px`, marginRight: `-${this.gutter}px` }
+      classList.style = { marginLeft: `-${this.gutter / 2}px`, marginRight: `-${this.gutter / 2}px` }
       if (this.type === 'flex') {
-        return classList.class = ['re-row-flex',
+        classList.class = [
+          're-row-flex',
           this.justify !== 'start' ? `is-justify-${this.justify}` : '',
           this.align !== 'top' ? `is-align-${this.align}` : '']
-      } else {
-        return classList
       }
+      return classList
     }
   },
   render () {

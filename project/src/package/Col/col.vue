@@ -34,7 +34,7 @@ export default {
     }
   },
   render () {
-    let style = { paddingLeft: `${this.$parent.gutter}px`, paddingRight: `${this.$parent.gutter}px` }
+    let style = { paddingLeft: `${this.$parent.gutter / 2}px`, paddingRight: `${this.$parent.gutter / 2}px` }
     return <div {...this.classNames()} style={style}>{this.$slots.default}</div>
   }
 }
