@@ -45,7 +45,7 @@ export default {
       on: this.$listeners
     }
     return <button type="button" {...listeners} class='re-btn' {...this.className()}>
-      {this.icon !== '' ? <i class={'re-icon-' + this.icon}></i> : ''}
+      {this.icon !== '' ? <i class={this.icon}></i> : ''}
       {slots.length ? <span>{slots}</span> : ''}
     </button>
   }

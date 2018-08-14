@@ -1,7 +1,7 @@
 html,body,#app{
   height: 100%;
 }
-*{box-sizing: border-box;}
+*{box-sizing: border-box; margin:0; padding: 0;}
 .wrapper{
   width: 100%;
   height: 100%;
@@ -16,8 +16,121 @@ html,body,#app{
 }
 
 .content-page{
-  height: 100%;
+  min-height: 100%;
   flex:1;
   overflow: auto;
-  padding: 25px 25px 15px 25px;
+  padding: 35px 35px 15px 35px;
+}
+
+.card-box{
+  padding: 20px;
+  border-radius: 3px;
+  margin-bottom: 30px;
+  background-color: #ffffff;
+}
+
+
+h1 {
+  line-height: 43px;
+  font-size: 36px;
+}
+
+h2 {
+  line-height: 35px;
+  font-size: 30px;
+}
+
+h3 {
+  line-height: 30px;
+  font-size: 24px;
+}
+
+h4 {
+  line-height: 22px;
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 15px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+.logo{
+  width: 190px;
+  height: 70px;
+  background-color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+
+.topbar{
+  margin-bottom: 30px;
+
+
+}
+
+.page-title{
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.page-title-decs{
+  font-size: 12px;
+  color: #98a6ad;
+}
+
+
+.icon-list{
+  display: flex;
+  flex-wrap: wrap;
+
+  &>div{
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
+    height: 100px;
+    color: #555;
+    -webkit-transition: color .3s ease-in-out,background-color .3s ease-in-out;
+    transition: color .3s ease-in-out,background-color .3s ease-in-out;
+    position: relative;
+    margin: 3px 0;
+    border-radius: 4px;
+    background-color: #fff;
+    overflow: hidden;
+    padding: 10px 0 0;
+
+    i[class^=re-icon-]{
+      border-radius: 100%;
+      font-size: 24px;
+      margin: 12px 0 16px;
+      -webkit-transition: -webkit-transform .3s ease-in-out;
+      transition: -webkit-transform .3s ease-in-out;
+      transition: transform .3s ease-in-out;
+      transition: transform .3s ease-in-out,-webkit-transform .3s ease-in-out;
+      will-change: transform;
+    }
+
+    .icon-class{
+      color: #888;
+      display: block;
+      text-align: center;
+      -webkit-transform: scale(.83);
+      -ms-transform: scale(.83);
+      transform: scale(.83);
+      font-family: Lucida Console,Consolas;
+      white-space: nowrap;
+    }
+
+    .icon-copy{
+      opacity: 0;
+      position: relative;
+      z-index: -1;
+    }
+  }
 }

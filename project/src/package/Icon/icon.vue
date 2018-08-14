@@ -5,7 +5,7 @@ export default {
     type: String
   },
   render () {
-    return <i class={'re-icon-' + this.type}></i>
+    return <i class={this.type}></i>
   }
 }
 </script>

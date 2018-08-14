@@ -1,39 +1,36 @@
 <template>
 <div id="app">
   <div class='wrapper'>
-    <div class="yi-sidebar-menu" style="width:200px">
+    <div class="yi-sidebar-menu" style="width:240px">
+      <div class="logo">
+        <img src="./assets/logo.png" alt="">
+      </div>
       <re-menu active-name="2-1" :uniqueOpened='true'>
         <re-menu-item name="1">
-          <re-icon type="home"></re-icon>
-          <span>首页</span>
+          <span>安装</span>
+        </re-menu-item>
+        <re-menu-item name="1">
+          <span>快速开始</span>
         </re-menu-item>
         <re-submenu name="2">
           <template slot="title">
-          <re-icon type="headphones"></re-icon>
-          <span>首页</span>
+          <span>UI Elements</span>
         </template>
-          <re-menu-group title="牛逼啊">
-            <re-menu-item name="2-1" to='/button'>按钮组件</re-menu-item>
-            <re-menu-item name="2-2" to='/icon'>图标组件</re-menu-item>
-            <re-menu-item name="2-3" to='/grid'>栅格布局</re-menu-item>
-            <re-menu-item name="2-4">首页</re-menu-item>
-            <re-menu-item name="2-5">首页</re-menu-item>
+          <re-menu-group title="General">
+            <re-menu-item name="2-1" to='/button'>Button 按钮</re-menu-item>
+            <re-menu-item name="2-2" to='/icon'>Icon 图标</re-menu-item>
           </re-menu-group>
-        </re-submenu>
-        <re-submenu name="3">
-          <template slot="title">
-          <re-icon type="twitter"></re-icon>
-          <span>首页</span>
-        </template>
-          <re-menu-group>
-            <re-menu-item name="3-1">首页</re-menu-item>
-            <re-menu-item name="3-2">首页</re-menu-item>
+          <re-menu-group title="Layout">
+            <re-menu-item name="2-3" to='/grid'>Grid 栅格</re-menu-item>
+          </re-menu-group>
+          <re-menu-group title="Data Entry">
+            <re-menu-item name="2-4" to='/input'>Input 输入框</re-menu-item>
           </re-menu-group>
         </re-submenu>
       </re-menu>
     </div>
     <div class="content-page">
-      <router-view/>
+        <router-view/>
     </div>
   </div>
 </div>

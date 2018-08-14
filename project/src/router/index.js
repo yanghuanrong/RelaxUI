@@ -7,18 +7,19 @@ export default new Router({
   routes: [
     {
       path: '/button',
-      name: 'button',
-      component: () => import('@/view/Button')
+      component: () => import('@/view/button/index.vue')
     },
     {
       path: '/icon',
-      name: 'icon',
-      component: () => import('@/view/Icon')
+      component: () => import('@/view/icon/index.vue')
     },
     {
       path: '/grid',
-      name: 'grid',
-      component: () => import('@/view/grid')
+      component: () => import('@/view/grid/index.vue')
+    },
+    {
+      path: '/input',
+      component: () => import('@/view/input/index.vue')
     }
   ]
 })

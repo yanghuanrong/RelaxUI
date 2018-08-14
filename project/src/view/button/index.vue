@@ -1,5 +1,12 @@
 <template lang="html">
-  <div class="">
+  <div>
+    <div class="topbar">
+      <div class="page-title-box">
+        <h4 class="page-title">Buttons 按钮</h4>
+        <p class="page-title-decs">按钮用于开始一个即时操作</p>
+      </div>
+    </div>
+    <div class="card-box">
     <div style="margin-bottom:30px;">
       <re-button>default</re-button>
       <re-button type='primary'>primary</re-button>
@@ -58,20 +65,20 @@
       <re-button type='text' disabled>re-button</re-button>
     </div>
     <div style="margin-bottom:30px;">
-      <re-button icon="heart-on" circle></re-button>
-      <re-button type="primary" icon="x" circle></re-button>
-      <re-button type="info" icon="mic" circle></re-button>
-      <re-button type="danger" icon="music" circle></re-button>
-      <re-button type="warning" icon="thumbs-down" circle></re-button>
-      <re-button type="success" icon="thumbs-up" circle></re-button>
+      <re-button icon="re-icon-heart-on" circle></re-button>
+      <re-button type="primary" icon="re-icon-x" circle></re-button>
+      <re-button type="info" icon="re-icon-mic" circle></re-button>
+      <re-button type="danger" icon="re-icon-music" circle></re-button>
+      <re-button type="warning" icon="re-icon-thumbs-down" circle></re-button>
+      <re-button type="success" icon="re-icon-thumbs-up" circle></re-button>
     </div>
     <div style="margin-bottom:30px;">
-      <re-button icon="home">default</re-button>
-      <re-button type="primary" icon='star-on'>primary</re-button>
-      <re-button type='success' icon='search'>success</re-button>
-      <re-button type='info' icon="user">info</re-button>
-      <re-button type='danger' icon="zap">danger</re-button>
-      <re-button type='warning' icon="triangle">warning</re-button>
+      <re-button icon="re-icon-home">default</re-button>
+      <re-button type="primary" icon='re-icon-star-on'>primary</re-button>
+      <re-button type='success' icon='re-icon-search'>success</re-button>
+      <re-button type='info' icon="re-icon-user">info</re-button>
+      <re-button type='danger' icon="re-icon-zap">danger</re-button>
+      <re-button type='warning' icon="re-icon-triangle">warning</re-button>
     </div>
     <div style="margin-bottom:30px;">
       <div style="width:200px; margin:0 auto">
@@ -90,6 +97,7 @@
         <re-button>info</re-button>
       </re-button-group>
     </div>
+  </div>
   </div>
 </template>
 
