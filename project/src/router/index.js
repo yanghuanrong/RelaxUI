@@ -14,6 +14,11 @@ export default new Router({
       path: '/icon',
       name: 'icon',
       component: () => import('@/view/Icon')
+    },
+    {
+      path: '/grid',
+      name: 'grid',
+      component: () => import('@/view/grid')
     }
   ]
 })

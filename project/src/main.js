@@ -3,13 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import yiui from './package'
+import Relax from './package'
 import './package/style.less'
 import './viewTheme/global.less'
 
 Vue.config.productionTip = false
 
-Vue.use(yiui)
+Vue.use(Relax)
 
 /* eslint-disable no-new */
 new Vue({

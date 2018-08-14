@@ -1,31 +1,84 @@
 .re-col(@index, @type, @num) when (@index > 0) {
   .re-col(@index - 1, @type, @num);
+
   .re-col-@{type}-@{index} {
     width: 100% / @num * @index;
     float: left;
   }
 }
 
-.re-row{
-  &::after{
+.re-col-offset(@type,@index) when (@index > 0) {
+  .re-col-offset(@type,@index - 1);
+
+  .re-col-offset-@{type}-@{index} {
+    margin-left: 100% / 24 * @index;
+  }
+}
+
+.re-row-flex {
+  display: flex;
+  flex-wrap: wrap;
+
+  &.re-row-flex-start {
+    justify-content: flex-start;
+  }
+
+  &.re-row-flex-center {
+    justify-content: flex-center;
+  }
+
+  &.re-row-flex-end {
+    justify-content: flex-end;
+  }
+
+  &.re-row-flex-space-between {
+    justify-content: space-between;
+  }
+
+  &.re-row-flex-space-around {
+    justify-content: space-around;
+  }
+
+  &.re-row-flex-top {
+    align-items: flex-start;
+  }
+
+  &.re-row-flex-center {
+    align-items: center;
+  }
+
+  &.re-row-flex-bottom {
+    align-items: flex-end;
+  }
+}
+
+.re-row {
+  &::after {
     content: "";
     display: block;
     clear: both;
   }
 }
 
+.re-col(24,sp,24);
+.re-col-offset(sp,23);
+
 @media (min-width: 576px) {
-  .re-col(24,sm,24)
+  .re-col(24,sm,24);
+  .re-col-offset(sm,23);
 }
 
 @media (min-width: 768px) {
-  .re-col(24,md,24)
+  .re-col(24,md,24);
+  .re-col-offset(md,23);
 }
 
 @media (min-width: 992px) {
-  .re-col(24,lg,24)
+  .re-col(24,lg,24);
+  .re-col-offset(lg,23);
 }
 
 @media (min-width: 1200px) {
-  .re-col(24,xl,24)
+  .re-col(24,xl,24);
+  .re-col-offset(xl,23);
 }

@@ -15,7 +15,7 @@
           <re-menu-group title="牛逼啊">
             <re-menu-item name="2-1" to='/button'>按钮组件</re-menu-item>
             <re-menu-item name="2-2" to='/icon'>图标组件</re-menu-item>
-            <re-menu-item name="2-3">首页</re-menu-item>
+            <re-menu-item name="2-3" to='/grid'>栅格布局</re-menu-item>
             <re-menu-item name="2-4">首页</re-menu-item>
             <re-menu-item name="2-5">首页</re-menu-item>
           </re-menu-group>
