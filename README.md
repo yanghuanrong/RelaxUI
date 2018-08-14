@@ -33,4 +33,4 @@
 1. [webpack4.0架构师]联想皮   https://github.com/JachinZou
 2. [综合技术大佬]heytoo
 3. 长沙Web前端招聘群 `412126546`
-> 在此欢迎大家贡献代码,为
+> 在此欢迎大家贡献代码
