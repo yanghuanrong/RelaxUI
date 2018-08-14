@@ -27,12 +27,12 @@
 
 
 ### 相关知识点
-1. `vue`,`es6`,`css3`,`element`,`react`,`iview`
+1. `vue`,`es6`,`es7`,`css3`,`element`,`react`,`iview`
 
 ### 由衷感谢
-1. [webpack4.0架构师]联想皮   https://github.com/JachinZou
-2. [综合技术大佬]heytoo
+1. [`webpack4.0`底层架构师]联想皮   https://github.com/JachinZou
+2. [`js`,`duckjs`,`vue`,`react`,`jquery`技术大佬]heytoo
 3. [黑土鸭店]一系列成员
-4. 长沙Web前端招聘群 `412126546`再坐的各位全是大佬
+4. 长沙Web前端招聘群再坐的各位全是大佬
 
 > 在此欢迎大家贡献星星，人人星我，我星人人
