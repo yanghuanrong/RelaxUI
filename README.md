@@ -29,6 +29,9 @@
 ### 相关知识点
 1. `vue`,`es6`,`es7`,`css3`,`element`,`react`,`iview`
 
+### 周边
+后期将推出`react`版本
+
 ### 由衷感谢
 1. [`webpack4.0`底层架构师]联想皮   https://github.com/JachinZou
 2. [`js`,`duckjs`,`vue`,`react`,`jquery`技术大佬]heytoo
