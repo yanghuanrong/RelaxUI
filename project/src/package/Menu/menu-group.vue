@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'ReMenuGroup',
+  name: 'MenuGroup',
   props: {
     title: String,
     default: ''

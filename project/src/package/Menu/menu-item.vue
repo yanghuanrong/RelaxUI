@@ -8,7 +8,7 @@
 import Menu from './menu-mixin'
 
 export default {
-  name: 'ReMenuItem',
+  name: 'MenuItem',
   mixins: [Menu],
   props: {
     name: String,
@@ -23,7 +23,7 @@ export default {
     this.$on('on-update-active-name', (name) => {
       if (name === this.name) {
         this.isActive = true
-        this.dispatch('ReSubmenu', 'item-click', this)
+        this.dispatch('Submenu', 'item-click', this)
         this.isRoute()
       } else {
         this.isActive = false
@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     handleClick (e) {
-      this.dispatch('ReMenu', 'item-click', this)
+      this.dispatch('Menu', 'item-click', this)
       this.$emit('click', this)
       this.isRoute()
     },

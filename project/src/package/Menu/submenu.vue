@@ -17,7 +17,7 @@ import Menu from './menu-mixin'
 import sliderTransition from '../transition/slider'
 
 export default {
-  name: 'ReSubmenu',
+  name: 'Submenu',
   mixins: [Menu],
   data () {
     return {

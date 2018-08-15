@@ -7,13 +7,13 @@
       </div>
     </div>
     <div class="card-box">
-      <re-row class="icon-list">
-        <re-col :sm='12' :md='8' :lg='6' :xl='4' v-for='(item,index) in icon' :key="index">
-          <re-icon :type="'re-icon-'+item"></re-icon>
+      <Row class="icon-list">
+        <Col :sm='12' :md='8' :lg='6' :xl='4' v-for='(item,index) in icon' :key="index">
+          <Icon :type="'re-icon-'+item"/>
           <span class="icon-class">re-icon-{{item}}</span>
-          <input type="text" class="icon-copy" :value='`<re-icon type="re-icon-${item}"></re-icon>`' readOnly/>
-        </re-col>
-      </re-row>
+          <input type="text" class="icon-copy" :value='`<Icon type="re-icon-${item}"/>`' readOnly/>
+        </Col>
+      </Row>
     </div>
   </div>
 </template>

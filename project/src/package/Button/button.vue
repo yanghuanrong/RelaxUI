@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'ReButton',
+  name: 'Button',
   props: {
     type: {
       type: String,

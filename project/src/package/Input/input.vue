@@ -1,11 +1,11 @@
 <script>
 export default {
-  name: 'Icon',
+  name: 'Input',
   props: {
     type: String
   },
   render () {
-    return <i class={this.type}></i>
+    return <input type="text" />
   }
 }
 </script>

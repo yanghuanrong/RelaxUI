@@ -11,7 +11,7 @@ function broadcast (componentName, eventName, params) {
 }
 
 export default {
-  name: 'ReMenu',
+  name: 'Menu',
   data () {
     return {
       currentActiveName: this.activeName
@@ -46,8 +46,8 @@ export default {
       broadcast.call(this, componentName, eventName, params)
     },
     updateActiveName () {
-      this.broadcast('ReSubmenu', 'on-update-active-name', false)
-      this.broadcast('ReMenuItem', 'on-update-active-name', this.currentActiveName)
+      this.broadcast('Submenu', 'on-update-active-name', false)
+      this.broadcast('MenuItem', 'on-update-active-name', this.currentActiveName)
     },
     handleItemClick (item) {
       this.currentActiveName = item.name

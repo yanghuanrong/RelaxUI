@@ -7,8 +7,9 @@ import MenuGroup from './MenuGroup'
 import Submenu from './Submenu'
 import Row from './Row'
 import Col from './Col'
+import Input from './Input'
 
-const components = [Button, Icon, ButtonGroup, Menu, MenuItem, MenuGroup, Submenu, Row, Col]
+const components = [Button, Icon, ButtonGroup, Menu, MenuItem, MenuGroup, Submenu, Row, Col, Input]
 
 const install = Vue => {
   components.map(component => {
@@ -30,5 +31,6 @@ export default {
   MenuItem,
   Submenu,
   Row,
-  Col
+  Col,
+  Input
 }

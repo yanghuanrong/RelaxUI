@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="card-box">
-
+      <Input type="password" />
     </div>
   </div>
 </template>
