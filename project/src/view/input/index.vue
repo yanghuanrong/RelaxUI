@@ -7,7 +7,9 @@
       </div>
     </div>
     <div class="card-box">
-      <Input type="text" v-model="input" @input="hhha" @focus="as" @blur='br' />
+      <div style="width:200px;">
+        <Input placeholder="请输入用户名" v-model="input" @input="hhha" @focus="as" @blur='br' @keyup.13='wo' autofocus clearable/>
+      </div>
       <span>{{input}}</span>
     </div>
   </div>
@@ -22,13 +24,16 @@ export default {
   },
   methods: {
     hhha () {
-      console.log('一致在输入')
+      console.log('一致在输入1')
     },
     as () {
       console.log('获得焦点')
     },
     br () {
       console.log('失去焦点')
+    },
+    wo () {
+      alert(this.input)
     }
   }
 }

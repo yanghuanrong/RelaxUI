@@ -1,0 +1,56 @@
+@import "./base.less";
+
+.re-form-control{
+
+  .re-from-input{
+    position: relative;
+
+    .re-clearable{
+      position: absolute;
+      height: 100%;
+      top: 0;
+      right: 0;
+      width: 30px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      cursor: pointer;
+      i{
+        transition: all 0.25s ease-in-out;
+        color: @border;
+      }
+      &:hover{
+        i{
+          color: darken(@border, 20%);
+        }
+      }
+    }
+  }
+}
+.re-input{
+  border: 1px solid @border;
+  border-radius: 4px;
+  max-width: 100%;
+  padding: .469rem .75rem;
+  font-size: 14px;
+  transition: all 0.25s ease-in-out;
+  color: @text;
+  max-width: 100%;
+  width: 100%;
+
+  &:hover{
+    border-color: @primary;
+  }
+  &:focus{
+    border-color: @primary;
+    box-shadow: 0 0 0 2px fade(@primary, 30%);
+
+    &::placeholder {
+      color: fade(@border, 40%);
+    }
+  }
+
+  &::placeholder {
+    color: @border;
+  }
+}
