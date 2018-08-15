@@ -5,7 +5,7 @@
       <div class="logo">
         <img src="./assets/logo.png" alt="">
       </div>
-      <Menu active-name="2-1" :uniqueOpened='true'>
+      <Menu :uniqueOpened='true'>
         <MenuItem name="1">
           <span>安装</span>
         </MenuItem>
