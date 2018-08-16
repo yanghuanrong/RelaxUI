@@ -9,7 +9,8 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'text'
+      default: 'text',
+      validator: value => ['text', 'password', 'textarea'].indexOf(value) !== -1
     },
     value: String,
     clearable: {
@@ -53,12 +54,22 @@ export default {
       class: [this.size !== '' || this.size ? 're-input-' + this.size : '']
     }
 
-    return <div class="re-form-control">
-      <div class="re-from-input">
-        <input class="re-input" type={this.type} value={this.currValue} {...inputClass} {...attrs} {...listeners} on-input={this.changeEv} ref='input'/>
-        { this.clearDom() }
-      </div>
-    </div>
+    const inputDom = () => {
+      if (this.type === 'textarea') {
+        console.log(this.$attrs.maxlength)
+        return <div class="re-from-textarea">
+          <textarea class="re-textarea" {...inputClass} {...attrs} {...listeners} on-input={this.changeEv} ref='input'>{this.currValue}</textarea>
+          { this.$attrs.maxlength ? <span class='re-textarea-maxlength'>{this.currValue.length}/{this.$attrs.maxlength}</span> : '' }
+        </div>
+      } else {
+        return <div class="re-from-input">
+          <input class="re-input" type={this.type} value={this.currValue} {...inputClass} {...attrs} {...listeners} on-input={this.changeEv} ref='input'/>
+          { this.clearDom() }
+        </div>
+      }
+    }
+
+    return <div class="re-form-control">{ inputDom() }</div>
   }
 }
 </script>

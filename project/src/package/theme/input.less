@@ -26,8 +26,20 @@
       }
     }
   }
+  .re-from-textarea{
+    position: relative;
+
+    .re-textarea-maxlength{
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      font-size: 12px;
+      color: @border;
+    }
+  }
 }
-.re-input{
+.re-input,.re-textarea{
+  resize: none;
   border: 1px solid @border;
   border-radius: 4px;
   max-width: 100%;
@@ -47,7 +59,12 @@
     padding: 4px 20px 4px 6px;
     font-size: 12px;
   }
-
+  &:disabled {
+    cursor: no-drop;
+    &:hover{
+      border-color: @border;
+    }
+  }
   &:hover{
     border-color: @primary;
   }

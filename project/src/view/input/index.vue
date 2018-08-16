@@ -11,12 +11,18 @@
         <Input placeholder="请输入用户名" v-model="input" @input="aa" @focus="as" @blur='br' @keyup.13='wo' autofocus clearable/>
       </div>
       <div style="width:200px; margin-bottom:10px">
-        <Input placeholder="请输入" size="lg" @input="aa"/>
+        <Input placeholder="请输入用户名" type="password" value="123123" clearable/>
+      </div>
+      <div style="width:200px; margin-bottom:10px">
+        <Input placeholder="请输入" size="lg" @input="aa" />
       </div>
       <div style="width:200px;">
-        <Input placeholder="请输入用户名" @input="aa" @change="hhha" clearable/>
+        <Input placeholder="请输入用户名" value="123" disabled  @input="aa" @change="hhha"/>
       </div>
       <span>{{input}}</span>
+      <div style="width:200px; margin-bottom:10px">
+        <Input placeholder="请输入" type="textarea" @input="aa" rows="7" cols="20" maxlength="20" />
+      </div>
     </div>
   </div>
 </template>
