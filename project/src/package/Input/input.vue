@@ -21,16 +21,19 @@ export default {
       type: String,
       default: '',
       validator: value => ['lg', 'sm', ''].indexOf(value) !== -1
-    }
+    },
+    iconAfter: String,
+    iconBefore: String
   },
   methods: {
     clearDom () {
-      if (this.clearable) {
+      if (this.clearable && !this.iconAfter) {
         if (this.currValue && this.currValue.length) {
           const clear = (e) => {
             this.currValue = ''; this.$emit('input', this.currValue)
             this.$refs.input.focus()
           }
+
           return <div class="re-clearable" on-click={clear}><i class="re-icon-x"></i></div>
         }
       }
@@ -51,7 +54,11 @@ export default {
     }
 
     const inputClass = {
-      class: [this.size !== '' || this.size ? 're-input-' + this.size : '']
+      class: [
+        this.size !== '' || this.size ? 're-input-' + this.size : '',
+        this.iconAfter ? 're-input-icon-affter' : '',
+        this.iconBefore ? 're-input-icon-before' : ''
+      ]
     }
 
     const inputDom = () => {
@@ -62,13 +69,18 @@ export default {
         </div>
       } else {
         return <div class="re-from-input">
+          { this.iconAfter ? <span class='re-icon-path-affter'><i class={this.iconAfter}></i></span> : '' }
           <input class="re-input" type={this.type} value={this.currValue} {...inputClass} {...attrs} {...listeners} on-input={this.changeEv} ref='input'/>
           { this.clearDom() }
+          { this.iconBefore ? <span class='re-icon-path-before'><i class={this.iconBefore}></i></span> : '' }
         </div>
       }
     }
-
-    return <div class="re-form-control">{ inputDom() }</div>
+    console.log(this.$slots)
+    return <div class="re-input-group">
+      {/* { this.$slots.addonAfter ? <div class="re-input-group-prepend">{this.$slots.addonAfter}</div> : '' } */}
+      { inputDom() }
+    </div>
   }
 }
 </script>

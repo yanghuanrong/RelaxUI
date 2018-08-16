@@ -8,20 +8,27 @@
     </div>
     <div class="card-box">
       <div style="width:200px; margin-bottom:10px">
-        <Input placeholder="请输入用户名" v-model="input" @input="aa" @focus="as" @blur='br' @keyup.13='wo' autofocus clearable/>
+        <Input placeholder="请输入用户名" v-model="input" iconBefore="re-icon-search" @input="aa" @focus="as" @blur='br' @keyup.13='wo' autofocus clearable/>
       </div>
       <div style="width:200px; margin-bottom:10px">
-        <Input placeholder="请输入用户名" type="password" value="123123" maxlength="10" clearable/>
+        <Input placeholder="请输入密码" iconBefore="re-icon-unlock" type="password" value="123123" maxlength="10" clearable/>
       </div>
       <div style="width:200px; margin-bottom:10px">
-        <Input placeholder="请输入" size="lg" @input="aa" />
+        <Input placeholder="请输入" iconAfter="re-icon-search" @input="aa"/>
       </div>
-      <div style="width:200px;">
+      <div style="width:200px; margin-bottom:10px">
+        <Input placeholder="请输入" @input="aa">
+          <template slot="addonAfter">
+            http://
+          </template>
+        </Input>
+      </div>
+      <div style="width:200px; margin-bottom:10px">
         <Input placeholder="请输入用户名" value="123" disabled  @input="aa" @change="hhha"/>
       </div>
       <span>{{input}}</span>
       <div style="width:200px; margin-bottom:10px">
-        <Input placeholder="请输入" type="textarea" @input="aa" rows="7" cols="20" maxlength="20" />
+        <Input placeholder="请输入" type="textarea" @input="aa" rows="7" cols="20" maxlength="40" />
       </div>
     </div>
   </div>
@@ -49,6 +56,9 @@ export default {
     },
     wo () {
       alert(this.input)
+    },
+    fn () {
+      console.log(1)
     }
   }
 }

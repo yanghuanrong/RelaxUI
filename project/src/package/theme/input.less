@@ -1,24 +1,41 @@
 @import "./base.less";
 
-.re-form-control{
+.re-input-group{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
 
   .re-from-input{
     position: relative;
 
-    .re-clearable{
+    .icon{
       position: absolute;
       height: 100%;
       top: 0;
-      right: 0;
       width: 30px;
       align-items: center;
       justify-content: center;
       display: flex;
-      cursor: pointer;
+
       i{
         transition: all 0.25s ease-in-out;
         color: @border;
       }
+    }
+    .re-icon-path-affter {
+      .icon;
+      right: 1px;
+    }
+    .re-icon-path-before {
+      .icon;
+      left: 1px;
+    }
+    .re-clearable{
+      .icon;
+      right: 0;
+      cursor: pointer;
+
       &:hover{
         i{
           color: darken(@border, 20%);
@@ -28,7 +45,9 @@
   }
   .re-from-textarea{
     position: relative;
-
+    .re-textarea{
+      padding: 8px 10px;
+    }
     .re-textarea-maxlength{
       position: absolute;
       left: 10px;
@@ -42,11 +61,11 @@
 ::-ms-clear,::-ms-reveal{display:none;}
 
 .re-input,.re-textarea{
+  padding: 8px 25px 8px 10px;
   resize: none;
   border: 1px solid @border;
   border-radius: 4px;
   max-width: 100%;
-  padding: 8px 25px 8px 10px;
   font-size: 14px;
   transition: all 0.25s ease-in-out;
   color: @text;
@@ -62,6 +81,12 @@
     padding: 4px 20px 4px 6px;
     font-size: 12px;
   }
+
+
+  &.re-input-icon-before{
+    padding-left: 30px !important;
+  }
+
   &:disabled {
     cursor: no-drop;
     &:hover{
