@@ -56,9 +56,8 @@ export default {
 
     const inputDom = () => {
       if (this.type === 'textarea') {
-        console.log(this.$attrs.maxlength)
         return <div class="re-from-textarea">
-          <textarea class="re-textarea" {...inputClass} {...attrs} {...listeners} on-input={this.changeEv} ref='input'>{this.currValue}</textarea>
+          <textarea class="re-textarea" {...inputClass} {...attrs} {...listeners} on-input={this.changeEv} ref='input'></textarea>
           { this.$attrs.maxlength ? <span class='re-textarea-maxlength'>{this.currValue.length}/{this.$attrs.maxlength}</span> : '' }
         </div>
       } else {

@@ -11,7 +11,7 @@
         <Input placeholder="请输入用户名" v-model="input" @input="aa" @focus="as" @blur='br' @keyup.13='wo' autofocus clearable/>
       </div>
       <div style="width:200px; margin-bottom:10px">
-        <Input placeholder="请输入用户名" type="password" value="123123" clearable/>
+        <Input placeholder="请输入用户名" type="password" value="123123" maxlength="10" clearable/>
       </div>
       <div style="width:200px; margin-bottom:10px">
         <Input placeholder="请输入" size="lg" @input="aa" />
