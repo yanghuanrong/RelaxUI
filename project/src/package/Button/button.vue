@@ -14,7 +14,7 @@ export default {
     size: {
       type: String,
       default: '',
-      validator: value => ['lg', 'sm', 'xs', ''].indexOf(value) !== -1
+      validator: value => ['lg', 'sm', ''].indexOf(value) !== -1
     },
     plain: Boolean,
     round: Boolean,

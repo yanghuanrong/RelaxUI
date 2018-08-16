@@ -7,8 +7,14 @@
       </div>
     </div>
     <div class="card-box">
+      <div style="width:200px; margin-bottom:10px">
+        <Input placeholder="请输入用户名" v-model="input" @input="aa" @focus="as" @blur='br' @keyup.13='wo' autofocus clearable/>
+      </div>
+      <div style="width:200px; margin-bottom:10px">
+        <Input placeholder="请输入" size="lg" @input="aa"/>
+      </div>
       <div style="width:200px;">
-        <Input placeholder="请输入用户名" v-model="input" @input="hhha" @focus="as" @blur='br' @keyup.13='wo' autofocus clearable/>
+        <Input placeholder="请输入用户名" @input="aa" @change="hhha" clearable/>
       </div>
       <span>{{input}}</span>
     </div>
@@ -23,8 +29,11 @@ export default {
     }
   },
   methods: {
-    hhha () {
-      console.log('一致在输入1')
+    hhha (e) {
+      console.log(e)
+    },
+    aa (e) {
+      console.log(e)
     },
     as () {
       console.log('获得焦点')
