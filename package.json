@@ -1,8 +1,8 @@
 {
-  "name": "vue-relax",
-  "version": "1.0.0",
-  "description": "vue-relax",
-  "author": "yanghuanrong",
+  "name": "vue-relax-ui",
+  "version": "1.0.1",
+  "description": "relax-vue",
+  "author": "npm.yanghuanrong",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
@@ -72,7 +72,7 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "main": "./index.js",
+  "main": "./src/package/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yanghuanrong/RelaxUI.git"
