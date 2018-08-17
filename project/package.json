@@ -1,9 +1,8 @@
 {
-  "name": "yiui",
+  "name": "vue-relax",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "杨焕荣",
-  "private": true,
+  "description": "vue-relax",
+  "author": "yanghuanrong",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
@@ -41,6 +40,8 @@
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
     "node-notifier": "^5.1.2",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^1.2.0",
@@ -70,5 +71,15 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanghuanrong/RelaxUI.git"
+  },
+  "keywords": [
+    "vue-realx",
+    "relax"
+  ],
+  "license": "ISC"
 }

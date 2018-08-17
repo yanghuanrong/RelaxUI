@@ -1,7 +1,7 @@
 # RelaxUI
 
 ### 介绍
-这是一个基于vue的ui`kuangjia`,灵感,代码来源于`element`,`antd`,`iview`,`jquery`,`bottstrap`
+这是一个基于vue的ui`kuangjia`,灵感,代码来源于`element`,`antd`,`iview`,`jquery`,`bootstrap`
 
 
 ## 安装使用
