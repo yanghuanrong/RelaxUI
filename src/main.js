@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Relax from './package'
-import './package/style.less'
+import './package/theme/style.less'
 import './viewTheme/global.less'
 
 Vue.config.productionTip = false

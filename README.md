@@ -4,11 +4,31 @@
 这是一个基于vue的ui`kuangjia`,灵感,代码来源于`element`,`antd`,`iview`,`jquery`,`bootstrap`
 
 
-## 安装使用
-目前不推荐使用,可以一起学习
+### 安装使用
+``` bash
+npm i vue-relax-ui
+```
+在`main.js`中引入
+``` javascript
+import Vue from 'vue'
+import App from './App'
+import router from './router'
+import Relax from 'vue-relax-ui'
+import 'vue-relax-ui/src/package/theme/style.css'
+Vue.use(Relax)
+Vue.config.productionTip = false
+
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  router,
+  components: { App },
+  template: '<App/>'
+})
+```
 
 
-## 开发文档
+### 开发文档
 还未编写
 
 ### 功能列表
@@ -23,7 +43,7 @@
 
 ### 开发规范
 1. 代码符合eslint
-2. 组件标签以`re`开头
+2. 组件标签以大写字母开头，驼峰形式
 
 
 ### 相关知识点

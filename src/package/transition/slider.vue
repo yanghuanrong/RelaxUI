@@ -1,3 +1,4 @@
+<script>
 import {addClass, delClass} from '../utils/dom'
 
 export default {
@@ -77,3 +78,4 @@ export default {
     </transition>
   }
 }
+</script>
