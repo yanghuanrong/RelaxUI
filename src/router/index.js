@@ -6,10 +6,6 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/input',
-      component: () => import('@/view/input/index.vue')
-    },
-    {
       path: '/button',
       component: () => import('@/view/button/index.vue')
     },
@@ -20,6 +16,14 @@ export default new Router({
     {
       path: '/grid',
       component: () => import('@/view/grid/index.vue')
+    },
+    {
+      path: '/input',
+      component: () => import('@/view/input/index.vue')
+    },
+    {
+      path: '/checkbox',
+      component: () => import('@/view/checkbox/index.vue')
     }
   ]
 })

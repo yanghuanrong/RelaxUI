@@ -8,8 +8,9 @@ import Submenu from './Submenu'
 import Row from './Row'
 import Col from './Col'
 import Input from './Input'
+import Checkbox from './Checkbox'
 
-const components = [Button, Icon, ButtonGroup, Menu, MenuItem, MenuGroup, Submenu, Row, Col, Input]
+const components = [Button, Icon, ButtonGroup, Menu, MenuItem, MenuGroup, Submenu, Row, Col, Input, Checkbox]
 
 const install = Vue => {
   components.map(component => {
@@ -21,16 +22,12 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
-export default {
-  install,
-  Button,
-  Icon,
-  ButtonGroup,
-  Menu,
-  MenuGroup,
-  MenuItem,
-  Submenu,
-  Row,
-  Col,
-  Input
+const Relax = {
+  install
 }
+
+components.map(component => {
+  Relax[component.name] = component
+})
+
+export default Relax
