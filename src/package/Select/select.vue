@@ -4,9 +4,11 @@
       <input class="re-input" readonly ref='selectInput' :class="{'is-focus': isActive}" @focus.stop='focus' :value="checkValue" :placeholder="placeholder"/>
       <i class="re-arrow" :class="{'is-active': isActive}"></i>
     </div>
-    <div class="re-select-option" :append-to-body='true' :style="dropStyle">
-      <ul v-show='isActive'><slot></slot></ul>
-    </div>
+    <transition name="fade-up" mode="out-in">
+      <div class="re-select-option" :style="dropStyle" v-show='isActive'>
+        <ul><slot></slot></ul>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -23,7 +25,8 @@ export default {
       required: true
     },
     multiple: Boolean,
-    placeholder: String
+    placeholder: String,
+    disabled: Boolean
   },
   data () {
     return {
