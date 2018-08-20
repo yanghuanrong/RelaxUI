@@ -9,8 +9,10 @@ import Row from './Row'
 import Col from './Col'
 import Input from './Input'
 import Checkbox from './Checkbox'
+import Select from './Select'
+import Option from './Option'
 
-const components = [Button, Icon, ButtonGroup, Menu, MenuItem, MenuGroup, Submenu, Row, Col, Input, Checkbox]
+const components = [Button, Icon, ButtonGroup, Menu, MenuItem, MenuGroup, Submenu, Row, Col, Input, Checkbox, Select, Option]
 
 const install = Vue => {
   components.map(component => {

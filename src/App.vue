@@ -25,7 +25,8 @@
           </MenuGroup>
           <MenuGroup title="Data Entry">
             <MenuItem name="2-4" to='/input'>Input 输入框</MenuItem>
-            <MenuItem name="2-5" to='/checkbox'>checkbox 多选框</MenuItem>
+            <MenuItem name="2-5" to='/checkbox'>Checkbox 多选框</MenuItem>
+            <MenuItem name="2-6" to='/select'>Select 选择器</MenuItem>
           </MenuGroup>
         </Submenu>
       </Menu>

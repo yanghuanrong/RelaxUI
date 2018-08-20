@@ -1,15 +1,14 @@
 <template>
   <li class='re-menu-item' @click.stop='handleClick' :class="{'active': isActive}">
-      <slot></slot>
+    <slot></slot>
   </li>
 </template>
 
 <script>
-import Menu from './menu-mixin'
+import {dispatch} from '../utils/emit'
 
 export default {
   name: 'MenuItem',
-  mixins: [Menu],
   props: {
     name: String,
     to: String
@@ -31,6 +30,9 @@ export default {
     })
   },
   methods: {
+    dispatch (componentName, eventName, params) {
+      dispatch.call(this, componentName, eventName, params)
+    },
     handleClick (e) {
       this.dispatch('Menu', 'item-click', this)
       this.$emit('click', this)

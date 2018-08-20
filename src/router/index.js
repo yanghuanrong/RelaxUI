@@ -24,6 +24,10 @@ export default new Router({
     {
       path: '/checkbox',
       component: () => import('@/view/checkbox/index.vue')
+    },
+    {
+      path: '/select',
+      component: () => import('@/view/select/index.vue')
     }
   ]
 })

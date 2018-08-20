@@ -10,7 +10,6 @@
       <span @click="fn">
         <Checkbox v-model="checked" label="卧槽" @change="fv" />
       </span>
-      <Checkbox @change="fv" />
       {{this.checked ? '选中' : '取消'}}
     </div>
   </div>

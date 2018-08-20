@@ -2,7 +2,7 @@
   <li class='re-submenu' @click.stop='handleClick' :class="{'is-opened': isActive}">
     <div class="re-menu-title">
       <slot name="title"></slot>
-      <i class="re-menu-arrow"></i>
+      <i class="re-arrow" :class="{'is-active': isActive}"></i>
     </div>
     <slider-transition>
       <ul class="re-menu" v-show="isActive">
@@ -13,12 +13,11 @@
 </template>
 
 <script>
-import Menu from './menu-mixin'
 import sliderTransition from '../transition/slider'
 
 export default {
   name: 'Submenu',
-  mixins: [Menu],
+  inject: ['rootMenu'],
   data () {
     return {
       isActive: false
@@ -35,7 +34,6 @@ export default {
   methods: {
     handleClick () {
       this.$emit('click', this)
-
       if (this.rootMenu.uniqueOpened) {
         this.$parent.$children.map(item => {
           if (item !== this) {

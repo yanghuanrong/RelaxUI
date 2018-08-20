@@ -57,47 +57,9 @@
       &>i[class*=re-icon-]{
         margin-right: 5px;
       }
-      &>i.re-menu-arrow{
-        position: absolute;
-        right: 0;
-        width: 10px;
-        height: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 20px;
-        @color:#ccc;
-
-        &::after,&::before {
-          content: "";
-          position: absolute;
-          width:1px;
-          height: 7px;
-          background-color: @color;
-          left: 4px;
-          top: 7px;
-          transform-origin: top center;
-          transition: all .2s ease
-        }
-
-        &::after{
-          transform: rotate(135deg);
-        }
-        &::before{
-          transform: rotate(-135deg);
-        }
-      }
     }
 
-    &.is-opened>.re-menu-title>i.re-menu-arrow{
-      &::after{
-        top: 2px;
-        transform: rotate(45deg);
-      }
-      &::before{
-        top: 2px;
-        transform: rotate(-45deg);
-      }
-    }
+
   }
 
   .re-menu-group{
