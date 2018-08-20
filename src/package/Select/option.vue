@@ -1,26 +1,41 @@
 <template>
-  <li @click='select' :class="{'select':isActive}">{{value}}</li>
+  <li @click='select' class="re-option" :class="className">{{value}}</li>
 </template>
 
 <script>
-import {dispatch} from '../utils/emit'
+import emit from '../utils/emit'
 export default {
   name: 'Option',
+  inject: ['rootSelect'],
+  mixins: [emit],
   props: {
-    value: String
+    value: String,
+    disabled: Boolean
   },
   data () {
     return {
       isActive: false
     }
   },
+  computed: {
+    className () {
+      return {
+        select: this.isActive,
+        'is-disabled': this.disabled
+      }
+    }
+  },
   methods: {
-    dispatch (componentName, eventName, params) {
-      dispatch.call(this, componentName, eventName, params)
-    },
     select () {
-      this.isActive = !this.isActive
-      this.dispatch('Select', 'select', {label: this.value, check: this.isActive})
+      if (!this.disabled) {
+        if (this.rootSelect.multiple) {
+          this.isActive = !this.isActive
+        } else {
+          this.rootSelect.$children.map(item => { item.isActive = false })
+          this.isActive = true
+        }
+        this.dispatch('Select', 'select', {label: this.value, check: this.isActive})
+      }
     }
   }
 }

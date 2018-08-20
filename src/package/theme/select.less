@@ -14,8 +14,32 @@
     }
   }
 
-
   .re-select-option{
+    position: absolute;
+    background-color: #FFF;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 5px 10px @border;
 
+    .re-option{
+      list-style: none;
+      cursor: pointer;
+      padding: 6px 12px;
+
+      &:hover{
+        background-color: fade(@primary, 10%)
+      }
+      &.select{
+        color: @primary;
+        background-color: fade(@border, 10%);
+      }
+      &.is-disabled{
+        cursor: no-drop;
+        color: fade(@text, 60%);
+        &:hover{
+          background-color: initial;
+        }
+      }
+    }
   }
 }

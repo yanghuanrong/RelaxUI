@@ -5,10 +5,11 @@
 </template>
 
 <script>
-import {dispatch} from '../utils/emit'
+import emit from '../utils/emit'
 
 export default {
   name: 'MenuItem',
+  mixins: [emit],
   props: {
     name: String,
     to: String
@@ -30,9 +31,6 @@ export default {
     })
   },
   methods: {
-    dispatch (componentName, eventName, params) {
-      dispatch.call(this, componentName, eventName, params)
-    },
     handleClick (e) {
       this.dispatch('Menu', 'item-click', this)
       this.$emit('click', this)

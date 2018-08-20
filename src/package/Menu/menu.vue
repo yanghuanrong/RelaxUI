@@ -1,8 +1,9 @@
 <script>
-import {broadcast} from '../utils/emit'
+import emit from '../utils/emit'
 
 export default {
   name: 'Menu',
+  mixins: [emit],
   data () {
     return {
       currentActiveName: this.activeName
@@ -33,9 +34,6 @@ export default {
     }
   },
   methods: {
-    broadcast (componentName, eventName, params) {
-      broadcast.call(this, componentName, eventName, params)
-    },
     updateActiveName () {
       this.broadcast('Submenu', 'on-update-active-name', false)
       this.broadcast('MenuItem', 'on-update-active-name', this.currentActiveName)
