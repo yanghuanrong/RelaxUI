@@ -7,7 +7,10 @@
       </div>
     </div>
     <div class="card-box">
-      <Checkbox v-model="checked" label="卧槽" />
+      <span @click="fn">
+        <Checkbox v-model="checked" label="卧槽" @change="fv" />
+      </span>
+      <Checkbox @change="fv" />
       {{this.checked ? '选中' : '取消'}}
     </div>
   </div>
@@ -21,12 +24,11 @@ export default {
     }
   },
   methods: {
-    fv () {
-      console.log(1)
+    fv (e) {
+      console.log('change 回调', e)
     },
     fn (a) {
-      console.log(a)
-      console.log(this.checked)
+      console.log('span 点击')
     }
   }
 }
