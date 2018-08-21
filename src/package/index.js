@@ -11,8 +11,9 @@ import Input from './Input'
 import Checkbox from './Checkbox'
 import Select from './Select'
 import Option from './Option'
+import OptionGroup from './OptionGroup'
 
-const components = [Button, Icon, ButtonGroup, Menu, MenuItem, MenuGroup, Submenu, Row, Col, Input, Checkbox, Select, Option]
+const components = [Button, Icon, ButtonGroup, Menu, MenuItem, MenuGroup, Submenu, Row, Col, Input, Checkbox, Select, Option, OptionGroup]
 
 const install = Vue => {
   components.map(component => {

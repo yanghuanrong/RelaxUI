@@ -109,36 +109,74 @@
 
     .re-option{
       list-style: none;
+    }
+
+    // 选项框
+    .re-option-row{
       cursor: pointer;
-      padding: 6px 12px;
+      padding-left: 25px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 6px 12px 6px 35px;
 
       &:hover{
         background-color: fade(@primary, 10%)
       }
+
+      &::before {
+        -o-transition: 0.3s ease-in-out;
+        -webkit-transition: 0.3s ease-in-out;
+        background-color: @white;
+        border-radius: 3px;
+        border: 2px solid darken(@border, 10%);
+        content: "";
+        display: inline-block;
+        height: 18px;
+        left: 10px;
+        position: absolute;
+        transition: 0.3s ease-in-out;
+        width: 18px;
+        outline: none !important;
+      }
+      &::after {
+        color: @border;
+        display: inline-block;
+        font-size: 11px;
+        height: 18px;
+        width: 18px;
+        left: 10px;
+        padding-left: 3px;
+        padding-top: 2px;
+        position: absolute;
+        top: 0;
+      }
+
+      // 选中状态
       &.select{
         color: @primary;
         background-color: fade(@border, 10%);
 
-        .re-option-row{
-          &::before {
-            background-color: @primary;
-            border-color: @primary;
-          }
-          &::after {
-            content: "";
-            position: absolute;
-            top: 5px;
-            left: 7px;
-            display: table;
-            width: 5px;
-            height: 10px;
-            border: 1px solid @white;
-            border-top-width: 0;
-            border-left-width: 0;
-            transform: rotate(45deg);
-          }
+        &::before {
+          background-color: @primary;
+          border-color: @primary;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 10px;
+          left: 17px;
+          display: table;
+          width: 5px;
+          height: 10px;
+          border: 1px solid @white;
+          border-top-width: 0;
+          border-left-width: 0;
+          transform: rotate(45deg);
         }
       }
+
+      // 禁用状态
       &.is-disabled{
         cursor: no-drop;
         color: fade(@text, 60%);
@@ -152,40 +190,22 @@
           }
         }
       }
-    }
 
-    .re-option-row{
-      padding-left: 25px;
-      position: relative;
-      display: flex;
-      align-items: center;
-
-      &::before {
-        -o-transition: 0.3s ease-in-out;
-        -webkit-transition: 0.3s ease-in-out;
-        background-color: @white;
-        border-radius: 3px;
-        border: 2px solid darken(@border, 10%);
-        content: "";
-        display: inline-block;
-        height: 18px;
-        left: 0;
-        position: absolute;
-        transition: 0.3s ease-in-out;
-        width: 18px;
-        outline: none !important;
-      }
-      &::after {
-        color: @border;
-        display: inline-block;
-        font-size: 11px;
-        height: 18px;
-        width: 18px;
-        left: 0;
-        padding-left: 3px;
-        padding-top: 2px;
-        position: absolute;
-        top: 0;
+      // 半选状态
+      &.is-check{
+        &::before {
+          background-color: @primary;
+          border-color: @primary;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 15px;
+          left: 15px;
+          width: 8px;
+          height: 1px;
+          background-color: @white;
+        }
       }
 
       .re-option-text{
@@ -193,6 +213,14 @@
         overflow: hidden;
         text-overflow: ellipsis;
       }
+
+    }
+  }
+
+
+  .re-option-group{
+    ul{
+      padding-left: 25px;
     }
   }
 }
