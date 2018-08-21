@@ -1,8 +1,20 @@
 <template>
   <div class='re-select'>
-    <div class="re-select-input" @click.prevent='toggleMenu'>
+    <div class="re-select-input" @click.prevent='toggleMenu' @mouseover='mouseover' @mouseout='mouseout'>
+      <div class="re-select-array" v-show='multiple && checkArray.length'>
+        <div class="re-select-array-content">
+          <span class="re-con-array">{{checkArray[0]}}</span>
+          <span class="re-clearable-array" @click.stop='clearValue'><i class="re-icon-x"></i></span>
+        </div>
+        <span v-if='checkArray.length > 1'> + {{checkArray.length - 1}}</span>
+      </div>
+
       <input class="re-input" readonly ref='selectInput' :class="{'is-focus': isActive}" @focus.stop='focus' :value="checkValue" :placeholder="placeholder"/>
-      <i class="re-arrow" :class="{'is-active': isActive}"></i>
+
+      <transition-group name="fade" mode='out-in' tag='div' class="re-select-icon">
+        <div class="re-clearable" v-show='isClear' key='1' @click.stop='clearValue'><i class="re-icon-x"></i></div>
+        <i class="re-arrow" key='2' v-show='!isClear' :class="{'is-active': isActive}"></i>
+      </transition-group>
     </div>
     <transition name="fade-up" mode="out-in">
       <div class="re-select-option" :style="dropStyle" v-show='isActive'>
@@ -13,8 +25,11 @@
 </template>
 
 <script>
+import emit from '../utils/emit'
+
 export default {
   name: 'Select',
+  mixins: [emit],
   provide () {
     return {
       rootSelect: this
@@ -31,9 +46,11 @@ export default {
   data () {
     return {
       isActive: false,
-      checkValue: [],
+      checkValue: '',
+      checkArray: [],
       dropStyle: null,
-      isfocus: false
+      isfocus: false,
+      isClear: false
     }
   },
   mounted () {
@@ -50,15 +67,17 @@ export default {
     this.$on('select', ({label, check}) => {
       if (this.multiple) {
         if (check) {
-          this.checkValue.push(label)
+          this.checkArray.push(label)
         } else {
-          this.checkValue.splice(this.checkValue.indexOf(label), 1)
+          this.checkArray.splice(this.checkArray.indexOf(label), 1)
         }
+        this.checkValue = this.checkArray.length ? ' ' : ''
+        this.$emit('input', this.checkArray)
       } else {
         this.checkValue = label
         this.close()
+        this.$emit('input', this.checkValue)
       }
-      this.$emit('input', this.checkValue)
     })
   },
   methods: {
@@ -79,6 +98,26 @@ export default {
     },
     focus () {
       this.isActive = true
+    },
+    mouseover () {
+      if (!this.multiple && this.checkValue.length) {
+        this.isClear = true
+      }
+    },
+    mouseout () {
+      this.isClear = false
+    },
+    clearValue () {
+      let emitValue
+      if (this.multiple) {
+        emitValue = this.checkArray.shift()
+        this.$emit('input', this.checkArray)
+        this.checkValue = this.checkArray.length ? ' ' : ''
+      } else {
+        emitValue = this.checkValue
+        this.$emit('input', this.checkValue = '')
+      }
+      this.broadcast('Option', 'clearValue', emitValue)
     }
   }
 }

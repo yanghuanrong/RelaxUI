@@ -26,7 +26,7 @@
           多选
           <div style="width:200px;">
             <Select v-model='value2' multiple placeholder="请选择人种">
-              <Option value='中国人'></Option>
+              <Option value='中华人中华人中华人中华人'></Option>
               <Option value='法国人'></Option>
               <Option value='赛亚人'></Option>
               <Option value='火星人' disabled></Option>

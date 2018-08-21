@@ -12,14 +12,95 @@
     &>i{
       right: 10px;
     }
+
+    .re-clearable{
+      position: absolute;
+      z-index: 1;
+      height: 100%;
+      top: 0;
+      width: 30px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+
+      i{
+        transition: all 0.25s ease-in-out;
+        color: @border;
+      }
+
+      right: 0;
+      cursor: pointer;
+
+      &:hover{
+        i{
+          color: darken(@border, 20%);
+        }
+      }
+    }
+
+    .re-select-icon{
+      position: absolute;
+      width: 30px;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      i.re-arrow{
+        right: 10px;
+      }
+    }
+
+    .re-select-array{
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 30px;
+      padding-left: 8px;
+      flex-wrap: wrap;
+      display: flex;
+      align-items: center;
+
+      &>span{
+        padding: 2px 8px;
+        background-color: @border;
+        border-radius: 4px;
+      }
+
+      .re-select-array-content{
+        max-width: 70%;
+        padding: 2px 8px;
+        background-color: @border;
+        border-radius: 4px;
+        margin-right: 5px;
+        display: flex;
+
+        &>span {
+          float: left;
+        }
+        .re-con-array{
+          overflow: hidden;
+          flex:1;
+          display: block;
+          white-space:nowrap;flex:1;
+          text-overflow: ellipsis;
+        }
+        .re-clearable-array{
+          width: 14px;
+          width: auto;
+          display: block;
+          cursor: pointer;
+        }
+      }
+    }
   }
 
   .re-select-option{
     position: absolute;
     background-color: #FFF;
-    width: 100%;
     border-radius: 4px;
     box-shadow: 0 5px 10px @border;
+    overflow: hidden;
 
     & ul{
       max-height: 250px;
@@ -37,6 +118,26 @@
       &.select{
         color: @primary;
         background-color: fade(@border, 10%);
+
+        .re-option-row{
+          &::before {
+            background-color: @primary;
+            border-color: @primary;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 7px;
+            display: table;
+            width: 5px;
+            height: 10px;
+            border: 1px solid @white;
+            border-top-width: 0;
+            border-left-width: 0;
+            transform: rotate(45deg);
+          }
+        }
       }
       &.is-disabled{
         cursor: no-drop;
@@ -44,6 +145,53 @@
         &:hover{
           background-color: initial;
         }
+        .re-option-row{
+          &::before {
+            border-color: darken(@border, 0.5%);
+            background-color: fade(@border, 30%);
+          }
+        }
+      }
+    }
+
+    .re-option-row{
+      padding-left: 25px;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      &::before {
+        -o-transition: 0.3s ease-in-out;
+        -webkit-transition: 0.3s ease-in-out;
+        background-color: @white;
+        border-radius: 3px;
+        border: 2px solid darken(@border, 10%);
+        content: "";
+        display: inline-block;
+        height: 18px;
+        left: 0;
+        position: absolute;
+        transition: 0.3s ease-in-out;
+        width: 18px;
+        outline: none !important;
+      }
+      &::after {
+        color: @border;
+        display: inline-block;
+        font-size: 11px;
+        height: 18px;
+        width: 18px;
+        left: 0;
+        padding-left: 3px;
+        padding-top: 2px;
+        position: absolute;
+        top: 0;
+      }
+
+      .re-option-text{
+        white-space:nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }

@@ -71,7 +71,8 @@
   }
   input[type="checkbox"]:disabled + span {
     &::before {
-      background-color: @border;
+      background-color: fade(@primary, 20%);
+      border-color: fade(@primary, 20%);
       cursor: not-allowed;
     }
   }

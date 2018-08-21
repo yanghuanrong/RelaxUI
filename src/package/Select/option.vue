@@ -1,5 +1,9 @@
 <template>
-  <li @click='select' class="re-option" :class="className">{{value}}</li>
+  <li @click='select' class="re-option" :class="className">
+    <div class="re-option-row">
+      <div class="re-option-text">{{value}}</div>
+    </div>
+  </li>
 </template>
 
 <script>
@@ -20,10 +24,17 @@ export default {
   computed: {
     className () {
       return {
-        select: this.isActive,
+        'select': this.isActive,
         'is-disabled': this.disabled
       }
     }
+  },
+  mounted () {
+    this.$on('clearValue', (value) => {
+      if (this.value === value) {
+        this.isActive = false
+      }
+    })
   },
   methods: {
     select () {
