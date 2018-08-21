@@ -37,7 +37,7 @@
           </div>
         </Col>
         <Col :span='4'>
-          多选
+          分组多选
           <div style="width:200px;">
             <Select v-model='value3' multiple placeholder="请选择颜色">
               <OptionGroup label="绿色">
@@ -48,11 +48,52 @@
               <OptionGroup label="红色">
                 <Option value='深红'></Option>
                 <Option value='玫红'></Option>
+                <Option value='黄色' disabled></Option>
               </OptionGroup>
             </Select>
           </div>
           <div>
             选中的值： {{value3}}
+          </div>
+        </Col>
+        <Col :span='4'>
+          分组多选，搜索Opiton维度
+          <div style="width:200px;">
+            <Select v-model='value4' multiple search="Option" placeholder="请选择颜色">
+              <OptionGroup label="绿色">
+                <Option value='深绿'></Option>
+                <Option value='淡绿'></Option>
+                <Option value='草绿'></Option>
+              </OptionGroup>
+              <OptionGroup label="红色">
+                <Option value='深红'></Option>
+                <Option value='玫红'></Option>
+                <Option value='黄色' disabled></Option>
+              </OptionGroup>
+            </Select>
+          </div>
+          <div>
+            选中的值： {{value4}}
+          </div>
+        </Col>
+        <Col :span='4'>
+          分组多选，搜索OpitonGroup维度
+          <div style="width:200px;">
+            <Select v-model='value5' multiple search="OptionGroup" placeholder="请选择颜色">
+              <OptionGroup label="绿色">
+                <Option value='深绿'></Option>
+                <Option value='淡绿'></Option>
+                <Option value='草绿'></Option>
+              </OptionGroup>
+              <OptionGroup label="红色">
+                <Option value='深红'></Option>
+                <Option value='玫红'></Option>
+                <Option value='黄色' disabled></Option>
+              </OptionGroup>
+            </Select>
+          </div>
+          <div>
+            选中的值： {{value5}}
           </div>
         </Col>
       </Row>
@@ -66,7 +107,9 @@ export default {
     return {
       value1: '',
       value2: '',
-      value3: ''
+      value3: '',
+      value4: '',
+      value5: ''
     }
   }
 }

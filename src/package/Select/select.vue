@@ -18,6 +18,9 @@
     </div>
     <transition name="fade-up" mode="out-in">
       <div class="re-select-option" :style="dropStyle" v-show='isActive'>
+        <div class="re-select-search" v-if='search'>
+          <Input iconBefore="re-icon-search" size='sm' :clearable='true' v-model='searchKey' @input="searchEv"/>
+        </div>
         <ul><slot></slot></ul>
       </div>
     </transition>
@@ -41,7 +44,8 @@ export default {
     },
     multiple: Boolean,
     placeholder: String,
-    disabled: Boolean
+    disabled: Boolean,
+    search: [String, Boolean]
   },
   data () {
     return {
@@ -50,7 +54,8 @@ export default {
       checkArray: [],
       dropStyle: null,
       isfocus: false,
-      isClear: false
+      isClear: false,
+      searchKey: ''
     }
   },
   mounted () {
@@ -93,6 +98,7 @@ export default {
       this.isActive = false
     },
     show () {
+      this.searchKey = ''
       this.isActive = true
       this.isfocus = true
     },
@@ -118,6 +124,9 @@ export default {
         this.$emit('input', this.checkValue = '')
       }
       this.broadcast('Option', 'clearValue', emitValue)
+    },
+    searchEv () {
+      this.broadcast(this.search, 'matched', this.searchKey)
     }
   }
 }

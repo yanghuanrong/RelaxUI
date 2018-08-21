@@ -1,5 +1,5 @@
 <template>
-  <li class="re-option re-option-group">
+  <li class="re-option re-option-group" v-show="isShow">
     <div class="re-option-title">
       <div class="re-option-row" :class="className" @click='select'>
         <div class="re-option-text">{{label}}</div>
@@ -22,7 +22,8 @@ export default {
   },
   data () {
     return {
-      isCheck: 0
+      isCheck: 0,
+      isShow: true
     }
   },
   computed: {
@@ -42,6 +43,16 @@ export default {
         this.isCheck = 1
       } else {
         this.isCheck = 0
+      }
+    })
+    this.$on('groupshow', () => {
+      this.isShow = this.$children.some(item => item.isShow)
+    })
+    this.$on('matched', (param) => {
+      if (this.label.indexOf(param) === -1) {
+        this.isShow = false
+      } else {
+        this.isShow = true
       }
     })
   },

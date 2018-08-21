@@ -13,10 +13,7 @@ export default {
       validator: value => ['text', 'password', 'textarea'].indexOf(value) !== -1
     },
     value: String,
-    clearable: {
-      type: Boolean,
-      default: false
-    },
+    clearable: Boolean,
     size: {
       type: String,
       default: '',
@@ -41,6 +38,12 @@ export default {
     changeEv (e) {
       this.currValue = e.target.value
       this.$emit('input', this.value || this.value === '' ? this.currValue : e)
+    }
+  },
+  watch: {
+    value (value) {
+      this.currValue = value
+      this.$emit('input', this.currValue)
     }
   },
   render () {
@@ -76,7 +79,6 @@ export default {
         </div>
       }
     }
-    console.log(this.$slots)
     return <div class="re-input-group">
       {/* { this.$slots.addonAfter ? <div class="re-input-group-prepend">{this.$slots.addonAfter}</div> : '' } */}
       { inputDom() }
