@@ -1,0 +1,81 @@
+@border: #f3f6f8;
+.tag-box{
+  background-color: #FFF;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+
+  .tag-right{
+    flex:1;
+    padding:20px;
+    position: relative;
+    overflow: hidden;
+
+    .tag-handle{
+      position: absolute;
+      right: 10px;
+      top: 10px;
+
+      i.re-icon-copy{
+        color: #98a6ad;
+        cursor: pointer;
+        transition: color ease .4s;
+
+        &:hover{
+          color: #333;
+        }
+      }
+      i.re-icon-check{
+        color: #0acf97;
+      }
+    }
+
+    .textarea{
+      position: absolute;
+      top: -100px;
+    }
+  }
+  .tag-left{
+    flex: 1;
+    border-right: 2px dotted @border;
+    .tag-temp{
+      padding:30px 20px;
+    }
+    .tag-detail{
+      position: relative;
+      padding: 30px 30px 20px;
+      color: #98a6ad;
+
+      .tag-title{
+        span{
+          position: absolute;
+          top: -10px;
+          z-index: 1;
+          background-color: #FFF;
+          padding: 0 10px;
+        }
+        &::after{
+          content: "";
+          position: absolute;
+          left: 0px;
+          right: 0px;
+          top: 0;
+          height: 1px;
+          background-color: @border;
+        }
+      }
+      .tag-desc{
+        line-height: 18px;
+        i{
+          font-size: 12px;
+          font-style: normal;
+          padding: 2px 3px;
+          margin: 0 2px;
+          line-height: 1.2;
+          background-color: @border;
+        }
+      }
+    }
+  }
+}

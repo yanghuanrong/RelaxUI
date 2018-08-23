@@ -10,7 +10,10 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "highlight.js": "^9.12.0",
+    "nprogress": "^0.2.0",
     "vue": "^2.5.2",
+    "vue-highlight.js": "^2.2.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

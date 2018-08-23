@@ -6,11 +6,13 @@ import router from './router'
 import Relax from './package'
 import './package/theme/style.less'
 import './viewTheme/global.less'
-
+import ViewComponet from './view/component'
+import VueHighlightJS from 'vue-highlight.js'
 Vue.config.productionTip = false
 
 Vue.use(Relax)
-
+Vue.use(ViewComponet)
+Vue.use(VueHighlightJS)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
