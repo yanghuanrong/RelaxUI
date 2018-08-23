@@ -11,7 +11,40 @@
     padding:20px;
     position: relative;
     overflow: hidden;
+    transition: height ease .2s;
 
+    .tag-display{
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 20px;
+      cursor: pointer;
+      color: #999;
+
+      &::after{
+        content: "";
+        width: 100%;
+        height: inherit;
+        display: block;
+        background-image: linear-gradient(transparent, #FFF);
+      }
+
+      &>i{
+        width: 30px;
+        position: absolute;
+        left: 50%;
+        margin-left: -15px;
+        top: 0px;
+        transition: all ease .2s;
+      }
+
+      &:hover{
+        &>i.re-icon-chevron-down{
+          top: 3px;
+        }
+      }
+    }
     .tag-handle{
       position: absolute;
       right: 10px;
