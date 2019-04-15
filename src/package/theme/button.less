@@ -75,7 +75,7 @@
 
     &.disable,&:disabled{
       color: #999 !important;
-      background-color: inherit;
+      background-color: inherit !important;
       &:hover{
         color: #999;
       }
@@ -89,10 +89,6 @@
     background-color: fade(@default, 40%);
     &.is-plain {
       color: @color;
-      &.disable:hover,&:disabled:hover{
-        color: @color;
-        background-color: inherit;
-      }
     }
     &:hover {
       background-color: darken(@default, 5%);
@@ -104,6 +100,10 @@
     &:focus {
       box-shadow: 0 0 0 2px fade(@default, 50%);
     }
+    &.disabled:hover{
+      color: @color;
+      background-color: inherit !important;
+    }
   }
 
   &.re-btn-info {
@@ -111,10 +111,6 @@
     background-color: @info;
     &.is-plain {
       color: @info;
-      &.disable:hover,&:disabled:hover{
-        color: @info;
-        background-color: inherit;
-      }
     }
     &:hover {
       background-color: darken(@info, 5%);
@@ -126,6 +122,10 @@
     &:focus {
       box-shadow: 0 0 0 2px fade(@info, 50%);
     }
+    &.disabled:hover{
+      color: @info;
+      background-color: inherit !important;
+    }
   }
 
   &.re-btn-success {
@@ -133,10 +133,6 @@
     background-color: @success;
     &.is-plain {
       color: @success;
-      &.disable:hover,&:disabled:hover{
-        color: @success;
-        background-color: inherit;
-      }
     }
     &:hover {
       background-color: darken(@success, 5%);
@@ -148,6 +144,10 @@
     &:focus {
       box-shadow: 0 0 0 2px fade(@success, 50%);
     }
+    &.disabled:hover{
+      color: @success;
+      background-color: inherit !important;
+    }
   }
 
   &.re-btn-primary {
@@ -155,10 +155,6 @@
     background-color: @primary;
     &.is-plain {
       color: @primary;
-      &.disable:hover,&:disabled:hover{
-        color: @primary;
-        background-color: inherit;
-      }
     }
     &:hover {
       background-color: darken(@primary, 5%);
@@ -170,6 +166,10 @@
     &:focus {
       box-shadow: 0 0 0 2px fade(@primary, 50%);
     }
+    &.disabled:hover{
+      color: @primary;
+      background-color: inherit !important;
+    }
   }
 
   &.re-btn-warning {
@@ -177,11 +177,7 @@
     background-color: @warning;
     &.is-plain {
       color: @warning;
-      &.disable:hover,&:disabled:hover{
-        color: @warning;
-        background-color: inherit;
       }
-    }
     &:hover {
       background-color: darken(@warning, 5%);
     }
@@ -192,6 +188,10 @@
     &:focus {
       box-shadow: 0 0 0 2px fade(@warning, 50%);
     }
+    &.disabled:hover{
+      color: @warning;
+      background-color: inherit !important;
+    }
   }
 
   &.re-btn-danger {
@@ -199,10 +199,6 @@
     background-color: @danger;
     &.is-plain {
       color: @danger;
-      &.disable:hover,&:disabled:hover{
-        color: @danger;
-        background-color: inherit;
-      }
     }
     &:hover {
       background-color: darken(@danger, 5%);
@@ -213,6 +209,10 @@
     }
     &:focus {
       box-shadow: 0 0 0 2px fade(@danger, 50%);
+    }
+    &.disabled:hover{
+      color: @danger;
+      background-color: inherit !important;
     }
   }
 
