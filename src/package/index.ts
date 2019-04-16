@@ -1,6 +1,8 @@
 import Button from './Button'
 import ButtonGroup from './ButtonGroup'
-const components = [Button, ButtonGroup]
+import Input from './Input'
+
+const components = [Button, ButtonGroup, Input]
 
 function install(Vue: any): void {
   components.forEach((component: any) => {

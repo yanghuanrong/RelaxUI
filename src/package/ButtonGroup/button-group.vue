@@ -1,6 +1,5 @@
 <script lang='tsx'>
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { CreateElement } from 'vue';
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class ButtonGroup extends Vue {

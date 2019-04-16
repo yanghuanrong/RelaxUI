@@ -10,6 +10,7 @@
       <div style="width:200px; margin-bottom:10px">
         <Input placeholder="请输入用户名" v-model="input" iconBefore="re-icon-search" @input="aa" @focus="as" @blur='br' @keyup.13='wo' autofocus clearable/>
       </div>
+      <span>{{input}}</span>
       <div style="width:200px; margin-bottom:10px">
         <Input placeholder="请输入密码" iconBefore="re-icon-unlock" type="password" value="123123" maxlength="10" clearable/>
       </div>
@@ -26,7 +27,6 @@
       <div style="width:200px; margin-bottom:10px">
         <Input placeholder="请输入用户名" value="123" disabled  @input="aa" @change="hhha"/>
       </div>
-      <span>{{input}}</span>
       <div style="width:200px; margin-bottom:10px">
         <Input placeholder="请输入" type="textarea" @input="aa" rows="7" cols="20" maxlength="40" />
       </div>
@@ -38,27 +38,27 @@
 export default {
   data () {
     return {
-      input: '123123'
+      input: '来自外部的数据'
     }
   },
   methods: {
     hhha (e) {
-      console.log(e)
+      // console.log(e)
     },
     aa (e) {
-      console.log(e)
+      // console.log(e)
     },
     as () {
-      console.log('获得焦点')
+      // console.log('获得焦点')
     },
     br () {
-      console.log('失去焦点')
+      // console.log('失去焦点')
     },
     wo () {
-      alert(this.input)
+      // alert(this.input)
     },
     fn () {
-      console.log(1)
+      // console.log(1)
     }
   }
 }

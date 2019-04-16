@@ -10,6 +10,10 @@ export default new Router({
     {
       path: '/button',
       component: () => import('@/document/view/button/index.vue')
-    }
+    },
+    {
+      path: '/input',
+      component: () => import('@/document/view/input/index.vue')
+    },
   ],
 });
