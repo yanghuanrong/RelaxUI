@@ -9,7 +9,7 @@
   &>.re-btn {
     position: relative;
     margin-left: -1px;
-
+    margin-right: 0 !important;
     &:hover {
       z-index: 1;
     }
@@ -109,7 +109,7 @@
       box-shadow: 0 0 0 2px fade(@default, 50%);
     }
 
-    &.disabled {
+    &.disabled,&.re-btn-loading {
       &.is-plain {
 
         &:hover,
@@ -151,7 +151,7 @@
       box-shadow: 0 0 0 2px fade(@info, 50%);
     }
 
-    &.disabled {
+    &.disabled,&.re-btn-loading {
       &.is-plain {
 
         &:hover,
@@ -193,7 +193,7 @@
       box-shadow: 0 0 0 2px fade(@success, 50%);
     }
 
-    &.disabled {
+    &.disabled,&.re-btn-loading {
       &.is-plain {
 
         &:hover,
@@ -235,7 +235,7 @@
       box-shadow: 0 0 0 2px fade(@primary, 50%);
     }
 
-    &.disabled {
+    &.disabled,&.re-btn-loading {
       &.is-plain {
 
         &:hover,
@@ -277,7 +277,7 @@
       box-shadow: 0 0 0 2px fade(@warning, 50%);
     }
 
-    &.disabled {
+    &.disabled,&.re-btn-loading {
       &.is-plain {
 
         &:hover,
@@ -319,7 +319,7 @@
       box-shadow: 0 0 0 2px fade(@danger, 50%);
     }
 
-    &.disabled {
+    &.disabled,&.re-btn-loading {
       &.is-plain {
 
         &:hover,

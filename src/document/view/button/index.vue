@@ -6,6 +6,7 @@
         <p class="page-title-decs">按钮用于开始一个即时操作</p>
       </div>
     </div>
+    <div  class="components-button-demo">
     <RelaxTag name="基础按钮">
       <template slot="temp">
         <Button>default</Button>
@@ -35,7 +36,6 @@
       <template slot="temp">
           <Button plain>default</Button>
           <Button type='primary' plain>primary</Button>
-          <Button type='success' :loading="loading" @click="clickHandle">primary</Button>
           <Button type='success' plain>success</Button>
           <Button type='info' plain>info</Button>
           <Button type='danger' plain>danger</Button>
@@ -56,9 +56,50 @@
       </textarea>
     </RelaxTag>
 
+    <RelaxTag name="加载中状态">
+      <template slot="temp">
+          <Button type='warning' size="sm" round :loading="true">loading</Button>
+          <Button type='danger' round :loading="true">loading</Button>
+          <Button type='info' round plain :loading="true">loading</Button>
+          <Button type='success' plain :loading="true">loading</Button>
+          <Button type='primary' :loading="loading" @click="enterLoading">Click loading</Button>
+      </template>
+      <template slot="desc">
+        添加 <i>loading</i> 属性即可让按钮处于加载状态
+      </template>
+      <textarea slot="code">
+        <template>
+          <Button type='warning' size="sm" round :loading="true">loading</Button>
+          <Button type='danger' round :loading="true">loading</Button>
+          <Button type='info' round plain :loading="true">loading</Button>
+          <Button type='success' plain :loading="true">loading</Button>
+          <Button type='primary' :loading="loading" @click="enterLoading">Click loading</Button>
+        </template>
+        <script>
+          export default {
+            data () {
+              return {
+                loading: false,
+              }
+            },
+            methods: {
+              enterLoading(){
+                this.loading = true
+
+                setTimeout(() => {
+                  this.loading = false
+                }, 2000)
+              }
+            }
+          }
+        </script>
+        
+      </textarea>
+    </RelaxTag>
+
     <RelaxTag name="圆角按钮">
       <template slot="temp">
-        <Button round @click="test">default</Button>
+        <Button round>default</Button>
         <Button type='primary' round>primary</Button>
         <Button type='success' round>success</Button>
         <Button type='info' round>info</Button>
@@ -82,7 +123,7 @@
 
     <RelaxTag name="不可点击">
       <template slot="temp">
-        <Button plain round disabled @click="test">default</Button>
+        <Button plain round disabled>default</Button>
         <Button type='primary' plain round disabled>primary</Button>
         <Button type='success' plain round disabled>success</Button>
         <Button type='info' plain round disabled>info</Button>
@@ -215,7 +256,88 @@
         </template>
       </textarea>
     </RelaxTag>
-
+</div>
+  
+  <div class="relax-document">
+    <div class="document-title">
+      <h4>API</h4>
+    </div>
+    <table class="document-api">
+      <thead>
+        <th>属性</th>
+        <th>说明</th>
+        <th>类型</th>
+        <th>默认值</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>type</td>
+          <td>设置按钮类型，可选值为 primary success info danger warning</td>
+          <td>string</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>plain</td>
+          <td>设置按钮镂空状态</td>
+          <td>boolean</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>loading</td>
+          <td>设置按钮载入状态</td>
+          <td>boolean</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>round</td>
+          <td>设置按钮圆角状态</td>
+          <td>boolean</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>disabled</td>
+          <td>按钮失效状态</td>
+          <td>boolean</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>size</td>
+          <td>设置按钮尺寸, 可选值为 sm lg</td>
+          <td>string</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><span>icon</span></td>
+          <td>设置按钮的图标类型</td>
+          <td>string</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>block</td>
+          <td>将按钮宽度调整为其父宽度的选项</td>
+          <td>boolean</td>
+          <td>false</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="document-title">
+      <h4>事件</h4>
+    </div>
+    <table class="document-event">
+      <thead>
+        <th>事件名称</th>
+        <th>说明</th>
+        <th>回调函数</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>click</td>
+          <td>点击按钮时的回调</td>
+          <td>(event) => void</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
   </div>
 </template>
 
@@ -224,20 +346,15 @@ export default {
   data () {
     return {
       loading: false,
-      a: '<div>11</div>'
     }
   },
   methods: {
-    clickHandle(){
-      console.log(111)
+    enterLoading(){
       this.loading = true
 
       setTimeout(() => {
         this.loading = false
-      }, 4000)
-    },
-    test(){
-      console.log(213123)
+      }, 2000)
     }
   }
 }
