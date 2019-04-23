@@ -58,7 +58,7 @@
 
     <RelaxTag name="圆角按钮">
       <template slot="temp">
-        <Button round>default</Button>
+        <Button round @click="test">default</Button>
         <Button type='primary' round>primary</Button>
         <Button type='success' round>success</Button>
         <Button type='info' round>info</Button>
@@ -82,7 +82,7 @@
 
     <RelaxTag name="不可点击">
       <template slot="temp">
-        <Button plain round disabled>default</Button>
+        <Button plain round disabled @click="test">default</Button>
         <Button type='primary' plain round disabled>primary</Button>
         <Button type='success' plain round disabled>success</Button>
         <Button type='info' plain round disabled>info</Button>
@@ -235,6 +235,9 @@ export default {
       setTimeout(() => {
         this.loading = false
       }, 4000)
+    },
+    test(){
+      console.log(213123)
     }
   }
 }

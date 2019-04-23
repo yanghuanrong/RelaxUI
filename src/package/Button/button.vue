@@ -33,11 +33,11 @@ export default class Button extends Vue {
   })
   readonly  size!: string;
 
-  @Prop(Boolean) readonly  plain!: boolean;
-  @Prop(Boolean) readonly  round!: boolean;
-  @Prop(Boolean) readonly  circle!: boolean;
-  @Prop(Boolean) readonly  block!: boolean;
-  @Prop(Boolean) readonly  disabled!: boolean;
+  @Prop(Boolean) readonly plain!: boolean;
+  @Prop(Boolean) readonly round!: boolean;
+  @Prop(Boolean) readonly circle!: boolean;
+  @Prop(Boolean) readonly block!: boolean;
+  @Prop(Boolean) readonly disabled!: boolean;
   @Prop(Boolean) readonly loading!: boolean;
 
   render() {
@@ -60,9 +60,9 @@ export default class Button extends Vue {
       (arr, key) => arr.concat(this.$slots[key]),
       [] as any[]
     )
-
+  
     const listeners = {
-      on: (!this.loading || !this.disabled) && this.$listeners
+      on: !(this.loading || this.disabled) ? this.$listeners : null
     }
 
     return (
