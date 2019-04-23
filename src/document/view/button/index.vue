@@ -35,6 +35,7 @@
       <template slot="temp">
           <Button plain>default</Button>
           <Button type='primary' plain>primary</Button>
+          <Button type='success' :loading="loading" @click="clickHandle">primary</Button>
           <Button type='success' plain>success</Button>
           <Button type='info' plain>info</Button>
           <Button type='danger' plain>danger</Button>
@@ -222,7 +223,18 @@
 export default {
   data () {
     return {
+      loading: false,
       a: '<div>11</div>'
+    }
+  },
+  methods: {
+    clickHandle(){
+      console.log(111)
+      this.loading = true
+
+      setTimeout(() => {
+        this.loading = false
+      }, 4000)
     }
   }
 }

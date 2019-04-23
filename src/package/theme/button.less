@@ -334,7 +334,7 @@
       &:focus,
       &:active {
         border-color: @danger;
-        background-color: @danger  !important;
+        background-color: @danger !important;
         box-shadow: none !important;
       }
     }
@@ -351,18 +351,38 @@
     }
   }
 
+  &.re-btn-loading,
   &.disabled,
   &:disabled {
     box-shadow: none;
-    cursor: not-allowed;
     opacity: 0.5;
+    cursor: not-allowed;
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
       transform: none;
       box-shadow: none;
       opacity: 0.5;
     }
   }
+
+
+  &.re-btn-loading {
+    cursor: auto;
+
+    &>i.re-icon-loader {
+      position: absolute;
+      animation: rotating linear 1.5s infinite;
+
+      &+span {
+        margin-left: 20px;
+        transition: margin-left .2s linear;
+      }
+    }
+  }
+
+
 
   &.is-round {
     border-radius: 2em
@@ -380,5 +400,15 @@
 
   & [class*=re-icon-]+span {
     margin-left: 5px;
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }

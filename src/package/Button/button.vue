@@ -38,19 +38,21 @@ export default class Button extends Vue {
   @Prop(Boolean) readonly  circle!: boolean;
   @Prop(Boolean) readonly  block!: boolean;
   @Prop(Boolean) readonly  disabled!: boolean;
+  @Prop(Boolean) readonly loading!: boolean;
 
   render() {
     const className = {
       class: [
-        this.type ? 're-btn-' + this.type : '',
+        this.type && 're-btn-' + this.type,
         this.size !== '' || this.size ? 're-btn-' + this.size : '',
         {
           'is-plain': this.plain,
           'is-round': this.round,
           'is-circle': this.circle,
           'is-block': this.block,
-          disabled: this.disabled
-        }
+          'disabled': this.disabled
+        },
+        this.loading && 're-btn-loading'
       ]
     }
 
@@ -58,13 +60,15 @@ export default class Button extends Vue {
       (arr, key) => arr.concat(this.$slots[key]),
       [] as any[]
     )
-    
+
     const listeners = {
-      on: this.$listeners
+      on: (!this.loading || !this.dis) && this.$listeners
     }
+
     return (
       <button type='button' {...listeners} class='re-btn' {...className}>
         {this.icon !== '' ? <i class={this.icon} /> : ''}
+        {this.loading && <i class="re-icon-loader"/> }
         {slots.length ? <span>{this.$slots.default}</span> : ''}
       </button>
     )
