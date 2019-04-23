@@ -62,7 +62,7 @@ export default class Button extends Vue {
     )
 
     const listeners = {
-      on: (!this.loading || !this.dis) && this.$listeners
+      on: (!this.loading || !this.disabled) && this.$listeners
     }
 
     return (
