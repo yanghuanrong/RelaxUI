@@ -1,9 +1,8 @@
 import Button from './Button'
 import Menu from './Menu'
 import Icon from './Icon'
-import Row from './Row'
-import Col from './Col'
 import Input from './Input'
+import Grid from './Grid'
 import Checkbox from './Checkbox'
 import Select from './Select'
 
@@ -12,9 +11,8 @@ const components = {
   ...Button,
   ...Menu,
   ...Select,
+  ...Grid,
   Icon,
-  Row,
-  Col,
   Input,
   Checkbox,
 }
