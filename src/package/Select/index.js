@@ -1,7 +1,13 @@
-import Element from './select'
+import {
+  install
+} from '../utils/install'
 
-Element.install = function (Vue) {
-  Vue.component(Element.name, Element)
-}
+import Select from './select'
+import Option from './option'
+import OptionGroup from './option-group'
 
-export default Element
+export default install({
+  Select,
+  Option,
+  OptionGroup
+})

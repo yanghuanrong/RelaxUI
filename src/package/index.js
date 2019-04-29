@@ -1,22 +1,27 @@
 import Button from './Button'
-import ButtonGroup from './ButtonGroup'
-import Icon from './Icon'
 import Menu from './Menu'
-import MenuItem from './MenuItem'
-import MenuGroup from './MenuGroup'
-import Submenu from './Submenu'
+import Icon from './Icon'
 import Row from './Row'
 import Col from './Col'
 import Input from './Input'
 import Checkbox from './Checkbox'
 import Select from './Select'
-import Option from './Option'
-import OptionGroup from './OptionGroup'
 
-const components = [Button, Icon, ButtonGroup, Menu, MenuItem, MenuGroup, Submenu, Row, Col, Input, Checkbox, Select, Option, OptionGroup]
 
-const install = Vue => {
-  components.map(component => {
+const components = {
+  ...Button,
+  ...Menu,
+  ...Select,
+  Icon,
+  Row,
+  Col,
+  Input,
+  Checkbox,
+}
+
+const install = (Vue) => {
+  Object.keys(components).map((key) => {
+    const component = components[key]
     Vue.component(component.name, component)
   })
 }
@@ -29,7 +34,8 @@ const Relax = {
   install
 }
 
-components.map(component => {
+Object.keys(components).map((key) => {
+  const component = components[key]
   Relax[component.name] = component
 })
 

@@ -1,7 +1,15 @@
-import Element from './menu'
+import {
+  install
+} from '../utils/install'
 
-Element.install = function (Vue) {
-  Vue.component(Element.name, Element)
-}
+import Menu from './menu'
+import MenuGroup from './menu-group'
+import MenuItem from './menu-item'
+import Submenu from './submenu'
 
-export default Element
+export default install({
+  Menu,
+  MenuGroup,
+  MenuItem,
+  Submenu
+})

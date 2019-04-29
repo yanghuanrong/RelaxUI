@@ -1,7 +1,11 @@
-import Element from './button'
+import {
+  install
+} from '../utils/install'
 
-Element.install = function (Vue) {
-  Vue.component(Element.name, Element)
-}
+import Button from './button'
+import ButtonGroup from './button-group'
 
-export default Element
+export default install({
+  Button,
+  ButtonGroup
+})
