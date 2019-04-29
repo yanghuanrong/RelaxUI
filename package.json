@@ -1,5 +1,5 @@
 {
-  "name": "ui",
+  "name": "relax",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,23 +8,38 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@types/highlight.js": "^9.12.3",
     "core-js": "^2.6.5",
+    "highlight.js": "^9.15.6",
+    "nprogress": "^0.2.0",
     "vue": "^2.6.10",
-    "vue-class-component": "^7.0.2",
     "vue-highlight.js": "^3.1.0",
-    "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.0.3"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.6.0",
-    "@vue/cli-plugin-typescript": "^3.6.0",
-    "@vue/cli-service": "^3.6.0",
-    "highlight.js": "^9.15.6",
+    "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-plugin-eslint": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
-    "typescript": "^3.4.3",
+    "lint-staged": "^8.1.5",
     "vue-template-compiler": "^2.5.21"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
   },
   "postcss": {
     "plugins": {
@@ -33,7 +48,15 @@
   },
   "browserslist": [
     "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+    "last 2 versions"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
 }

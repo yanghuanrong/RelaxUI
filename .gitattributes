@@ -1,4 +1,0 @@
-*.ts linguist-language=ts
-*.js linguist-language=ts
-*.css linguist-language=ts
-*.html linguist-language=ts

@@ -1,5 +1,6 @@
 module.exports = {
   publicPath: 'docs',
   outputDir: './docs',
-  runtimeCompiler: true
+  runtimeCompiler: true,
+  lintOnSave: false
 }
