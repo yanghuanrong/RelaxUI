@@ -1,10 +1,18 @@
+<template>
+  <transition name="message-move" v-on:after-leave="close" appear>
+    <div class="re-message" v-show="state">
+      <i class="re-icon-alert-circle"/>
+      {{content}}
+    </div>
+  </transition>
+</template>
 <script>
 import { setTimeout } from "timers";
 export default {
   name: "message",
   data() {
     return {
-      state: false,
+      state: true,
       time: this.duration || 1500
     };
   },
@@ -16,32 +24,16 @@ export default {
     }
   },
   mounted() {
-    this.state = true;
     setTimeout(() => {
       this.state = false;
     }, this.duration);
   },
   methods: {
-    onClose() {
+    close() {
       if (!this.state) {
-        this.$emit("onClose");
+        this.$emit('onClose');
       }
     }
-  },
-  render() {
-    const moveon = {
-      on: {
-        "leave-cancelled": "onClose"
-      }
-    };
-    return (
-      <transition name="message-move" {...moveon}>
-        <div class="re-message" v-show={this.state}>
-          <i class="re-icon-alert-circle" />
-          {this.content}
-        </div>
-      </transition>
-    );
   }
 };
 </script>
