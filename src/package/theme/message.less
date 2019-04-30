@@ -14,10 +14,16 @@
   font-family: Arial, Helvetica, sans-serif;
   span{
     font-size: 14px;
+    position: relative;
+    padding-left: 23px;
+    display: block;
   }
+
   i[class^=re-icon]{
     font-size: 16px;
-    margin-right: 5px;
+    position: absolute;
+    left: 0;
+    top: -2px;
 
     &.info{
       color: @primary;
@@ -37,6 +43,8 @@
 
     &.loading{
       color: @info;
+      animation: rotating linear 1.5s infinite;
+      transform-origin: center;
     }
   }
 }
@@ -48,4 +56,14 @@
 .message-move-enter,.message-move-leave-to{
   opacity: 0;
   transform: translateY(-100%);
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

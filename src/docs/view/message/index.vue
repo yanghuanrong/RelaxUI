@@ -19,6 +19,7 @@
             <Button type='primary' @click="info">显示普通提示</Button>
           </template>
           <script>
+          import { setTimeout } from 'timers';
           export default {
             methods: {
               info(){
@@ -63,6 +64,30 @@
         </textarea>
       </RelaxTag>
 
+      <RelaxTag name="加载中">
+        <template slot="temp">
+          <Button @click="loading">显示加载中</Button>
+        </template>
+        <template slot="desc">
+          Loading 的状态，并异步在某个时机移除。
+        </template>
+        <textarea slot="code">
+          <template>
+            <Button @click="loading">显示加载中</Button>
+          </template>
+          <script>
+          export default {
+            methods: {
+              loading(){
+                const loading = this.$message.loading('message 消息', 0)
+                setTimeout(loading, 3000)
+              }
+            }
+          }
+          </script>
+        </textarea>
+      </RelaxTag>
+
   </div>
   </div>
 </template>
@@ -81,10 +106,12 @@ export default {
     },
     error(){
       this.$message.error('message 消息')
+    },
+    loading(){
+      const loading = this.$message.loading('message 消息', 0)
+      setTimeout(loading, 3000)
     }
   }
 }
 </script>
 
-<style lang="css" scoped>
-</style>
