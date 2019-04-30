@@ -65,6 +65,7 @@ export default {
       element.setSelectionRange(0, element.value.length)
       document.execCommand('Copy')
       this.isCopy = true
+      this.$message.success('拷贝成功!')
       setTimeout(() => {
         this.isCopy = false
       }, 2000)

@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './docs/App'
 import router from './docs/router'
 import './docs/style/global.less'
-import ViewComponet from './docs/view/component'
+import ViewComponet from './docs/component'
 
 import Relax from './package'
 import './package/theme/style.less'

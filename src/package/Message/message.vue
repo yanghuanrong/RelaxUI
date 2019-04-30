@@ -1,8 +1,7 @@
 <template>
   <transition name="message-move" v-on:after-leave="close" appear>
     <div class="re-message" v-show="state">
-      <i :class="iconType[type]"/>
-      <span>{{content}}</span>
+      <i :class="iconType[type]"/><span>{{content}}</span>
     </div>
   </transition>
 </template>
