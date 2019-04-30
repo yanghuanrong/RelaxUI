@@ -30,6 +30,10 @@ const router = new Router({
     {
       path: '/select',
       component: () => import('@/docs/view/select/index.vue')
+    },
+    {
+      path: '/message',
+      component: () => import('@/docs/view/message/index.vue')
     }
   ]
 })

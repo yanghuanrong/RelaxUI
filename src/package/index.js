@@ -5,8 +5,8 @@ import Input from './Input'
 import Grid from './Grid'
 import Checkbox from './Checkbox'
 import Select from './Select'
-
-
+import Message from './Message'
+import create from './utils/create'
 const components = {
   ...Button,
   ...Menu,
@@ -22,6 +22,9 @@ const install = (Vue) => {
     const component = components[key]
     Vue.component(component.name, component)
   })
+
+  Vue.prototype.$message = Message
+  Vue.prototype.$create = create
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

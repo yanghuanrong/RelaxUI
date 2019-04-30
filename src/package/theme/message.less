@@ -1,0 +1,21 @@
+.re-message{
+  font-size: 14px;
+  position: fixed;
+  z-index: 1010;
+  top: 16px;
+  left: 50%;
+  background-color: #FFF;
+  box-shadow: 0 0 10px fade(#000, 10%);
+  padding: 5px 20px;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.message-move-enter-active,.message-move-leave-active{
+  transition: all .2s ease;
+  transform-origin: center top;
+}
+.message-move-enter,.message-move-leave-to{
+  opacity: 0;
+  transform: translateY(-100%);
+}
