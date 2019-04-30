@@ -1,8 +1,8 @@
 <template>
   <transition name="message-move" v-on:after-leave="close" appear>
     <div class="re-message" v-show="state">
-      <i class="re-icon-alert-circle"/>
-      {{content}}
+      <i :class="iconType[type]"/>
+      <span>{{content}}</span>
     </div>
   </transition>
 </template>
@@ -13,11 +13,19 @@ export default {
   data() {
     return {
       state: true,
+      iconType: {
+        info: 're-icon-info info',
+        error: 're-icon-x-circle error',
+        success: 're-icon-check-circle success',
+        warning: 're-icon-alert-triangle warning',
+        loading: 're-icon-loader loading'
+      },
       time: this.duration || 1500
     };
   },
   props: {
     content: String,
+    type: String,
     duration: {
       type: Number,
       default: 1500
@@ -31,7 +39,7 @@ export default {
   methods: {
     close() {
       if (!this.state) {
-        this.$emit('onClose');
+        this.$emit("onClose");
       }
     }
   }

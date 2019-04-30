@@ -1,3 +1,5 @@
+@import 'base';
+
 .re-message{
   font-size: 14px;
   position: fixed;
@@ -5,10 +7,37 @@
   top: 16px;
   left: 50%;
   background-color: #FFF;
-  box-shadow: 0 0 10px fade(#000, 10%);
+  box-shadow: 0 0 10px fade(#000, 5%);
   padding: 5px 20px;
   border-radius: 3px;
   pointer-events: none;
+  font-family: Arial, Helvetica, sans-serif;
+  span{
+    font-size: 14px;
+  }
+  i[class^=re-icon]{
+    font-size: 16px;
+
+    &.info{
+      color: @primary;
+    }
+
+    &.error{
+      color: @danger;
+    }
+
+    &.success{
+      color: @success;
+    }
+
+    &.warning{
+      color: @warning;
+    }
+
+    &.loading{
+      color: @info;
+    }
+  }
 }
 
 .message-move-enter-active,.message-move-leave-active{
