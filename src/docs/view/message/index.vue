@@ -19,7 +19,6 @@
             <Button type='primary' @click="info">显示普通提示</Button>
           </template>
           <script>
-          import { setTimeout } from 'timers';
           export default {
             methods: {
               info(){
