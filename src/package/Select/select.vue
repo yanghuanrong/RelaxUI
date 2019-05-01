@@ -16,6 +16,7 @@
         <i class="re-arrow" key='2' v-show='!isClear' :class="{'is-active': isActive}"></i>
       </transition-group>
     </div>
+    
     <transition name="fade-up" mode="out-in">
       <div class="re-select-option" :style="dropStyle" v-show='isActive'>
         <div class="re-select-search" v-if='search'>
@@ -63,6 +64,8 @@ export default {
       minWidth: this.$el.getBoundingClientRect().width + 'px',
       top: this.$el.getBoundingClientRect().height + 5 + 'px'
     }
+
+    console.info(this.$compile)
 
     document.addEventListener('click', (e) => {
       if (!this.$el.contains(e.target)) {

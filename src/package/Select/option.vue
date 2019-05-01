@@ -8,6 +8,7 @@
 
 <script>
 import emit from '../utils/emit'
+import { setTimeout, clearTimeout } from 'timers';
 export default {
   name: 'Option',
   inject: ['rootSelect'],
@@ -58,14 +59,16 @@ export default {
           break
         default:
       }
+      
     })
+    let matchedTid = null
     this.$on('matched', (param) => {
-      if (this.value.indexOf(param) === -1) {
-        this.isShow = false
-      } else {
-        this.isShow = true
-      }
-      this.dispatch('OptionGroup', 'groupshow', true)
+      clearTimeout(matchedTid)
+      matchedTid = setTimeout(() => {
+        this.isShow = !(this.value.indexOf(param) === -1)
+        this.dispatch('OptionGroup', 'groupshow', true)
+      }, 100)
+      
     })
   },
   methods: {

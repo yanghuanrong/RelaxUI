@@ -13,6 +13,11 @@
 
 <script>
 import emit from '../utils/emit'
+import { clearTimeout, setTimeout } from 'timers';
+
+const ALL = 2
+const HALF = 1
+const NONE = 0
 
 export default {
   name: 'OptionGroup',
@@ -22,14 +27,14 @@ export default {
   },
   data () {
     return {
-      isCheck: 0,
+      isCheck: NONE,
       isShow: true
     }
   },
   computed: {
     className () {
       return {
-        'is-check': this.isCheck === 1,
+        'is-check': this.isCheck === HALF,
         'select': this.isCheck === 2
       }
     }
@@ -37,23 +42,25 @@ export default {
   mounted () {
     this.$on('select', ({label, check}) => {
       let checkLen = this.$children.filter((item) => item.isActive)
+
       if (this.$children.length === checkLen.length) {
-        this.isCheck = 2
+        this.isCheck = ALL
       } else if (checkLen.length) {
-        this.isCheck = 1
+        this.isCheck = HALF
       } else {
-        this.isCheck = 0
+        this.isCheck = NONE
       }
     })
     this.$on('groupshow', () => {
       this.isShow = this.$children.some(item => item.isShow)
     })
+
+    let matchedTid = null
     this.$on('matched', (param) => {
-      if (this.label.indexOf(param) === -1) {
-        this.isShow = false
-      } else {
-        this.isShow = true
-      }
+      clearTimeout(matchedTid)
+      setTimeout(() => {
+        this.isShow = !(this.label.indexOf(param) === -1)
+      }, 100)
     })
   },
   methods: {

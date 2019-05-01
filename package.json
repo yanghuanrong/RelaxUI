@@ -50,9 +50,6 @@
     "> 1%",
     "last 2 versions"
   ],
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
   "lint-staged": {
     "*.{js,vue}": [
       "vue-cli-service lint",

@@ -10,16 +10,16 @@ function messageCreate(content, type, duration) {
     return
   }
 
-  let options = {
+  let props = {
     content: content,
     type: type
   }
 
   if (isNumber(duration)) {
-    options.duration = duration
+    props.duration = duration
   }
 
-  const message = create(Element, options)
+  const message = create(Element, props)
   message.$on('onClose', message.remove)
 
   return message.hide.bind(this)
