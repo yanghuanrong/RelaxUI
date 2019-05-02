@@ -65,13 +65,12 @@ export default {
       top: this.$el.getBoundingClientRect().height + 5 + 'px'
     }
 
-    console.info(this.$compile)
-
     document.addEventListener('click', (e) => {
       if (!this.$el.contains(e.target)) {
         this.close()
       }
     })
+
     this.$on('select', ({label, check}) => {
       if (this.multiple) {
         if (check) {
