@@ -152,6 +152,71 @@ h6 {
   margin-bottom: 12px;
 }
 
+.components-grid-demo {
+
+  margin-bottom: 30px;
+
+  [class^=x-row]{
+    background-color: #FFF; 
+    background-image: linear-gradient(90deg, #ededed 4.16666667%, transparent 0, transparent 8.33333333%, #ededed 0, #ededed 12.5%, transparent 0, transparent 16.66666667%, #ededed 0, #ededed 20.83333333%, transparent 0, transparent 25%, #ededed 0, #ededed 29.16666667%, transparent 0, transparent 33.33333333%, #ededed 0, #ededed 37.5%, transparent 0, transparent 41.66666667%, #ededed 0, #ededed 45.83333333%, transparent 0, transparent 50%, #ededed 0, #ededed 54.16666667%, transparent 0, transparent 58.33333333%, #ededed 0, #ededed 62.5%, transparent 0, transparent 66.66666667%, #ededed 0, #ededed 70.83333333%, transparent 0, transparent 75%, #ededed 0, #ededed 79.16666667%, transparent 0, transparent 83.33333333%, #ededed 0, #ededed 87.5%, transparent 0, transparent 91.66666667%, #ededed 0, #ededed 95.83333333%, transparent 0);
+    margin-bottom: 5px;
+  }
+
+  [class*=x-col]{
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 16px;
+  }
+  .blue1 {
+    background: fade(#4eb7eb, 90%);
+  }
+  .blue2 {
+    background: fade(#4eb7eb, 70%);
+  }
+  .blue3 {
+    background: fade(#4eb7eb, 50%);
+  }
+}
+
+.x-row-style{
+  .x-row{
+    margin-bottom: 10px;
+
+    &>div{
+      color: #fff;
+      padding: 3px 0;
+      text-align: center;
+      font-size: 12px;
+
+      &:nth-child(odd){
+        background: fade(#4eb7eb, 90%);
+      }
+      &:nth-child(even){
+        background: fade(#4eb7eb, 70%);
+      }
+    }
+  }
+
+  &.gutter{
+    .x-row{
+      &>div{
+        background: transparent !important;
+  
+        &:nth-child(odd){
+          div{
+            background: fade(#4eb7eb, 90%);
+          }
+        }
+        &:nth-child(even){
+          div{
+            background: fade(#4eb7eb, 70%);
+          }
+        }
+      }
+    }
+  }
+}
 
 .relax-document {
   .document-title {
@@ -160,42 +225,45 @@ h6 {
     color: #666;
     margin-bottom: 20px;
 
-    h4{
+    h4 {
       font-weight: normal;
     }
   }
 
-  table{
+  table {
     width: 100%;
-    border-collapse:collapse;
+    border-collapse: collapse;
 
-    &.document-api{
+    &.document-api {
       margin-bottom: 20px;
     }
 
-    thead{
-      th{
+    thead {
+      th {
         background-color: #e5eaee;
         padding: 10px;
         color: #666;
         border-bottom: 2px solid #dae1e6
       }
     }
-    td{
+
+    td {
       padding: 10px;
       background: #FFF;
       border-bottom: 1px solid #e5eaee;
 
-      
-      &:nth-child(3){
+
+      &:nth-child(3) {
         color: #f81d22;
         width: 15%;
       }
-      &:nth-child(1){
+
+      &:nth-child(1) {
         color: #0b8235;
         width: 15%;
       }
-      &:nth-child(4){
+
+      &:nth-child(4) {
         color: #008dff
       }
     }

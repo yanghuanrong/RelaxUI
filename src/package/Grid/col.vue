@@ -1,6 +1,12 @@
 <script>
+import {
+  isNumber,
+  isObject
+} from '../utils/data-type'
+
 export default {
   name: 'xCol',
+  inject: ['rootRow'],
   props: {
     span: {
       type: Number,
@@ -14,34 +20,41 @@ export default {
     xl: [Number, Object]
   },
   render () {
+    const Row = this.rootRow
+
     const classList = {}
     const style = {}
-    const classArr = []
-    let isSpan = true
+    const className = []
     const type = ['sm', 'md', 'lg', 'xl']
+    let isSpan = true
 
-    if (this.$parent.gutter) {
+    if (Row.gutter) {
       style.paddingLeft = `${this.$parent.gutter / 2}px`
       style.paddingRight = style.paddingLeft
     }
 
-    type.map(item => {
-      if (typeof this[item] === 'number') {
+    type.forEach(item => {
+      if (isNumber(this[item])) {
         isSpan = false
-        classArr.push(`x-col-${item}-${this[item]}`)
-      } else if (typeof this[item] === 'object') {
+        className.push(`x-col-${item}-${this[item]}`)
+      } else if (isObject(this[item])) {
         isSpan = false
-        classArr.push(this[item].span ? `x-col-${item}-${this[item].span}` : '', this[item].offset ? `x-col-offset-${item}-${this[item].span}` : '')
+        this[item].span && className.push(`x-col-${item}-${this[item].span}`)
+        this[item].offset && className.push(`x-col-offset-${item}-${this[item].span}`)
       }
     })
+
     if (isSpan) {
-      classList.class = [
-        `x-col-sp-${this.span}`,
-        this.offset ? `x-col-offset-sp-${this.offset}` : ''
-      ]
+      classList.class = [`x-col-sp-${this.span}`]
+      this.offset && classList.class.push(`x-col-offset-sp-${this.offset}`)
     } else {
-      classList.class = classArr
+      classList.class = className
     }
+
+    if(Row.type === 'flex') {
+      this.order && classList.class.push(`x-col-order-${this.order}`)
+    }
+    
     return <div {...classList} style={style}>{this.$slots.default}</div>
   }
 }

@@ -15,6 +15,14 @@
   }
 }
 
+.x-col-order(@index) when (@index > 0) {
+  .x-col-order(@index - 1);
+
+  .x-col-order-@{index} {
+    order: @index;
+  }
+}
+
 .x-row-flex {
   display: flex;
   flex-wrap: wrap;
@@ -50,6 +58,8 @@
   &.x-row-flex-bottom {
     align-items: flex-end;
   }
+
+  .x-col-order(24)
 }
 
 .x-row {
