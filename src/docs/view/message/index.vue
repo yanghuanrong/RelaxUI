@@ -6,7 +6,7 @@
         <p class="page-title-decs">消息通知</p>
       </div>
     </div>
-    <div class="components-demo">
+    <div class="components-button-demo">
       <RelaxTag name="普通提示">
         <template slot="temp">
           <x-button type='primary' @click="info">显示普通提示</x-button>
@@ -32,18 +32,18 @@
 
       <RelaxTag name="提示类型">
         <template slot="temp">
-          <x-button @click="success">显示成功提示</x-button>
-          <x-button @click="warning">显示警告提示</x-button>
-          <x-button @click="error">显示错误提示</x-button>
+          <x-button type="success" @click="success">显示成功提示</x-button>
+          <x-button type="warning" @click="warning">显示警告提示</x-button>
+          <x-button type="danger" @click="error">显示错误提示</x-button>
         </template>
         <template slot="desc">
           不同的提示状态：成功、警告、错误。
         </template>
         <textarea slot="code">
           <template>
-            <x-button @click="success">显示成功提示</x-button>
-            <x-button @click="warning">显示警告提示</x-button>
-            <x-button @click="error">显示错误提示</x-button>
+            <x-button type="success" @click="success">显示成功提示</x-button>
+            <x-button type="warning" @click="warning">显示警告提示</x-button>
+            <x-button type="danger" @click="error">显示错误提示</x-button>
           </template>
           <script>
           export default {

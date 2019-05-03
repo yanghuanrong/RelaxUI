@@ -6,7 +6,7 @@
         <p class="page-title-decs">按钮用于开始一个即时操作</p>
       </div>
     </div>
-    <div class="components-demo">
+    <div class="components-button-demo">
     <RelaxTag name="基础按钮">
       <template slot="temp">
         <x-button>default</x-button>
