@@ -22,8 +22,8 @@ export default {
     },
     size: {
       type: String,
-      default: '',
-      validator: value => ['lg', 'sm', ''].some(item => value === item)
+      default: 'md',
+      validator: value => ['lg', 'sm', 'md'].some(item => value === item)
     },
     plain: Boolean,
     round: Boolean,

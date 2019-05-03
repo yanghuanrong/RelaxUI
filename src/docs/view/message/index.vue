@@ -6,7 +6,7 @@
         <p class="page-title-decs">来自Relax的消息</p>
       </div>
     </div>
-    <div class="components-button-demo">
+    <div class="components-demo">
       <RelaxTag name="普通提示">
         <template slot="temp">
           <x-button type='primary' @click="info">显示普通提示</x-button>
