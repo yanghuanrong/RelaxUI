@@ -2,8 +2,8 @@
   <div>
     <div class="topbar">
       <div class="page-title-box">
-        <h4 class="page-title">message 消息</h4>
-        <p class="page-title-decs">来自Relax的消息</p>
+        <h4 class="page-title">Message 消息</h4>
+        <p class="page-title-decs">消息通知</p>
       </div>
     </div>
     <div class="components-demo">

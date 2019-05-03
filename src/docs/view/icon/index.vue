@@ -2,7 +2,7 @@
   <div>
     <div class="topbar">
       <div class="page-title-box">
-        <h4 class="page-title">x-icon 图标</h4>
+        <h4 class="page-title">Icon 图标</h4>
         <p class="page-title-decs">语义化的矢量图形</p>
       </div>
     </div>

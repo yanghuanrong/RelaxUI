@@ -2,7 +2,7 @@
   <div>
     <div class="topbar">
       <div class="page-title-box">
-        <h4 class="page-title">x-select 选择器</h4>
+        <h4 class="page-title">Select 选择器</h4>
         <p class="page-title-decs">下拉选择器</p>
       </div>
     </div>

@@ -2,7 +2,7 @@
   <div>
     <div class="topbar">
       <div class="page-title-box">
-        <h4 class="page-title">x-buttons 按钮</h4>
+        <h4 class="page-title">Buttons 按钮</h4>
         <p class="page-title-decs">按钮用于开始一个即时操作</p>
       </div>
     </div>

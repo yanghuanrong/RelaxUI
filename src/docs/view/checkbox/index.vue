@@ -2,7 +2,7 @@
   <div>
     <div class="topbar">
       <div class="page-title-box">
-        <h4 class="page-title">x-checkbox 多选框</h4>
+        <h4 class="page-title">Checkbox 多选框</h4>
         <p class="page-title-decs">多选框</p>
       </div>
     </div>
