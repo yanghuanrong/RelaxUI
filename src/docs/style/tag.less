@@ -5,6 +5,11 @@
   margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
+  transition: box-shadow 1s;
+
+  &.show{
+    box-shadow: 0 0 20px fade(#000, 15%)
+  }
 
   .tag-right{
     flex:1;

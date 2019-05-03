@@ -1,11 +1,11 @@
 <template>
 <div id="app">
   <div class='wrapper'>
-    <div class="yi-sidebar-menu" style="width:240px">
+    <div class="sidebar-menu" style="width:220px">
       <div class="logo">
         <img src="./assets/logo.png" alt="">
       </div>
-      <x-menu :uniqueOpened='true'>
+      <x-menu :all-opend='true'>
         <x-menu-item name="1">
           <span>安装</span>
         </x-menu-item>

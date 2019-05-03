@@ -1,5 +1,5 @@
 <template>
-  <li class='x-submenu' @click.stop='handleClick' :class="{'is-opened': isActive}">
+  <li class="x-submenu" @click.stop="handleClick" :class="{'is-opened': isActive}">
     <div class="x-menu-title">
       <slot name="title"></slot>
       <i class="x-arrow" :class="{'is-active': isActive}"></i>
@@ -13,36 +13,37 @@
 </template>
 
 <script>
-import sliderTransition from '../transition/slider'
+import sliderTransition from "../transition/slider";
 
 export default {
-  name: 'xSubmenu',
-  inject: ['rootMenu'],
-  data () {
+  name: "xSubmenu",
+  inject: ["rootMenu"],
+  data() {
     return {
       isActive: false
-    }
+    };
   },
-  mounted () {
-    this.$on('item-click', (name) => {
-      this.isActive = true
-    })
+  mounted() {
+    this.$on("item-click", name => {
+      this.isActive = true;
+    });
+    this.isActive = this.rootMenu.allOpend;
   },
   components: {
     sliderTransition
   },
   methods: {
-    handleClick () {
-      this.$emit('click', this)
+    handleClick() {
+      this.$emit("click", this);
       if (this.rootMenu.uniqueOpened) {
-        this.$parent.$children.map(item => {
+        this.$parent.$children.forEach(item => {
           if (item !== this) {
-            item.isActive = false
+            item.isActive = false;
           }
-        })
+        });
       }
-      this.isActive = !this.isActive
+      this.isActive = !this.isActive;
     }
   }
-}
+};
 </script>

@@ -22,6 +22,10 @@ export default {
     uniqueOpened: {
       type: Boolean,
       default: false
+    },
+    allOpend: {
+      type: Boolean,
+      default: false
     }
   },
   mounted () {

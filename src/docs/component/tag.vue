@@ -1,5 +1,5 @@
 <template>
-  <div class="tag-box">
+  <div class="tag-box" :class="{show: !isShow}">
     <div class="tag-left" ref='left'>
       <div class="tag-temp">
         <slot name="temp"></slot>
@@ -65,7 +65,7 @@ export default {
       element.setSelectionRange(0, element.value.length)
       document.execCommand('Copy')
       this.isCopy = true
-      this.$message.success('拷贝成功!')
+      this.$message.success('拷贝成功')
       setTimeout(() => {
         this.isCopy = false
       }, 2000)
