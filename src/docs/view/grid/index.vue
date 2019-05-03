@@ -122,30 +122,111 @@
       </textarea>
     </RelaxTag>
 
-    <div class="card-box">
-      <x-row :gutter='20'>
-        <x-col :span='16' :offset='4'>
-          <div style="background:#ccc">x-col-span-16</div>
-        </x-col>
-        <x-col :span='12' :offset='4'>
-          <div style="background:#ccc">x-col-span-12</div>
-        </x-col>
-        <x-col :xl='6' :sm='5' :md='7'>
-          <div style="background:#ccc">x-col-xl-12,x-col-sm-5,x-col-md-7</div>
-        </x-col>
-        <x-col :sm='{span:6,offset:4}'>
-          <div style="background:#ccc">x-col-sm-12</div>
-        </x-col>
-        <x-col :md='12'>
-          <div style="background:#ccc">x-col-md-12</div>
-        </x-col>
-      </x-row>
+    <RelaxTag name="左右偏移" class="x-row-style">
+      <template slot="temp">
+        <x-row>
+          <x-col :span="8">col-8</x-col>
+          <x-col :span="8" :offset="8">col-8 | offset-8</x-col>
+        </x-row>
+        <x-row>
+          <x-col :span="6" :offset="8">col-6 | offset-8</x-col>
+          <x-col :span="6" :offset="4">col-6 | offset-4</x-col>
+        </x-row>
+        <x-row>
+          <x-col :span="12" :offset="8">col-12 | offset-8</x-col>
+        </x-row>
+      </template>
+      <template slot="desc">
+        通过设置offset属性，将列进行左右偏移
+      </template>
+      <textarea slot="code">
+        <template>
+          <x-row>
+            <x-col :span="8">col-8</x-col>
+            <x-col :span="8" :offset="8">col-8 | offset-8</x-col>
+          </x-row>
+          <x-row>
+            <x-col :span="6" :offset="8">col-6 | offset-8</x-col>
+            <x-col :span="6" :offset="4">col-6 | offset-4</x-col>
+          </x-row>
+          <x-row>
+            <x-col :span="12" :offset="8">col-12 | offset-8</x-col>
+          </x-row>
+        </template>
+      </textarea>
+    </RelaxTag>
 
-      <x-row type="flex" justify="space-between">
-        <x-col :span='2'><div style="background:#ccc">x-col-span-16</div></x-col>
-        <x-col :span='2'><div style="background:#ccc">x-col-span-16</div></x-col>
-        <x-col :span='2'><div style="background:#ccc">x-col-span-16</div></x-col>
-      </x-row>
-    </div>
+    <RelaxTag name="flex布局" class="x-row-style code-row-bg">
+      <template slot="temp">
+        <x-row type="flex" justify="start">
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+        </x-row>
+        <x-row type="flex" justify="end">
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+        </x-row>
+        <x-row type="flex" justify="center">
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+        </x-row>
+        <x-row type="flex" justify="space-between">
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+        </x-row>
+        <x-row type="flex" justify="space-around">
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+        </x-row>
+      </template>
+      <template slot="desc">
+        通过给row设置参数justify为不同的值，来定义子元素的排布方式。在flex模式下有效。
+      </template>
+      <textarea slot="code">
+        <template>
+          <x-row type="flex" justify="start">
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+        </x-row>
+        <x-row type="flex" justify="end">
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+        </x-row>
+        <x-row type="flex" justify="center">
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+        </x-row>
+        <x-row type="flex" justify="space-between">
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+        </x-row>
+        <x-row type="flex" justify="space-around">
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+          <x-col :span="4">col-4</x-col>
+        </x-row>
+        </template>
+      </textarea>
+    </RelaxTag>
+
   </div>
 </template>
