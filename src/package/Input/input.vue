@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'Input',
+  name: 'xInput',
   data () {
     return {
       currValue: this.value || ''
@@ -31,7 +31,7 @@ export default {
             this.$refs.input.focus()
           }
 
-          return <div class="re-clearable" on-click={clear}><i class="re-icon-x"></i></div>
+          return <div class="x-clearable" on-click={clear}><i class="x-icon-x"></i></div>
         }
       }
     },
@@ -58,29 +58,29 @@ export default {
 
     const inputClass = {
       class: [
-        this.size !== '' || this.size ? 're-input-' + this.size : '',
-        this.iconAfter ? 're-input-icon-affter' : '',
-        this.iconBefore ? 're-input-icon-before' : ''
+        this.size !== '' || this.size ? 'x-input-' + this.size : '',
+        this.iconAfter ? 'x-input-icon-affter' : '',
+        this.iconBefore ? 'x-input-icon-before' : ''
       ]
     }
     
     const inputDom = () => {
       if (this.type === 'textarea') {
-        return <div class="re-from-textarea">
-          <textarea class="re-textarea" {...inputClass} {...attrs} {...listeners} on-input={this.changeEv} ref='input'></textarea>
-          { this.$attrs.maxlength ? <span class='re-textarea-maxlength'>{this.currValue.length}/{this.$attrs.maxlength}</span> : '' }
+        return <div class="x-from-textarea">
+          <textarea class="x-textarea" {...inputClass} {...attrs} {...listeners} on-input={this.changeEv} ref='input'></textarea>
+          { this.$attrs.maxlength ? <span class='x-textarea-maxlength'>{this.currValue.length}/{this.$attrs.maxlength}</span> : '' }
         </div>
       } else {
-        return <div class="re-from-input">
-          { this.iconAfter ? <span class='re-icon-path-affter'><i class={this.iconAfter}></i></span> : '' }
-          <input class="re-input" type={this.type} value={this.currValue} {...inputClass} {...attrs} {...listeners} on-input={this.changeEv} ref='input'/>
+        return <div class="x-from-input">
+          { this.iconAfter ? <span class='x-icon-path-affter'><i class={this.iconAfter}></i></span> : '' }
+          <input class="x-input" type={this.type} value={this.currValue} {...inputClass} {...attrs} {...listeners} on-input={this.changeEv} ref='input'/>
           { this.clearDom() }
-          { this.iconBefore ? <span class='re-icon-path-before'><i class={this.iconBefore}></i></span> : '' }
+          { this.iconBefore ? <span class='x-icon-path-before'><i class={this.iconBefore}></i></span> : '' }
         </div>
       }
     }
-    return <div class="re-input-group">
-      {/* { this.$slots.addonAfter ? <div class="re-input-group-prepend">{this.$slots.addonAfter}</div> : '' } */}
+    return <div class="x-input-group">
+      {/* { this.$slots.addonAfter ? <div class="x-input-group-prepend">{this.$slots.addonAfter}</div> : '' } */}
       { inputDom() }
     </div>
   }

@@ -1,12 +1,12 @@
 @import "./base.less";
 
-.re-btn-group {
+.x-btn-group {
   position: relative;
   display: -ms-inline-flexbox;
   display: inline-flex;
   vertical-align: middle;
 
-  &>.re-btn {
+  &>.x-btn {
     position: relative;
     margin-left: -1px;
     margin-right: 0 !important;
@@ -15,20 +15,20 @@
     }
   }
 
-  &>&:not(:last-child)>.re-btn,
-  &>.re-btn:not(:last-child):not(.dropdown-toggle) {
+  &>&:not(:last-child)>.x-btn,
+  &>.x-btn:not(:last-child):not(.dropdown-toggle) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
 
-  &>&:not(:first-child)>.re-btn,
-  &>.re-btn:not(:first-child) {
+  &>&:not(:first-child)>.x-btn,
+  &>.x-btn:not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
 }
 
-.re-btn {
+.x-btn {
   display: inline-block;
   position: relative;
   max-width: 100%;
@@ -59,17 +59,17 @@
     outline: 0;
   }
 
-  &.re-btn-lg {
+  &.x-btn-lg {
     padding: 12px 22px;
     font-size: 1rem;
   }
 
-  &.re-btn-sm {
+  &.x-btn-sm {
     padding: 4px 10px;
     font-size: 0.75rem;
   }
 
-  &.re-btn-text {
+  &.x-btn-text {
     background-color: transparent;
     color: @primary;
     padding-left: 0;
@@ -86,7 +86,7 @@
     }
   }
 
-  &.re-btn-default {
+  &.x-btn-default {
     @color: #444;
     color: @color;
     border-color: @default;
@@ -109,7 +109,7 @@
       box-shadow: 0 0 0 2px fade(@default, 50%);
     }
 
-    &.disabled,&.re-btn-loading {
+    &.disabled,&.x-btn-loading {
       &.is-plain {
 
         &:hover,
@@ -130,7 +130,7 @@
     }
   }
 
-  &.re-btn-info {
+  &.x-btn-info {
     border-color: @info;
     background-color: @info;
 
@@ -151,7 +151,7 @@
       box-shadow: 0 0 0 2px fade(@info, 50%);
     }
 
-    &.disabled,&.re-btn-loading {
+    &.disabled,&.x-btn-loading {
       &.is-plain {
 
         &:hover,
@@ -172,7 +172,7 @@
     }
   }
 
-  &.re-btn-success {
+  &.x-btn-success {
     border-color: @success;
     background-color: @success;
 
@@ -193,7 +193,7 @@
       box-shadow: 0 0 0 2px fade(@success, 50%);
     }
 
-    &.disabled,&.re-btn-loading {
+    &.disabled,&.x-btn-loading {
       &.is-plain {
 
         &:hover,
@@ -214,7 +214,7 @@
     }
   }
 
-  &.re-btn-primary {
+  &.x-btn-primary {
     border-color: @primary;
     background-color: @primary;
 
@@ -235,7 +235,7 @@
       box-shadow: 0 0 0 2px fade(@primary, 50%);
     }
 
-    &.disabled,&.re-btn-loading {
+    &.disabled,&.x-btn-loading {
       &.is-plain {
 
         &:hover,
@@ -256,7 +256,7 @@
     }
   }
 
-  &.re-btn-warning {
+  &.x-btn-warning {
     border-color: @warning;
     background-color: @warning;
 
@@ -277,7 +277,7 @@
       box-shadow: 0 0 0 2px fade(@warning, 50%);
     }
 
-    &.disabled,&.re-btn-loading {
+    &.disabled,&.x-btn-loading {
       &.is-plain {
 
         &:hover,
@@ -298,7 +298,7 @@
     }
   }
 
-  &.re-btn-danger {
+  &.x-btn-danger {
     border-color: @danger;
     background-color: @danger;
 
@@ -319,7 +319,7 @@
       box-shadow: 0 0 0 2px fade(@danger, 50%);
     }
 
-    &.disabled,&.re-btn-loading {
+    &.disabled,&.x-btn-loading {
       &.is-plain {
 
         &:hover,
@@ -351,7 +351,7 @@
     }
   }
 
-  &.re-btn-loading,
+  &.x-btn-loading,
   &.disabled,
   &:disabled {
     box-shadow: none;
@@ -368,10 +368,10 @@
   }
 
 
-  &.re-btn-loading {
+  &.x-btn-loading {
     cursor: auto;
 
-    &>i.re-icon-loader {
+    &>i.x-icon-loader {
       position: absolute;
       animation: rotating linear 1.5s infinite;
 

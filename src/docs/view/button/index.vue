@@ -2,78 +2,78 @@
   <div>
     <div class="topbar">
       <div class="page-title-box">
-        <h4 class="page-title">Buttons 按钮</h4>
+        <h4 class="page-title">x-buttons 按钮</h4>
         <p class="page-title-decs">按钮用于开始一个即时操作</p>
       </div>
     </div>
-    <div  class="components-button-demo">
+    <div class="components-demo">
     <RelaxTag name="基础按钮">
       <template slot="temp">
-        <Button>default</Button>
-        <Button type='primary'>primary</Button>
-        <Button type='success'>success</Button>
-        <Button type='info'>info</Button>
-        <Button type='danger'>danger</Button>
-        <Button type='warning'>warning</Button>
+        <x-button>default</x-button>
+        <x-button type='primary'>primary</x-button>
+        <x-button type='success'>success</x-button>
+        <x-button type='info'>info</x-button>
+        <x-button type='danger'>danger</x-button>
+        <x-button type='warning'>warning</x-button>
       </template>
       <template slot="desc">
         按钮可以根据<i>type</i>来设置不同的颜色，提供了6种类型的按钮<i>primary</i><i>success</i><i>info</i><i>danger</i><i>warning</i>
       </template>
       <textarea slot="code">
         <template>
-          <Button>default</Button>
-          <Button type='primary'>primary</Button>
-          <Button type='success'>success</Button>
-          <Button type='info'>info</Button>
-          <Button type='danger'>danger</Button>
-          <Button type='danger'>danger</Button>
-          <Button type='warning'>warning</Button>
+          <x-button>default</x-button>
+          <x-button type='primary'>primary</x-button>
+          <x-button type='success'>success</x-button>
+          <x-button type='info'>info</x-button>
+          <x-button type='danger'>danger</x-button>
+          <x-button type='danger'>danger</x-button>
+          <x-button type='warning'>warning</x-button>
         </template>
       </textarea>
     </RelaxTag>
 
     <RelaxTag name="镂空按钮">
       <template slot="temp">
-          <Button plain>default</Button>
-          <Button type='primary' plain>primary</Button>
-          <Button type='success' plain>success</Button>
-          <Button type='info' plain>info</Button>
-          <Button type='danger' plain>danger</Button>
-          <Button type='warning' plain>warning</Button>
+          <x-button plain>default</x-button>
+          <x-button type='primary' plain>primary</x-button>
+          <x-button type='success' plain>success</x-button>
+          <x-button type='info' plain>info</x-button>
+          <x-button type='danger' plain>danger</x-button>
+          <x-button type='warning' plain>warning</x-button>
       </template>
       <template slot="desc">
         设置<i>plain</i>属性可以设置镂空按钮
       </template>
       <textarea slot="code">
         <template>
-          <Button plain>default</Button>
-          <Button type='primary' plain>primary</Button>
-          <Button type='success' plain>success</Button>
-          <Button type='info' plain>info</Button>
-          <Button type='danger' plain>danger</Button>
-          <Button type='warning' plain>warning</Button>
+          <x-button plain>default</x-button>
+          <x-button type='primary' plain>primary</x-button>
+          <x-button type='success' plain>success</x-button>
+          <x-button type='info' plain>info</x-button>
+          <x-button type='danger' plain>danger</x-button>
+          <x-button type='warning' plain>warning</x-button>
         </template>
       </textarea>
     </RelaxTag>
 
     <RelaxTag name="加载中状态">
       <template slot="temp">
-          <Button type='warning' size="sm" round :loading="true">loading</Button>
-          <Button type='danger' round :loading="true">loading</Button>
-          <Button type='info' round plain :loading="true">loading</Button>
-          <Button type='success' plain :loading="true">loading</Button>
-          <Button type='primary' :loading="loading" @click="enterLoading">Click loading</Button>
+          <x-button type='warning' size="sm" round :loading="true">loading</x-button>
+          <x-button type='danger' round :loading="true">loading</x-button>
+          <x-button type='info' round plain :loading="true">loading</x-button>
+          <x-button type='success' plain :loading="true">loading</x-button>
+          <x-button type='primary' :loading="loading" @click="enterLoading">Click loading</x-button>
       </template>
       <template slot="desc">
         添加 <i>loading</i> 属性即可让按钮处于加载状态
       </template>
       <textarea slot="code">
         <template>
-          <Button type='warning' size="sm" round :loading="true">loading</Button>
-          <Button type='danger' round :loading="true">loading</Button>
-          <Button type='info' round plain :loading="true">loading</Button>
-          <Button type='success' plain :loading="true">loading</Button>
-          <Button type='primary' :loading="loading" @click="enterLoading">Click loading</Button>
+          <x-button type='warning' size="sm" round :loading="true">loading</x-button>
+          <x-button type='danger' round :loading="true">loading</x-button>
+          <x-button type='info' round plain :loading="true">loading</x-button>
+          <x-button type='success' plain :loading="true">loading</x-button>
+          <x-button type='primary' :loading="loading" @click="enterLoading">Click loading</x-button>
         </template>
         <script>
           export default {
@@ -99,160 +99,160 @@
 
     <RelaxTag name="圆角按钮">
       <template slot="temp">
-        <Button round>default</Button>
-        <Button type='primary' round>primary</Button>
-        <Button type='success' round>success</Button>
-        <Button type='info' round>info</Button>
-        <Button type='danger' round>danger</Button>
-        <Button type='warning' round>warning</Button>
+        <x-button round>default</x-button>
+        <x-button type='primary' round>primary</x-button>
+        <x-button type='success' round>success</x-button>
+        <x-button type='info' round>info</x-button>
+        <x-button type='danger' round>danger</x-button>
+        <x-button type='warning' round>warning</x-button>
       </template>
       <template slot="desc">
         设置<i>round</i>属性可以设置圆角按钮
       </template>
       <textarea slot="code">
         <template>
-          <Button round>default</Button>
-          <Button type='primary' round>primary</Button>
-          <Button type='success' round>success</Button>
-          <Button type='info' round>info</Button>
-          <Button type='danger' round>danger</Button>
-          <Button type='warning' round>warning</Button>
+          <x-button round>default</x-button>
+          <x-button type='primary' round>primary</x-button>
+          <x-button type='success' round>success</x-button>
+          <x-button type='info' round>info</x-button>
+          <x-button type='danger' round>danger</x-button>
+          <x-button type='warning' round>warning</x-button>
         </template>
       </textarea>
     </RelaxTag>
 
     <RelaxTag name="不可点击">
       <template slot="temp">
-        <Button plain round disabled>default</Button>
-        <Button type='primary' plain round disabled>primary</Button>
-        <Button type='success' plain round disabled>success</Button>
-        <Button type='info' plain round disabled>info</Button>
-        <Button type='danger' plain round disabled>danger</Button>
-        <Button type='warning' plain round disabled>warning</Button>
+        <x-button plain round disabled>default</x-button>
+        <x-button type='primary' plain round disabled>primary</x-button>
+        <x-button type='success' plain round disabled>success</x-button>
+        <x-button type='info' plain round disabled>info</x-button>
+        <x-button type='danger' plain round disabled>danger</x-button>
+        <x-button type='warning' plain round disabled>warning</x-button>
       </template>
       <template slot="desc">
         设置<i>disabled</i>属性达到按钮不可点击状态
       </template>
       <textarea slot="code">
         <template>
-          <Button plain round disabled>default</Button>
-          <Button type='primary' plain round disabled>primary</Button>
-          <Button type='success' plain round disabled>success</Button>
-          <Button type='info' plain round disabled>info</Button>
-          <Button type='danger' plain round disabled>danger</Button>
-          <Button type='warning' plain round disabled>warning</Button>
+          <x-button plain round disabled>default</x-button>
+          <x-button type='primary' plain round disabled>primary</x-button>
+          <x-button type='success' plain round disabled>success</x-button>
+          <x-button type='info' plain round disabled>info</x-button>
+          <x-button type='danger' plain round disabled>danger</x-button>
+          <x-button type='warning' plain round disabled>warning</x-button>
         </template>
       </textarea>
     </RelaxTag>
 
     <RelaxTag name="按钮尺寸">
       <template slot="temp">
-        <Button type='primary' size='sm'>small</Button>
-        <Button type='warning'>normal</Button>
-        <Button size='lg'>large</Button>
+        <x-button type='primary' size='sm'>small</x-button>
+        <x-button type='warning'>normal</x-button>
+        <x-button size='lg'>large</x-button>
       </template>
       <template slot="desc">
         按钮根据<i>size</i>来变换尺寸，提供了<i>sm</i><i>lg</i>和默认的三种
       </template>
       <textarea slot="code">
         <template>
-          <Button type='primary' size='sm'>small</Button>
-          <Button type='warning'>normal</Button>
-          <Button size='lg'>large</Button>
+          <x-button type='primary' size='sm'>small</x-button>
+          <x-button type='warning'>normal</x-button>
+          <x-button size='lg'>large</x-button>
         </template>
       </textarea>
     </RelaxTag>
 
     <RelaxTag name="图标按钮">
       <template slot="temp">
-        <Button icon="re-icon-heart-on" circle></Button>
-        <Button type="primary" icon="re-icon-x" circle></Button>
-        <Button type="info" icon="re-icon-mic" circle></Button>
-        <Button type="danger" icon="re-icon-music" circle></Button>
-        <Button type="warning" icon="re-icon-thumbs-down" circle></Button>
-        <Button type="success" icon="re-icon-thumbs-up" circle></Button>
+        <x-button icon="x-icon-heart-on" circle></x-button>
+        <x-button type="primary" icon="x-icon-x" circle></x-button>
+        <x-button type="info" icon="x-icon-mic" circle></x-button>
+        <x-button type="danger" icon="x-icon-music" circle></x-button>
+        <x-button type="warning" icon="x-icon-thumbs-down" circle></x-button>
+        <x-button type="success" icon="x-icon-thumbs-up" circle></x-button>
       </template>
       <template slot="desc">
         圆形的图标按钮
       </template>
       <textarea slot="code">
         <template>
-          <Button icon="re-icon-heart-on" circle></Button>
-          <Button type="primary" icon="re-icon-x" circle></Button>
-          <Button type="info" icon="re-icon-mic" circle></Button>
-          <Button type="danger" icon="re-icon-music" circle></Button>
-          <Button type="warning" icon="re-icon-thumbs-down" circle></Button>
-          <Button type="success" icon="re-icon-thumbs-up" circle></Button>
+          <x-button icon="x-icon-heart-on" circle></x-button>
+          <x-button type="primary" icon="x-icon-x" circle></x-button>
+          <x-button type="info" icon="x-icon-mic" circle></x-button>
+          <x-button type="danger" icon="x-icon-music" circle></x-button>
+          <x-button type="warning" icon="x-icon-thumbs-down" circle></x-button>
+          <x-button type="success" icon="x-icon-thumbs-up" circle></x-button>
         </template>
       </textarea>
     </RelaxTag>
 
     <RelaxTag name="图标按钮">
       <template slot="temp">
-        <Button icon="re-icon-home">default</Button>
-        <Button type="primary" icon='re-icon-star-on'>primary</Button>
-        <Button type='success' icon='re-icon-search'>success</Button>
-        <Button type='info' icon="re-icon-user">info</Button>
-        <Button type='danger' icon="re-icon-zap">danger</Button>
-        <Button type='warning' icon="re-icon-triangle">warning</Button>
+        <x-button icon="x-icon-home">default</x-button>
+        <x-button type="primary" icon='x-icon-star-on'>primary</x-button>
+        <x-button type='success' icon='x-icon-search'>success</x-button>
+        <x-button type='info' icon="x-icon-user">info</x-button>
+        <x-button type='danger' icon="x-icon-zap">danger</x-button>
+        <x-button type='warning' icon="x-icon-triangle">warning</x-button>
       </template>
       <template slot="desc">
         有文字信息的图标按钮
       </template>
       <textarea slot="code">
         <template>
-          <Button icon="re-icon-home">default</Button>
-          <Button type="primary" icon='re-icon-star-on'>primary</Button>
-          <Button type='success' icon='re-icon-search'>success</Button>
-          <Button type='info' icon="re-icon-user">info</Button>
-          <Button type='danger' icon="re-icon-zap">danger</Button>
-          <Button type='warning' icon="re-icon-triangle">warning</Button>
+          <x-button icon="x-icon-home">default</x-button>
+          <x-button type="primary" icon='x-icon-star-on'>primary</x-button>
+          <x-button type='success' icon='x-icon-search'>success</x-button>
+          <x-button type='info' icon="x-icon-user">info</x-button>
+          <x-button type='danger' icon="x-icon-zap">danger</x-button>
+          <x-button type='warning' icon="x-icon-triangle">warning</x-button>
         </template>
       </textarea>
     </RelaxTag>
 
     <RelaxTag name="块级按钮">
       <template slot="temp">
-        <Button block>default</Button>
-        <Button type='primary' block>primary</Button>
-        <Button type='success' block>success</Button>
-        <Button type='info' block>info</Button>
-        <Button type='danger' block>danger</Button>
-        <Button type='warning' block>warning</Button>
+        <x-button block>default</x-button>
+        <x-button type='primary' block>primary</x-button>
+        <x-button type='success' block>success</x-button>
+        <x-button type='info' block>info</x-button>
+        <x-button type='danger' block>danger</x-button>
+        <x-button type='warning' block>warning</x-button>
       </template>
       <template slot="desc">
         设置<i>block</i>属性变成块级按钮
       </template>
       <textarea slot="code">
         <template>
-          <Button block>default</Button>
-          <Button type='primary' block>primary</Button>
-          <Button type='success' block>success</Button>
-          <Button type='info' block>info</Button>
-          <Button type='danger' block>danger</Button>
-          <Button type='warning' block>warning</Button>
+          <x-button block>default</x-button>
+          <x-button type='primary' block>primary</x-button>
+          <x-button type='success' block>success</x-button>
+          <x-button type='info' block>info</x-button>
+          <x-button type='danger' block>danger</x-button>
+          <x-button type='warning' block>warning</x-button>
         </template>
       </textarea>
     </RelaxTag>
 
     <RelaxTag name="按钮组">
       <template slot="temp">
-        <ButtonGroup>
-          <Button>primary</Button>
-          <Button>success</Button>
-          <Button>info</Button>
-        </ButtonGroup>
+        <x-buttonGroup>
+          <x-button>primary</x-button>
+          <x-button>success</x-button>
+          <x-button>info</x-button>
+        </x-buttonGroup>
       </template>
       <template slot="desc">
-        包裹<i>ButtonGroup</i>标签变成按钮组
+        包裹<i>x-buttonGroup</i>标签变成按钮组
       </template>
       <textarea slot="code">
         <template>
-          <ButtonGroup>
-            <Button>primary</Button>
-            <Button>success</Button>
-            <Button>info</Button>
-          </ButtonGroup>
+          <x-buttonGroup>
+            <x-button>primary</x-button>
+            <x-button>success</x-button>
+            <x-button>info</x-button>
+          </x-buttonGroup>
         </template>
       </textarea>
     </RelaxTag>

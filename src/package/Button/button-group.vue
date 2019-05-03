@@ -1,8 +1,8 @@
 <script>
 export default {
-  name: 'ButtonGroup',
+  name: 'xButtonGroup',
   render () {
-    return <div class='re-btn-group'>{this.$slots.default}</div>
+    return <div class='x-btn-group'>{this.$slots.default}</div>
   }
 }
 </script>

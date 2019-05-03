@@ -1,7 +1,7 @@
 <template>
-  <li class='re-menu-group'>
-    <div class='re-menu-title' v-if="title && title !== ''" @click.stop="">{{title}}</div>
-    <ul class='re-menu'>
+  <li class='x-menu-group'>
+    <div class='x-menu-title' v-if="title && title !== ''" @click.stop="">{{title}}</div>
+    <ul class='x-menu'>
       <slot></slot>
     </ul>
   </li>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'MenuGroup',
+  name: 'xMenuGroup',
   props: {
     title: String,
     default: ''

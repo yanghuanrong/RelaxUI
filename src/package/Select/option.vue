@@ -1,7 +1,7 @@
 <template>
-  <li @click='select' class="re-option" v-show="isShow">
-    <div class="re-option-row" :class="className">
-      <div class="re-option-text">{{value}}</div>
+  <li @click='select' class="x-option" v-show="isShow">
+    <div class="x-option-row" :class="className">
+      <div class="x-option-text">{{value}}</div>
     </div>
   </li>
 </template>
@@ -10,7 +10,7 @@
 import emit from '../utils/emit'
 import { setTimeout, clearTimeout } from 'timers';
 export default {
-  name: 'Option',
+  name: 'xOption',
   inject: ['rootSelect'],
   mixins: [emit],
   props: {
@@ -36,7 +36,7 @@ export default {
       if (this.value === value) {
         this.isActive = false
       }
-      this.dispatch('OptionGroup', 'select', {label: this.value, check: this.isActive})
+      this.dispatch('xOptionGroup', 'select', {label: this.value, check: this.isActive})
     })
     this.$on('groupValue', (status) => {
       if (this.disabled) {
@@ -66,7 +66,7 @@ export default {
       clearTimeout(matchedTid)
       matchedTid = setTimeout(() => {
         this.isShow = !(this.value.indexOf(param) === -1)
-        this.dispatch('OptionGroup', 'groupshow', true)
+        this.dispatch('xOptionGroup', 'groupshow', true)
       }, 100)
       
     })
@@ -84,8 +84,8 @@ export default {
       }
     },
     emitParent () {
-      this.dispatch('Select', 'select', {label: this.value, check: this.isActive})
-      this.dispatch('OptionGroup', 'select', {label: this.value, check: this.isActive})
+      this.dispatch('xSelect', 'select', {label: this.value, check: this.isActive})
+      this.dispatch('xOptionGroup', 'select', {label: this.value, check: this.isActive})
     }
   }
 }

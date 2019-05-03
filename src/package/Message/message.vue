@@ -1,6 +1,6 @@
 <template>
   <transition name="message-move" v-on:after-leave="close" appear>
-    <div class="re-message" v-show="state">
+    <div class="x-message" v-show="state">
       <span><i :class="iconType[type]"/>{{content}}</span>
     </div>
   </transition>
@@ -13,11 +13,11 @@ export default {
     return {
       state: true,
       iconType: {
-        info: "re-icon-info info",
-        error: "re-icon-x-circle error",
-        success: "re-icon-check-circle success",
-        warning: "re-icon-alert-triangle warning",
-        loading: "re-icon-loader loading"
+        info: "x-icon-info info",
+        error: "x-icon-x-circle error",
+        success: "x-icon-check-circle success",
+        warning: "x-icon-alert-triangle warning",
+        loading: "x-icon-loader loading"
       },
       time: this.duration
     };

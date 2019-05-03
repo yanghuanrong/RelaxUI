@@ -7,29 +7,29 @@
       </div>
     </div>
     <div class="card-box">
-      <Row :gutter='20'>
-        <Col :span='16' :offset='4'>
-          <div style="background:#ccc">col-span-16</div>
-        </Col>
-        <Col :span='12' :offset='4'>
-          <div style="background:#ccc">col-span-12</div>
-        </Col>
-        <Col :xl='6' :sm='5' :md='7'>
-          <div style="background:#ccc">col-xl-12,col-sm-5,col-md-7</div>
-        </Col>
-        <Col :sm='{span:6,offset:4}'>
-          <div style="background:#ccc">col-sm-12</div>
-        </Col>
-        <Col :md='12'>
-          <div style="background:#ccc">col-md-12</div>
-        </Col>
-      </Row>
+      <x-row :gutter='20'>
+        <x-col :span='16' :offset='4'>
+          <div style="background:#ccc">x-col-span-16</div>
+        </x-col>
+        <x-col :span='12' :offset='4'>
+          <div style="background:#ccc">x-col-span-12</div>
+        </x-col>
+        <x-col :xl='6' :sm='5' :md='7'>
+          <div style="background:#ccc">x-col-xl-12,x-col-sm-5,x-col-md-7</div>
+        </x-col>
+        <x-col :sm='{span:6,offset:4}'>
+          <div style="background:#ccc">x-col-sm-12</div>
+        </x-col>
+        <x-col :md='12'>
+          <div style="background:#ccc">x-col-md-12</div>
+        </x-col>
+      </x-row>
 
-      <Row type="flex" justify="space-between">
-        <Col :span='2'><div style="background:#ccc">col-span-16</div></Col>
-        <Col :span='2'><div style="background:#ccc">col-span-16</div></Col>
-        <Col :span='2'><div style="background:#ccc">col-span-16</div></Col>
-      </Row>
+      <x-row type="flex" justify="space-between">
+        <x-col :span='2'><div style="background:#ccc">x-col-span-16</div></x-col>
+        <x-col :span='2'><div style="background:#ccc">x-col-span-16</div></x-col>
+        <x-col :span='2'><div style="background:#ccc">x-col-span-16</div></x-col>
+      </x-row>
     </div>
   </div>
 </template>

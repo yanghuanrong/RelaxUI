@@ -1,11 +1,11 @@
 @import "./base.less";
 
-.re-select {
+.x-select {
   position: relative;
 
-  .re-select-input{
+  .x-select-input{
     position: relative;
-    &>.re-input{
+    &>.x-input{
       cursor: pointer;
     }
 
@@ -13,7 +13,7 @@
       right: 10px;
     }
 
-    .re-clearable{
+    .x-clearable{
       position: absolute;
       z-index: 1;
       height: 100%;
@@ -38,19 +38,19 @@
       }
     }
 
-    .re-select-icon{
+    .x-select-icon{
       position: absolute;
       width: 30px;
       right: 0;
       top: 0;
       bottom: 0;
 
-      i.re-arrow{
+      i.x-arrow{
         right: 10px;
       }
     }
 
-    .re-select-array{
+    .x-select-array{
       position: absolute;
       top: 0;
       left: 0;
@@ -67,7 +67,7 @@
         border-radius: 4px;
       }
 
-      .re-select-array-content{
+      .x-select-array-content{
         max-width: 70%;
         padding: 2px 8px;
         background-color: @border;
@@ -78,14 +78,14 @@
         &>span {
           float: left;
         }
-        .re-con-array{
+        .x-con-array{
           overflow: hidden;
           flex:1;
           display: block;
           white-space:nowrap;flex:1;
           text-overflow: ellipsis;
         }
-        .re-clearable-array{
+        .x-clearable-array{
           width: 14px;
           width: auto;
           display: block;
@@ -95,7 +95,7 @@
     }
   }
 
-  .re-select-option{
+  .x-select-option{
     z-index: 2;
     position: absolute;
     background-color: #FFF;
@@ -108,17 +108,17 @@
       overflow-y: auto;
     }
 
-    .re-option{
+    .x-option{
       list-style: none;
     }
 
 
-    .re-select-search{
+    .x-select-search{
       padding:5px 10px;
     }
 
     // 选项框
-    .re-option-row{
+    .x-option-row{
       cursor: pointer;
       padding-left: 25px;
       position: relative;
@@ -189,7 +189,7 @@
         &:hover{
           background-color: initial;
         }
-        .re-option-row{
+        .x-option-row{
           &::before {
             border-color: darken(@border, 0.5%);
             background-color: fade(@border, 30%);
@@ -214,7 +214,7 @@
         }
       }
 
-      .re-option-text{
+      .x-option-text{
         white-space:nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -224,7 +224,7 @@
   }
 
 
-  .re-option-group{
+  .x-option-group{
     ul{
       padding-left: 25px;
     }

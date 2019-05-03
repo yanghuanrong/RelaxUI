@@ -1,8 +1,8 @@
 <template>
-  <li class="re-option re-option-group" v-show="isShow">
-    <div class="re-option-title">
-      <div class="re-option-row" :class="className" @click='select'>
-        <div class="re-option-text">{{label}}</div>
+  <li class="x-option x-option-group" v-show="isShow">
+    <div class="x-option-title">
+      <div class="x-option-row" :class="className" @click='select'>
+        <div class="x-option-text">{{label}}</div>
       </div>
     </div>
     <ul>
@@ -20,7 +20,7 @@ const HALF = 1
 const NONE = 0
 
 export default {
-  name: 'OptionGroup',
+  name: 'xOptionGroup',
   mixins: [emit],
   props: {
     label: String
@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     select () {
-      this.broadcast('Option', 'groupValue', this.isCheck)
+      this.broadcast('xOption', 'groupValue', this.isCheck)
     }
   }
 }

@@ -1,23 +1,23 @@
 <template>
-  <div class="re-select">
+  <div class="x-select">
     <div
-      class="re-select-input"
+      class="x-select-input"
       @click.prevent="toggleMenu"
       @mouseover="mouseover"
       @mouseout="mouseout"
     >
-      <div class="re-select-array" v-show="multiple && checkArray.length">
-        <div class="re-select-array-content">
-          <span class="re-con-array">{{checkArray[0]}}</span>
-          <span class="re-clearable-array" @click.stop="clearValue">
-            <i class="re-icon-x"></i>
+      <div class="x-select-array" v-show="multiple && checkArray.length">
+        <div class="x-select-array-content">
+          <span class="x-con-array">{{checkArray[0]}}</span>
+          <span class="x-clearable-array" @click.stop="clearValue">
+            <i class="x-icon-x"></i>
           </span>
         </div>
         <span v-if="checkArray.length > 1">+ {{checkArray.length - 1}}</span>
       </div>
 
       <input
-        class="re-input"
+        class="x-input"
         readonly
         ref="selectInput"
         :class="{'is-focus': isActive}"
@@ -26,19 +26,19 @@
         :placeholder="placeholder"
       >
 
-      <transition-group name="fade" mode="out-in" tag="div" class="re-select-icon">
-        <div class="re-clearable" v-show="isClear" key="1" @click.stop="clearValue">
-          <i class="re-icon-x"></i>
+      <transition-group name="fade" mode="out-in" tag="div" class="x-select-icon">
+        <div class="x-clearable" v-show="isClear" key="1" @click.stop="clearValue">
+          <i class="x-icon-x"></i>
         </div>
-        <i class="re-arrow" key="2" v-show="!isClear" :class="{'is-active': isActive}"></i>
+        <i class="x-arrow" key="2" v-show="!isClear" :class="{'is-active': isActive}"></i>
       </transition-group>
     </div>
 
     <transition name="fade-up" mode="out-in">
-      <div class="re-select-option" :style="dropStyle" v-show="isActive" ref="optionEl">
-        <div class="re-select-search" v-if="search">
+      <div class="x-select-option" :style="dropStyle" v-show="isActive" ref="optionEl">
+        <div class="x-select-search" v-if="search">
           <Input
-            iconBefore="re-icon-search"
+            iconBefore="x-icon-search"
             size="sm"
             :clearable="true"
             v-model="searchKey"
@@ -57,7 +57,7 @@
 import emit from "../utils/emit";
 
 export default {
-  name: "Select",
+  name: "xSelect",
   mixins: [emit],
   provide() {
     return {

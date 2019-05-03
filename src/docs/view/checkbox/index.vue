@@ -2,13 +2,13 @@
   <div>
     <div class="topbar">
       <div class="page-title-box">
-        <h4 class="page-title">checkbox 多选框</h4>
+        <h4 class="page-title">x-checkbox 多选框</h4>
         <p class="page-title-decs">多选框</p>
       </div>
     </div>
     <div class="card-box">
       <span @click="fn">
-        <Checkbox v-model="checked" label="卧槽" @change="fv" />
+        <x-checkbox v-model="checked" label="卧槽" @change="fv" />
       </span>
       {{this.checked ? '选中' : '取消'}}
     </div>

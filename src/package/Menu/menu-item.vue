@@ -1,5 +1,5 @@
 <template>
-  <li class='re-menu-item' @click.stop='handleClick' :class="{'active': isActive}">
+  <li class='x-menu-item' @click.stop='handleClick' :class="{'active': isActive}">
     <slot></slot>
   </li>
 </template>
@@ -8,7 +8,7 @@
 import emit from '../utils/emit'
 
 export default {
-  name: 'MenuItem',
+  name: 'xMenuItem',
   mixins: [emit],
   props: {
     name: String,
@@ -23,7 +23,7 @@ export default {
     this.$on('on-update-active-name', (name) => {
       if (name === this.name) {
         this.isActive = true
-        this.dispatch('Submenu', 'item-click', this)
+        this.dispatch('xSubmenu', 'item-click', this)
         this.isRoute()
       } else {
         this.isActive = false
@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     handleClick (e) {
-      this.dispatch('Menu', 'item-click', this)
+      this.dispatch('xMenu', 'item-click', this)
       this.$emit('click', this)
       this.isRoute()
     },

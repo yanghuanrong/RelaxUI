@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'Row',
+  name: 'xRow',
   props: {
     gutter: {
       type: Number,
@@ -28,11 +28,11 @@ export default {
     }
     if (this.type === 'flex') {
       classList.class = [
-        're-row-flex',
-        this.justify !== 'start' ? `re-row-flex-${this.justify}` : '',
-        this.align !== 'top' ? `re-row-flex-${this.align}` : '']
+        'x-row-flex',
+        this.justify !== 'start' ? `x-row-flex-${this.justify}` : '',
+        this.align !== 'top' ? `x-row-flex-${this.align}` : '']
     } else {
-      classList.class = ['re-row']
+      classList.class = ['x-row']
     }
     return <div {...classList}>{this.$slots.default}</div>
   }

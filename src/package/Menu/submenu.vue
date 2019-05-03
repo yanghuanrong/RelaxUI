@@ -1,11 +1,11 @@
 <template>
-  <li class='re-submenu' @click.stop='handleClick' :class="{'is-opened': isActive}">
-    <div class="re-menu-title">
+  <li class='x-submenu' @click.stop='handleClick' :class="{'is-opened': isActive}">
+    <div class="x-menu-title">
       <slot name="title"></slot>
-      <i class="re-arrow" :class="{'is-active': isActive}"></i>
+      <i class="x-arrow" :class="{'is-active': isActive}"></i>
     </div>
     <slider-transition>
-      <ul class="re-menu" v-show="isActive">
+      <ul class="x-menu" v-show="isActive">
         <slot></slot>
       </ul>
     </slider-transition>
@@ -16,7 +16,7 @@
 import sliderTransition from '../transition/slider'
 
 export default {
-  name: 'Submenu',
+  name: 'xSubmenu',
   inject: ['rootMenu'],
   data () {
     return {

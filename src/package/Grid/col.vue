@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'Col',
+  name: 'xCol',
   props: {
     span: {
       type: Number,
@@ -28,16 +28,16 @@ export default {
     type.map(item => {
       if (typeof this[item] === 'number') {
         isSpan = false
-        classArr.push(`re-col-${item}-${this[item]}`)
+        classArr.push(`x-col-${item}-${this[item]}`)
       } else if (typeof this[item] === 'object') {
         isSpan = false
-        classArr.push(this[item].span ? `re-col-${item}-${this[item].span}` : '', this[item].offset ? `re-col-offset-${item}-${this[item].span}` : '')
+        classArr.push(this[item].span ? `x-col-${item}-${this[item].span}` : '', this[item].offset ? `x-col-offset-${item}-${this[item].span}` : '')
       }
     })
     if (isSpan) {
       classList.class = [
-        `re-col-sp-${this.span}`,
-        this.offset ? `re-col-offset-sp-${this.offset}` : ''
+        `x-col-sp-${this.span}`,
+        this.offset ? `x-col-offset-sp-${this.offset}` : ''
       ]
     } else {
       classList.class = classArr

@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'Button',
+  name: 'xButton',
   props: {
     type: {
       type: String,
@@ -35,8 +35,8 @@ export default {
   render() {
     const className = {
       class: [
-        this.type && 're-btn-' + this.type,
-        this.size !== '' || this.size ? 're-btn-' + this.size : '',
+        this.type && 'x-btn-' + this.type,
+        this.size !== '' || this.size ? 'x-btn-' + this.size : '',
         {
           'is-plain': this.plain,
           'is-round': this.round,
@@ -44,7 +44,7 @@ export default {
           'is-block': this.block,
           'disabled': this.disabled
         },
-        this.loading && 're-btn-loading'
+        this.loading && 'x-btn-loading'
       ]
     };
 
@@ -58,9 +58,9 @@ export default {
     };
 
     return (
-      <button type='button' {...listeners} class='re-btn' {...className}>
+      <button type='button' {...listeners} class='x-btn' {...className}>
         {this.icon !== '' ? <i class={this.icon} /> : ''}
-        {this.loading && <i class='re-icon-loader' />}
+        {this.loading && <i class='x-icon-loader' />}
         {slots.length ? <span>{this.$slots.default}</span> : ''}
       </button>
     );

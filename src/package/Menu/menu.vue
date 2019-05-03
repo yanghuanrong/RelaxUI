@@ -2,7 +2,7 @@
 import emit from '../utils/emit'
 
 export default {
-  name: 'Menu',
+  name: 'xMenu',
   mixins: [emit],
   data () {
     return {
@@ -35,8 +35,8 @@ export default {
   },
   methods: {
     updateActiveName () {
-      this.broadcast('Submenu', 'on-update-active-name', false)
-      this.broadcast('MenuItem', 'on-update-active-name', this.currentActiveName)
+      this.broadcast('xSubmenu', 'on-update-active-name', false)
+      this.broadcast('xMenuItem', 'on-update-active-name', this.currentActiveName)
     },
     handleItemClick (item) {
       this.currentActiveName = item.name
@@ -44,7 +44,7 @@ export default {
     }
   },
   render () {
-    return <ul class='re-menu'>{this.$slots.default}</ul>
+    return <ul class='x-menu'>{this.$slots.default}</ul>
   }
 }
 </script>

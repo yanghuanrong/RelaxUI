@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'Icon',
+  name: 'xIcon',
   props: {
     type: String
   },
