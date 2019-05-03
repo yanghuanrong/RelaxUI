@@ -13,12 +13,12 @@
     </div>
     <div class="tag-right" ref='right' :style="style">
       <div class="tag-display" @click='codeEv' v-if='R - 20 > L'>
-        <i class="re-icon-chevron-down" v-if='isShow'></i>
-        <i class="re-icon-chevron-up" v-if='!isShow'></i>
+        <i class="x-icon-chevron-down" v-if='isShow'></i>
+        <i class="x-icon-chevron-up" v-if='!isShow'></i>
       </div>
       <div class="tag-handle">
-        <i class="re-icon-copy" @click="copy" v-if="!isCopy"></i>
-        <i class="re-icon-check" v-if="isCopy"></i>
+        <i class="x-icon-copy" @click="copy" v-if="!isCopy"></i>
+        <i class="x-icon-check" v-if="isCopy"></i>
       </div>
       <div style="overflow:hidden">
       <div ref='textarea' class="textarea"><slot name='code'></slot></div>
