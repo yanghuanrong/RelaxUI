@@ -8,7 +8,7 @@
     </div>
     <div class="card-box">
       <x-row class="icon-list">
-        <x-col :sm='12' :md='8' :lg='6' :xl='4' v-for='(item,index) in icon' :key="index">
+        <x-col :sm='8' :md='6' :lg='4' v-for='(item,index) in icon' :key="index">
           <x-icon :type="'x-icon-'+item"/>
           <span class="icon-class">x-icon-{{item}}</span>
           <input type="text" class="icon-copy" :value='`<x-icon type="x-icon-${item}"/>`' readOnly/>
