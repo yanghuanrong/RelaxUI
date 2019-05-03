@@ -38,10 +38,9 @@ export default {
 
     let className = ['x-row']
     if (this.type === 'flex') {
-      className = className.concat([
-        'x-row-flex',
-        this.justify !== 'start' ? `x-row-flex-${this.justify}` : '',
-        this.align !== 'top' ? `x-row-flex-${this.align}` : ''])
+      className.push('x-row-flex')
+      this.justify && className.push(`x-row-flex-justify-${this.justify}`)
+      this.align && className.push(`x-row-flex-align-${this.align}`)
     }
     classList.class = className
 

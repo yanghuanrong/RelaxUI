@@ -195,35 +195,106 @@
       <textarea slot="code">
         <template>
           <x-row type="flex" justify="start">
-          <x-col :span="4">col-4</x-col>
-          <x-col :span="4">col-4</x-col>
-          <x-col :span="4">col-4</x-col>
-          <x-col :span="4">col-4</x-col>
+            <x-col :span="4">col-4</x-col>
+            <x-col :span="4">col-4</x-col>
+            <x-col :span="4">col-4</x-col>
+            <x-col :span="4">col-4</x-col>
+          </x-row>
+          <x-row type="flex" justify="end">
+            <x-col :span="4">col-4</x-col>
+            <x-col :span="4">col-4</x-col>
+            <x-col :span="4">col-4</x-col>
+            <x-col :span="4">col-4</x-col>
+          </x-row>
+          <x-row type="flex" justify="center">
+            <x-col :span="4">col-4</x-col>
+            <x-col :span="4">col-4</x-col>
+            <x-col :span="4">col-4</x-col>
+            <x-col :span="4">col-4</x-col>
+          </x-row>
+          <x-row type="flex" justify="space-between">
+            <x-col :span="4">col-4</x-col>
+            <x-col :span="4">col-4</x-col>
+            <x-col :span="4">col-4</x-col>
+            <x-col :span="4">col-4</x-col>
+          </x-row>
+          <x-row type="flex" justify="space-around">
+            <x-col :span="4">col-4</x-col>
+            <x-col :span="4">col-4</x-col>
+            <x-col :span="4">col-4</x-col>
+            <x-col :span="4">col-4</x-col>
+          </x-row>
+        </template>
+      </textarea>
+    </RelaxTag>
+
+    <RelaxTag name="flex对齐" class="x-row-style code-row-bg">
+      <template slot="temp">
+        <x-row type="flex" justify="center" align="top">
+          <x-col :span="4"><p style="height: 80px">col-4</p></x-col>
+          <x-col :span="4"><p style="height: 30px">col-4</p></x-col>
+          <x-col :span="4"><p style="height: 100px">col-4</p></x-col>
+          <x-col :span="4"><p style="height: 60px">col-4</p></x-col>
         </x-row>
-        <x-row type="flex" justify="end">
-          <x-col :span="4">col-4</x-col>
-          <x-col :span="4">col-4</x-col>
-          <x-col :span="4">col-4</x-col>
-          <x-col :span="4">col-4</x-col>
+        <x-row type="flex" justify="center" align="center">
+          <x-col :span="4"><p style="height: 80px">col-4</p></x-col>
+          <x-col :span="4"><p style="height: 30px">col-4</p></x-col>
+          <x-col :span="4"><p style="height: 100px">col-4</p></x-col>
+          <x-col :span="4"><p style="height: 60px">col-4</p></x-col>
         </x-row>
-        <x-row type="flex" justify="center">
-          <x-col :span="4">col-4</x-col>
-          <x-col :span="4">col-4</x-col>
-          <x-col :span="4">col-4</x-col>
-          <x-col :span="4">col-4</x-col>
+        <x-row type="flex" justify="center" align="bottom">
+          <x-col :span="4"><p style="height: 80px">col-4</p></x-col>
+          <x-col :span="4"><p style="height: 30px">col-4</p></x-col>
+          <x-col :span="4"><p style="height: 100px">col-4</p></x-col>
+          <x-col :span="4"><p style="height: 60px">col-4</p></x-col>
         </x-row>
-        <x-row type="flex" justify="space-between">
-          <x-col :span="4">col-4</x-col>
-          <x-col :span="4">col-4</x-col>
-          <x-col :span="4">col-4</x-col>
-          <x-col :span="4">col-4</x-col>
+      </template>
+      <template slot="desc">
+        通过给row设置参数justify为不同的值，来定义子元素的排布方式。在flex模式下有效。
+      </template>
+      <textarea slot="code">
+        <template>
+          <x-row type="flex" justify="center" align="top">
+            <x-col :span="4"><p style="height: 80px">col-4</p></x-col>
+            <x-col :span="4"><p style="height: 30px">col-4</p></x-col>
+            <x-col :span="4"><p style="height: 100px">col-4</p></x-col>
+            <x-col :span="4"><p style="height: 60px">col-4</p></x-col>
+          </x-row>
+          <x-row type="flex" justify="center" align="center">
+            <x-col :span="4"><p style="height: 80px">col-4</p></x-col>
+            <x-col :span="4"><p style="height: 30px">col-4</p></x-col>
+            <x-col :span="4"><p style="height: 100px">col-4</p></x-col>
+            <x-col :span="4"><p style="height: 60px">col-4</p></x-col>
+          </x-row>
+          <x-row type="flex" justify="center" align="bottom">
+            <x-col :span="4"><p style="height: 80px">col-4</p></x-col>
+            <x-col :span="4"><p style="height: 30px">col-4</p></x-col>
+            <x-col :span="4"><p style="height: 100px">col-4</p></x-col>
+            <x-col :span="4"><p style="height: 60px">col-4</p></x-col>
+          </x-row>
+        </template>
+      </textarea>
+    </RelaxTag>
+
+    <RelaxTag name="响应式布局" class="x-row-style code-row-bg">
+      <template slot="temp">
+        <x-row>
+          <x-col :xs="2" :sm="4" :md="6" :lg="8">col</x-col>
+          <x-col :xs="20" :sm="16" :md="12" :lg="8">col</x-col>
+          <x-col :xs="2" :sm="4" :md="6" :lg="8">col</x-col>
         </x-row>
-        <x-row type="flex" justify="space-around">
-          <x-col :span="4">col-4</x-col>
-          <x-col :span="4">col-4</x-col>
-          <x-col :span="4">col-4</x-col>
-          <x-col :span="4">col-4</x-col>
-        </x-row>
+      </template>
+      <template slot="desc">
+        参照 Bootstrap 的 响应式设计，预设四个响应尺寸：xs sm md lg<br>
+        调整浏览器尺寸来查看效果。
+      </template>
+      <textarea slot="code">
+        <template>
+          <x-row>
+            <x-col :xs="2" :sm="4" :md="6" :lg="8">col</x-col>
+            <x-col :xs="20" :sm="16" :md="12" :lg="8">col</x-col>
+            <x-col :xs="2" :sm="4" :md="6" :lg="8">col</x-col>
+          </x-row>
         </template>
       </textarea>
     </RelaxTag>

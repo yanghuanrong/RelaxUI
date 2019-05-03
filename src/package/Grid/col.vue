@@ -14,10 +14,10 @@ export default {
     },
     offset: Number,
     order: Number,
+    xs: [Number, Object],
     sm: [Number, Object],
     md: [Number, Object],
-    lg: [Number, Object],
-    xl: [Number, Object]
+    lg: [Number, Object]
   },
   render () {
     const Row = this.rootRow
@@ -25,7 +25,7 @@ export default {
     const classList = {}
     const style = {}
     const className = []
-    const type = ['sm', 'md', 'lg', 'xl']
+    const type = ['sm', 'md', 'lg', 'xs']
     let isSpan = true
 
     if (Row.gutter) {

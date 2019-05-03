@@ -27,35 +27,35 @@
   display: flex;
   flex-wrap: wrap;
 
-  &.x-row-flex-start {
+  &.x-row-flex-justify-start {
     justify-content: flex-start;
   }
 
-  &.x-row-flex-center {
-    justify-content: flex-center;
+  &.x-row-flex-justify-center {
+    justify-content: center;
   }
 
-  &.x-row-flex-end {
+  &.x-row-flex-justify-end {
     justify-content: flex-end;
   }
 
-  &.x-row-flex-space-between {
+  &.x-row-flex-justify-space-between {
     justify-content: space-between;
   }
 
-  &.x-row-flex-space-around {
+  &.x-row-flex-justify-space-around {
     justify-content: space-around;
   }
 
-  &.x-row-flex-top {
+  &.x-row-flex-align-top {
     align-items: flex-start;
   }
 
-  &.x-row-flex-center {
+  &.x-row-flex-align-center {
     align-items: center;
   }
 
-  &.x-row-flex-bottom {
+  &.x-row-flex-align-bottom {
     align-items: flex-end;
   }
 
@@ -74,21 +74,21 @@
 .x-col-offset(sp,23);
 
 @media (min-width: 576px) {
+  .x-col(24,xs,24);
+  .x-col-offset(xs,23);
+}
+
+@media (min-width: 768px) {
   .x-col(24,sm,24);
   .x-col-offset(sm,23);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .x-col(24,md,24);
   .x-col-offset(md,23);
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .x-col(24,lg,24);
   .x-col-offset(lg,23);
-}
-
-@media (min-width: 1200px) {
-  .x-col(24,xl,24);
-  .x-col-offset(xl,23);
 }
