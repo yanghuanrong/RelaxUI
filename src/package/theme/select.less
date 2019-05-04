@@ -2,9 +2,32 @@
 
 .x-select {
   position: relative;
+  display: inline-block;
 
   .x-select-input{
     position: relative;
+    
+    &.x-select-input-sm{
+      .x-input{
+        padding: 4px 20px 4px 6px;
+      }
+    }
+
+    &.x-select-input-lg{
+      .x-input{
+        padding: 12px 30px 12px 15px;
+        font-size: 14px
+      }
+    }
+
+    &.x-select-input-disabled{
+      cursor: not-allowed;
+
+      .x-input{
+        cursor: not-allowed;
+      }
+    }
+
     &>.x-input{
       cursor: pointer;
     }
@@ -25,7 +48,7 @@
 
       i{
         transition: all 0.25s ease-in-out;
-        color: @border;
+        color: darken(@border, 20%);
       }
 
       right: 0;
@@ -33,7 +56,7 @@
 
       &:hover{
         i{
-          color: darken(@border, 20%);
+          color: darken(@border, 60%);
         }
       }
     }
@@ -95,26 +118,22 @@
     }
   }
 
+  // 单选模式
   .x-select-option{
     z-index: 2;
     position: absolute;
     background-color: #FFF;
     border-radius: 4px;
-    box-shadow: 0 5px 10px @border;
+    box-shadow: 0 2px 8px fade(#000, 10%);
     overflow: hidden;
 
     & ul{
-      max-height: 250px;
+      max-height: 220px;
       overflow-y: auto;
     }
 
     .x-option{
       list-style: none;
-    }
-
-
-    .x-select-search{
-      padding:5px 10px;
     }
 
     // 选项框
@@ -124,93 +143,25 @@
       position: relative;
       display: flex;
       align-items: center;
-      padding: 6px 12px 6px 35px;
+      padding: 6px 12px;
 
       &:hover{
         background-color: fade(@primary, 10%)
-      }
-
-      &::before {
-        -o-transition: 0.3s ease-in-out;
-        -webkit-transition: 0.3s ease-in-out;
-        background-color: @white;
-        border-radius: 3px;
-        border: 2px solid darken(@border, 10%);
-        content: "";
-        display: inline-block;
-        height: 18px;
-        left: 10px;
-        position: absolute;
-        transition: 0.3s ease-in-out;
-        width: 18px;
-        outline: none !important;
-      }
-      &::after {
-        color: @border;
-        display: inline-block;
-        font-size: 11px;
-        height: 18px;
-        width: 18px;
-        left: 10px;
-        padding-left: 3px;
-        padding-top: 2px;
-        position: absolute;
-        top: 0;
       }
 
       // 选中状态
       &.select{
         color: @primary;
         background-color: fade(@border, 10%);
-
-        &::before {
-          background-color: @primary;
-          border-color: @primary;
-        }
-        &::after {
-          content: "";
-          position: absolute;
-          top: 10px;
-          left: 17px;
-          display: table;
-          width: 5px;
-          height: 10px;
-          border: 1px solid @white;
-          border-top-width: 0;
-          border-left-width: 0;
-          transform: rotate(45deg);
-        }
+        font-weight: bold;
       }
 
       // 禁用状态
       &.is-disabled{
         cursor: no-drop;
-        color: fade(@text, 60%);
+        color: fade(@text, 40%);
         &:hover{
           background-color: initial;
-        }
-        .x-option-row{
-          &::before {
-            border-color: darken(@border, 0.5%);
-            background-color: fade(@border, 30%);
-          }
-        }
-      }
-
-      // 半选状态
-      &.is-check{
-        &::before {
-          background-color: @primary;
-          border-color: @primary;
-        }
-        &::after {
-          content: "";
-          position: absolute;
-          top: 15px;
-          left: 15px;
-          width: 8px;
-          height: 1px;
-          background-color: @white;
         }
       }
 
@@ -223,10 +174,163 @@
     }
   }
 
-
   .x-option-group{
+    .x-option-title{
+      .x-option-row{
+        cursor: auto;
+        color: #aaa;
+        &:hover{
+          background-color: inherit;
+        }
+      }
+    }
     ul{
-      padding-left: 25px;
+      li {
+        .x-option-row{
+          padding-left: 22px;
+        }
+      }
     }
   }
+
+  .x-select-search{
+    padding:5px 10px;
+  }
+
+  .list-complete-enter, .list-complete-leave-to
+  /* .list-complete-leave-active for below version 2.1.8 */ {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  .list-complete-leave-active {
+    position: absolute;
+  }
+  
+  // .x-select-option{
+  //   z-index: 2;
+  //   position: absolute;
+  //   background-color: #FFF;
+  //   border-radius: 4px;
+  //   box-shadow: 0 5px 10px @border;
+  //   overflow: hidden;
+
+  //   & ul{
+  //     max-height: 250px;
+  //     overflow-y: auto;
+  //   }
+
+  //   .x-option{
+  //     list-style: none;
+  //   }
+
+
+
+
+  //   // 选项框
+  //   .x-option-row{
+  //     cursor: pointer;
+  //     padding-left: 25px;
+  //     position: relative;
+  //     display: flex;
+  //     align-items: center;
+  //     padding: 6px 12px 6px 35px;
+
+  //     &:hover{
+  //       background-color: fade(@primary, 10%)
+  //     }
+
+  //     &::before {
+  //       -o-transition: 0.3s ease-in-out;
+  //       -webkit-transition: 0.3s ease-in-out;
+  //       background-color: @white;
+  //       border-radius: 3px;
+  //       border: 2px solid darken(@border, 10%);
+  //       content: "";
+  //       display: inline-block;
+  //       height: 18px;
+  //       left: 10px;
+  //       position: absolute;
+  //       transition: 0.3s ease-in-out;
+  //       width: 18px;
+  //       outline: none !important;
+  //     }
+  //     &::after {
+  //       color: @border;
+  //       display: inline-block;
+  //       font-size: 11px;
+  //       height: 18px;
+  //       width: 18px;
+  //       left: 10px;
+  //       padding-left: 3px;
+  //       padding-top: 2px;
+  //       position: absolute;
+  //       top: 0;
+  //     }
+
+  //     // 选中状态
+  //     &.select{
+  //       color: @primary;
+  //       background-color: fade(@border, 10%);
+
+  //       &::before {
+  //         background-color: @primary;
+  //         border-color: @primary;
+  //       }
+  //       &::after {
+  //         content: "";
+  //         position: absolute;
+  //         top: 10px;
+  //         left: 17px;
+  //         display: table;
+  //         width: 5px;
+  //         height: 10px;
+  //         border: 1px solid @white;
+  //         border-top-width: 0;
+  //         border-left-width: 0;
+  //         transform: rotate(45deg);
+  //       }
+  //     }
+
+  //     // 禁用状态
+  //     &.is-disabled{
+  //       cursor: no-drop;
+  //       color: fade(@text, 60%);
+  //       &:hover{
+  //         background-color: initial;
+  //       }
+  //       .x-option-row{
+  //         &::before {
+  //           border-color: darken(@border, 0.5%);
+  //           background-color: fade(@border, 30%);
+  //         }
+  //       }
+  //     }
+
+  //     // 半选状态
+  //     &.is-check{
+  //       &::before {
+  //         background-color: @primary;
+  //         border-color: @primary;
+  //       }
+  //       &::after {
+  //         content: "";
+  //         position: absolute;
+  //         top: 15px;
+  //         left: 15px;
+  //         width: 8px;
+  //         height: 1px;
+  //         background-color: @white;
+  //       }
+  //     }
+
+  //     .x-option-text{
+  //       white-space:nowrap;
+  //       overflow: hidden;
+  //       text-overflow: ellipsis;
+  //     }
+
+  //   }
+  // }
+
+
 }

@@ -85,14 +85,14 @@
 
       <RelaxTag name="自定义时长">
         <template slot="temp">
-          <x-button @click="time">打开普通提醒</x-button>
+          <x-button @click="time">手动关闭</x-button>
         </template>
         <template slot="desc">
           自定义时长，为 0 则不自动关闭
         </template>
         <textarea slot="code">
           <template>
-            <x-button @click="open">打开普通提醒</x-button>
+            <x-button @click="open">手动关闭</x-button>
           </template>
           <script>
           export default {
@@ -102,6 +102,31 @@
                   title: 'Notice 通知提醒',
                   desc: '我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述',
                   duration: 0
+                })
+              }
+            }
+          }
+          </script>
+        </textarea>
+      </RelaxTag>
+
+      <RelaxTag name="仅显示标题">
+        <template slot="temp">
+          <x-button @click="openNotice">打开提醒(仅标题)</x-button>
+        </template>
+        <template slot="desc">
+          title 为必填项
+        </template>
+        <textarea slot="code">
+          <template>
+            <x-button @click="openNotice">打开提醒(仅标题)</x-button>
+          </template>
+          <script>
+          export default {
+            methods: {
+              openNotice(){
+                this.$notice.success({
+                  title: 'Notice 通知提醒'
                 })
               }
             }
@@ -151,6 +176,11 @@ export default {
         title: 'Notice 通知提醒',
         desc: '我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述',
         duration: 0
+      })
+    },
+    openNotice(){
+      this.$notice.info({
+        title: 'Notice 通知提醒'
       })
     }
   }

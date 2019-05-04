@@ -2,6 +2,7 @@
   <div class="x-select">
     <div
       class="x-select-input"
+      :class="classNames"
       @click.prevent="toggleMenu"
       @mouseover="mouseover"
       @mouseout="mouseout"
@@ -21,6 +22,7 @@
         readonly
         ref="selectInput"
         :class="{'is-focus': isActive}"
+        :disabled = 'disabled'
         @focus.stop="focus"
         :value="checkValue"
         :placeholder="placeholder"
@@ -37,7 +39,7 @@
     <transition name="fade-up" mode="out-in">
       <div class="x-select-option" :style="dropStyle" v-show="isActive" ref="optionEl">
         <div class="x-select-search" v-if="search">
-          <Input
+          <x-input
             iconBefore="x-icon-search"
             size="sm"
             :clearable="true"
@@ -56,6 +58,8 @@
 <script>
 import emit from "../utils/emit";
 
+let TimeId = null;
+
 export default {
   name: "xSelect",
   mixins: [emit],
@@ -65,8 +69,11 @@ export default {
     };
   },
   props: {
-    value: {
-      required: true
+    value: [String, Array],
+    size: {
+      type: String,
+      default: 'md',
+      validator: value => ['lg', 'sm', 'md'].some(item => value === item)
     },
     multiple: Boolean,
     placeholder: String,
@@ -81,8 +88,23 @@ export default {
       dropStyle: null,
       isfocus: false,
       isClear: false,
-      searchKey: ""
+      searchKey: "",
+      dim: "",
     };
+  },
+  computed: {
+    classNames(){
+      let className = ''
+      if(this.size) {
+        className += ' x-select-input-'+this.size
+      }
+
+      if(this.disabled){
+        className += ' x-select-input-disabled'
+      }
+
+      return className
+    }
   },
   mounted() {
     document.addEventListener("click", e => {
@@ -105,18 +127,19 @@ export default {
         this.close();
         this.$emit("input", this.checkValue);
       }
-    })
+    });
+
+    const search = this.search;
+    if (search) {
+      this.dim = "x" + search.replace(search[0], search[0].toUpperCase());
+    }
 
   },
   methods: {
     getRect() {
-      const SPACE = 5
+      const SPACE = 5;
       const Rect = this.$el.getBoundingClientRect();
-      const PageH = document.body.clientHeight
-      const OptionH = this.$refs.optionEl.clientHeight
-      const ShowH = Rect.top + Rect.height + SPACE + OptionH
-
-      const T = PageH > ShowH ? ~~(Rect.height) + 5 : -(SPACE + OptionH)
+      const T = ~~Rect.height + 5;
 
       this.dropStyle = {
         minWidth: Rect.width + "px",
@@ -124,11 +147,13 @@ export default {
       };
     },
     toggleMenu() {
+      if(!this.disabled) {
       if (this.isfocus && this.isActive) {
         this.close();
       } else {
-        this.show()
-        this.getRect()
+        this.show();
+        this.getRect();
+      }
       }
     },
     close() {
@@ -161,10 +186,13 @@ export default {
         emitValue = this.checkValue;
         this.$emit("input", (this.checkValue = ""));
       }
-      this.broadcast("Option", "clearValue", emitValue);
+      this.broadcast("xOption", "clearValue", emitValue);
     },
     searchEv() {
-      this.broadcast(this.search, "matched", this.searchKey);
+      clearTimeout(TimeId);
+      TimeId = setTimeout(() => {
+        this.broadcast(this.dim, "matched", this.searchKey);
+      }, 100);
     }
   }
 };

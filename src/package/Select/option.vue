@@ -8,7 +8,7 @@
 
 <script>
 import emit from '../utils/emit'
-import { setTimeout, clearTimeout } from 'timers';
+
 export default {
   name: 'xOption',
   inject: ['rootSelect'],
@@ -36,7 +36,6 @@ export default {
       if (this.value === value) {
         this.isActive = false
       }
-      this.dispatch('xOptionGroup', 'select', {label: this.value, check: this.isActive})
     })
     this.$on('groupValue', (status) => {
       if (this.disabled) {
@@ -59,16 +58,10 @@ export default {
           break
         default:
       }
-      
     })
-    let matchedTid = null
     this.$on('matched', (param) => {
-      clearTimeout(matchedTid)
-      matchedTid = setTimeout(() => {
         this.isShow = !(this.value.indexOf(param) === -1)
         this.dispatch('xOptionGroup', 'groupshow', true)
-      }, 100)
-      
     })
   },
   methods: {
@@ -85,7 +78,6 @@ export default {
     },
     emitParent () {
       this.dispatch('xSelect', 'select', {label: this.value, check: this.isActive})
-      this.dispatch('xOptionGroup', 'select', {label: this.value, check: this.isActive})
     }
   }
 }

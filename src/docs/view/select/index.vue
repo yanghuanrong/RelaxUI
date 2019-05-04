@@ -6,27 +6,43 @@
         <p class="page-title-decs">下拉选择器</p>
       </div>
     </div>
+    <div class="components-select-demo">
 
     <RelaxTag name="单选">
       <template slot="temp">
-        <x-select v-model='value1' placeholder="请选择物种">
-          <x-option value='蓝天'></x-option>
-          <x-option value='白云'></x-option>
-          <x-option value='草地'></x-option>
-          <x-option value='树木' disabled></x-option>
+        <x-select v-model='value1' placeholder="请选择语言">
+          <x-option value='Javascript'>Javascript</x-option>
+          <x-option value='C++'>C++</x-option>
+          <x-option value='PHP' disabled>PHP</x-option>
+          <x-option value='Java'>Java</x-option>
         </x-select>
+
+        <x-select placeholder="请选择语言" disabled>
+          <x-option value='Javascript'>Javascript</x-option>
+          <x-option value='C++'>C++</x-option>
+          <x-option value='PHP' disabled>PHP</x-option>
+          <x-option value='Java'>Java</x-option>
+        </x-select>
+
         <div class="m-t-sm">选中的值： {{value1}}</div>
       </template>
       <template slot="desc">
-        <i>v-model</i>的值为当前被选中的<i>x-option</i>的 value 属性值
+        <i>v-model</i>的值为当前被选中的<i>option</i>的 value 属性值
       </template>
       <textarea slot="code">
         <template>
-          <x-select v-model='value1' placeholder="请选择物种">
-            <x-option value='蓝天'></x-option>
-            <x-option value='白云'></x-option>
-            <x-option value='草地'></x-option>
-            <x-option value='树木' disabled></x-option>
+          <x-select v-model='value1' placeholder="请选择语言">
+            <x-option value='Javascript'></x-option>
+            <x-option value='C++'></x-option>
+            <x-option value='PHP' disabled></x-option>
+            <x-option value='Java'></x-option>
+          </x-select>
+
+          <x-select placeholder="请选择语言" disabled>
+            <x-option value='Javascript'>Javascript</x-option>
+            <x-option value='C++'>C++</x-option>
+            <x-option value='PHP' disabled>PHP</x-option>
+            <x-option value='Java'>Java</x-option>
           </x-select>
         </template>
 
@@ -43,11 +59,11 @@
     </RelaxTag>
     <RelaxTag name="多选">
       <template slot="temp">
-        <x-select v-model='value2' multiple placeholder="请选择人种">
-          <x-option value='中华人中华人中华人中华人'></x-option>
-          <x-option value='法国人'></x-option>
-          <x-option value='赛亚人'></x-option>
-          <x-option value='火星人' disabled></x-option>
+        <x-select v-model='value2' multiple placeholder="请选择语言">
+          <x-option value='Javascript'></x-option>
+          <x-option value='C++'></x-option>
+          <x-option value='PHP' disabled></x-option>
+          <x-option value='Java'></x-option>
         </x-select>
         <div class="m-t-sm">选中的值： {{value2}}</div>
       </template>
@@ -56,11 +72,11 @@
       </template>
       <textarea slot="code">
         <template>
-          <x-select v-model='value2' multiple placeholder="请选择人种">
-            <x-option value='中华人中华人中华人中华人'></x-option>
-            <x-option value='法国人'></x-option>
-            <x-option value='赛亚人'></x-option>
-            <x-option value='火星人' disabled></x-option>
+          <x-select v-model='value2' multiple placeholder="请选择语言">
+            <x-option value='Javascript'></x-option>
+            <x-option value='C++'></x-option>
+            <x-option value='PHP' disabled></x-option>
+            <x-option value='Java'></x-option>
           </x-select>
         </template>
 
@@ -77,16 +93,16 @@
     </RelaxTag>
     <RelaxTag name="分组多选">
       <template slot="temp">
-        <x-select v-model='value3' multiple placeholder="请选择颜色">
-          <x-optionGroup label="绿色">
-            <x-option value='深绿'></x-option>
-            <x-option value='淡绿'></x-option>
-            <x-option value='草绿'></x-option>
+        <x-select v-model='value3' multiple placeholder="请选择">
+          <x-optionGroup label="Javascript">
+            <x-option value='JQuery'></x-option>
+            <x-option value='Vue'></x-option>
+            <x-option value='React'></x-option>
           </x-optionGroup>
-          <x-optionGroup label="红色">
-            <x-option value='深红'></x-option>
-            <x-option value='玫红'></x-option>
-            <x-option value='黄色' disabled></x-option>
+          <x-optionGroup label="CSS">
+            <x-option value='Less'></x-option>
+            <x-option value='Sass'></x-option>
+            <x-option value='Scss' disabled></x-option>
           </x-optionGroup>
         </x-select>
         <div class="m-t-sm">选中的值： {{value3}}</div>
@@ -96,16 +112,17 @@
       </template>
       <textarea slot="code">
         <template>
-          <x-select v-model='value3' multiple placeholder="请选择颜色">
-            <x-optionGroup label="绿色">
-              <x-option value='深绿'></x-option>
-              <x-option value='淡绿'></x-option>
-              <x-option value='草绿'></x-option>
+          <x-select v-model='value3' multiple placeholder="请选择">
+            <x-optionGroup label="Javascript">
+              <x-option value='JQuery'></x-option>
+              <x-option value='Vue'></x-option>
+              <x-option value='React'></x-option>
             </x-optionGroup>
-            <x-optionGroup label="红色">
-              <x-option value='深红'></x-option>
-              <x-option value='玫红'></x-option>
-              <x-option value='黄色' disabled></x-option>
+            <x-optionGroup label="CSS">
+              <x-option value='Less'></x-option>
+              <x-option value='Sass'></x-option>
+              <x-option value='Scss' disabled></x-option>
+            </x-optionGroup>
             </x-optionGroup>
           </x-select>
         </template>
@@ -123,35 +140,36 @@
     </RelaxTag>
     <RelaxTag name="搜索维度">
       <template slot="temp">
-        <x-select v-model='value4' multiple search="x-option" placeholder="请选择颜色">
-          <x-optionGroup label="绿色">
-            <x-option value='深绿'></x-option>
-            <x-option value='淡绿'></x-option>
-            <x-option value='草绿'></x-option>
+        <x-select v-model='value4' multiple search="option" placeholder="请选择">
+          <x-optionGroup label="Javascript">
+            <x-option value='JQuery'></x-option>
+            <x-option value='Vue'></x-option>
+            <x-option value='React'></x-option>
           </x-optionGroup>
-          <x-optionGroup label="红色">
-            <x-option value='深红'></x-option>
-            <x-option value='玫红'></x-option>
-            <x-option value='黄色' disabled></x-option>
+          <x-optionGroup label="CSS">
+            <x-option value='Less'></x-option>
+            <x-option value='Sass'></x-option>
+            <x-option value='Scss' disabled></x-option>
           </x-optionGroup>
         </x-select>
         <div class="m-t-sm">选中的值： {{value4}}</div>
       </template>
       <template slot="desc">
-        添加<i>search</i>属性将开启搜索， <i>search</i>可选值为<i>x-option</i> <i>x-optionGroup</i>，对应搜索的不同维度
+        添加<i>search</i>属性将开启搜索， <i>search</i>可选值为<i>option</i> <i>optionGroup</i>，对应搜索的不同维度 <br>
       </template>
       <textarea slot="code">
         <template>
-          <x-select v-model='value4' multiple search="x-option" placeholder="请选择颜色">
-            <x-optionGroup label="绿色">
-              <x-option value='深绿'></x-option>
-              <x-option value='淡绿'></x-option>
-              <x-option value='草绿'></x-option>
+          <x-select v-model='value4' multiple search="option" placeholder="请选择颜色">
+            <x-optionGroup label="Javascript">
+              <x-option value='JQuery'></x-option>
+              <x-option value='Vue'></x-option>
+              <x-option value='React'></x-option>
             </x-optionGroup>
-            <x-optionGroup label="红色">
-              <x-option value='深红'></x-option>
-              <x-option value='玫红'></x-option>
-              <x-option value='黄色' disabled></x-option>
+            <x-optionGroup label="CSS">
+              <x-option value='Less'></x-option>
+              <x-option value='Sass'></x-option>
+              <x-option value='Scss' disabled></x-option>
+            </x-optionGroup>
             </x-optionGroup>
           </x-select>
         </template>
@@ -167,6 +185,53 @@
         </script>
       </textarea>
     </RelaxTag>
+
+    <RelaxTag name="不同尺寸">
+      <template slot="temp">
+        <x-select placeholder="请选择语言" size="sm">
+          <x-option value='Javascript'></x-option>
+          <x-option value='C++'></x-option>
+          <x-option value='PHP' disabled></x-option>
+          <x-option value='Java'></x-option>
+        </x-select>
+        <x-select placeholder="请选择语言" size="md">
+          <x-option value='Javascript'></x-option>
+          <x-option value='C++'></x-option>
+          <x-option value='PHP' disabled></x-option>
+          <x-option value='Java'></x-option>
+        </x-select>
+        <x-select placeholder="请选择语言" size="lg">
+          <x-option value='Javascript'></x-option>
+          <x-option value='C++'></x-option>
+          <x-option value='PHP' disabled></x-option>
+          <x-option value='Java'></x-option>
+        </x-select>
+      </template>
+      <template slot="desc">
+        按钮根据<i>size</i>来变换尺寸，提供了<i>sm</i><i>md</i><i>lg</i>和默认的三种
+      </template>
+      <textarea slot="code">
+        <template>
+          <x-select v-model='value2' multiple placeholder="请选择语言">
+            <x-option value='Javascript'></x-option>
+            <x-option value='C++'></x-option>
+            <x-option value='PHP' disabled></x-option>
+            <x-option value='Java'></x-option>
+          </x-select>
+        </template>
+
+        <script>
+        export default {
+          data () {
+            return {
+              value2: ''
+            }
+          }
+        }
+        </script>
+      </textarea>
+    </RelaxTag>
+  </div>
   </div>
 </template>
 

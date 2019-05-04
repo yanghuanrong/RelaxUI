@@ -148,16 +148,16 @@
     <RelaxTag name="按钮尺寸">
       <template slot="temp">
         <x-button type='primary' size='sm'>small</x-button>
-        <x-button type='warning'>normal</x-button>
+        <x-button type='warning' size='md'>default</x-button>
         <x-button size='lg'>large</x-button>
       </template>
       <template slot="desc">
-        按钮根据<i>size</i>来变换尺寸，提供了<i>sm</i><i>lg</i>和默认的三种
+        按钮根据<i>size</i>来变换尺寸，提供了<i>sm</i><i>md</i><i>lg</i>和默认的三种
       </template>
       <textarea slot="code">
         <template>
           <x-button type='primary' size='sm'>small</x-button>
-          <x-button type='warning'>normal</x-button>
+          <x-button type='warning' size='md'>default</x-button>
           <x-button size='lg'>large</x-button>
         </template>
       </textarea>

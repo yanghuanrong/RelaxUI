@@ -14,11 +14,11 @@ function createNoticeWrap() {
 }
 
 function NoticeCreate(props, type) {
-  if (!isObject(props)) {
+  if (!isObject(props) && !props.title) {
     return
   }
   props.type = type
-  
+
   if (!NoticeWrap) {
     NoticeWrap = createNoticeWrap()
   }
