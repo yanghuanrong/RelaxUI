@@ -250,7 +250,7 @@
         </x-row>
       </template>
       <template slot="desc">
-        通过给row设置参数justify为不同的值，来定义子元素的排布方式。在flex模式下有效。
+        通过给row设置参数align为不同的值，来定义子元素在垂直方向上的排布方式。在flex模式下有效。
       </template>
       <textarea slot="code">
         <template>
