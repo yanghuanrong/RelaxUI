@@ -1,5 +1,5 @@
 <template>
-  <transition name="notice-move" v-on:after-leave="close" appear>
+  <transition name="notice-move" v-on:before-leave="beforeLeave" v-on:leave="leave" v-on:after-leave="close" appear>
     <div class="x-notice-content-rect" v-show="state">
       <div class="x-notice-content">
         <span class="x-notice-icon">
@@ -16,7 +16,7 @@
   </transition>
 </template>
 <script>
-import { setTimeout } from "timers";
+import { addClass, delClass } from "../utils/dom";
 export default {
   name: "message",
   data() {
@@ -47,10 +47,35 @@ export default {
     }
   },
   methods: {
+    beforeLeave(el) {
+      if (!el.dataset) {
+        el.dataset = {};
+      }
+      el.dataset.oldPaddingTop = el.style.paddingTop;
+      el.dataset.oldPaddingBottom = el.style.paddingBottom;
+      el.dataset.oldOverflow = el.style.overflow;
+
+      el.style.height = el.scrollHeight + "px";
+      el.style.overflow = "hidden";
+    },
+    leave(el) {
+      if (el.scrollHeight !== 0) {
+        addClass(el, "transition");
+        el.style.height = 0;
+        el.style.paddingTop = 0;
+        el.style.paddingBottom = 0;
+      }
+    },
     hide() {
       this.state = false;
     },
-    close() {
+    close(el) {
+      delClass(el, "transition");
+      el.style.height = "";
+      el.style.overflow = el.dataset.oldOverflow;
+      el.style.paddingTop = el.dataset.oldPaddingTop;
+      el.style.paddingBottom = el.dataset.oldPaddingBottom;
+
       if (!this.state) {
         this.$emit("onClose");
       }

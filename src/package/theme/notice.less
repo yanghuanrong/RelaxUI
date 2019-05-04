@@ -57,7 +57,7 @@
 }
 
 .notice-move-enter-active,.notice-move-leave-active{
-  transition: all .2s ease;
+  transition: all .2s linear;
   transform-origin: center top;
 }
 
@@ -72,6 +72,6 @@
 
 .notice-move-leave-to{
   opacity: 0;
-  transform: translateY(-10%);
+  height: 0;
 }
 
