@@ -1,0 +1,77 @@
+.x-notice-wrap{
+  position: fixed;
+  z-index: 1000;
+  top: 24px;
+  right: 40px;
+  bottom: auto;
+
+  .x-notice-content-rect{
+    padding: 10px 24px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px fade(#000, 15%);
+    background: #fff;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    overflow: hidden;
+    width: 360px;
+    
+    .x-notice-content{
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .x-notice-icon{
+      position: absolute;
+      left: 0;
+      top: -2px;
+      font-size: 18px;
+    }
+
+    .x-notice-title{
+      font-size: 14px;
+      color: #333;
+    }
+
+    .x-notice-description{
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+      line-height: 20px;
+    }
+
+    .x-notice-close{
+      position: absolute;
+      right: 0;
+      top: 2px;
+      color: #999;
+      cursor: pointer;
+      transition: color .2s;
+      font-size: 14px;
+
+      &:hover{
+        color: #666;
+        text-shadow: 0 0 12px fade(#000, 15%);
+      }
+    }
+  }
+}
+
+.notice-move-enter-active,.notice-move-leave-active{
+  transition: all .2s ease;
+  transform-origin: center top;
+}
+
+.notice-move-enter{
+  opacity: 0;
+  transform: translateX(20%);
+}
+
+.notice-move-enter-to{
+  transform: translateX(0);
+}
+
+.notice-move-leave-to{
+  opacity: 0;
+  transform: translateY(-10%);
+}
+

@@ -1,12 +1,11 @@
 body{
   margin: 0;
   overflow-x: hidden;
-  font-size: 14px;
+  font-size: 12px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  text-align: left;
 }
 
 textarea,input{
@@ -28,7 +27,7 @@ html {
 
 html{
   font-family: Lato,sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -44,7 +43,26 @@ html{
 @import "checkbox";
 @import "select";
 @import "message";
+@import "notice";
 @import "transition";
+
+
+.info{
+  color: @primary;
+}
+
+.error{
+  color: @danger;
+}
+
+.success{
+  color: @success;
+}
+
+.warning{
+  color: @warning;
+}
+
 
 i.x-arrow{
   position: absolute;

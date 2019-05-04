@@ -6,6 +6,7 @@ import Grid from './Grid'
 import Checkbox from './Checkbox'
 import Select from './Select'
 import Message from './Message'
+import Notice from './Notice'
 import create from './utils/create'
 const components = {
   ...Button,
@@ -24,6 +25,7 @@ const install = (Vue) => {
   })
 
   Vue.prototype.$message = Message
+  Vue.prototype.$notice = Notice
   Vue.prototype.$create = create
 }
 

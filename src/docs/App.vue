@@ -30,6 +30,7 @@
           </x-menu-group>
           <x-menu-group title="Feedback">
             <x-menu-item name="2-7" to='/message'>Message 消息</x-menu-item>
+            <x-menu-item name="2-8" to='/notice'>Notice 消息</x-menu-item>
           </x-menu-group>
           
         </x-submenu>

@@ -34,6 +34,10 @@ const router = new Router({
     {
       path: '/message',
       component: () => import('@/docs/view/message/index.vue')
+    },
+    {
+      path: '/notice',
+      component: () => import('@/docs/view/notice/index.vue')
     }
   ],
   scrollBehavior (to, from, savedPosition) {
