@@ -2,13 +2,13 @@
   <transition name="notice-move" v-on:before-leave="beforeLeave" v-on:leave="leave" v-on:after-leave="close" appear>
     <div class="x-notice-content-rect" v-show="state">
       <div class="x-notice-content">
-        <span class="x-notice-icon">
+        <span class="x-notice-icon" v-if="type !== 'open'">
           <i :class="iconType[type]"/>
         </span>
         <div class="x-notice-title">{{title}}</div>
         <div class="x-notice-description" v-if="desc">{{desc}}</div>
 
-        <span class="x-notice-close">
+        <span class="x-notice-close" @click="hide">
           <i class="x-icon-x"></i>
         </span>
       </div>
@@ -27,7 +27,6 @@ export default {
         error: "x-icon-x-circle error",
         success: "x-icon-check-circle success",
         warning: "x-icon-alert-triangle warning",
-        loading: "x-icon-loader loading"
       },
       time: this.duration
     };

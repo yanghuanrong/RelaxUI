@@ -6,39 +6,35 @@ import {
 
 let NoticeWrap
 
-function messageCreate(options, type) {
-  if (!isObject(options)) {
-    return
-  }
-
-  if(!NoticeWrap) {
-    NoticeWrap = createNoticeWrap()
-  }
-
-  let props = {
-    type: type,
-    title: options.title,
-    desc: options.desc
-  }
-
-  const message = create(Element, props, NoticeWrap)
-  message.$on('onClose', message.remove)
-
-  return message.hide.bind(this)
-}
-
 function createNoticeWrap() {
   const NoticeWrap = document.createElement('div')
-  NoticeWrap.className =  'x-notice-wrap'
+  NoticeWrap.className = 'x-notice-wrap'
   document.body.appendChild(NoticeWrap)
   return NoticeWrap
 }
 
+function NoticeCreate(props, type) {
+  if (!isObject(props)) {
+    return
+  }
+  props.type = type
+  
+  if (!NoticeWrap) {
+    NoticeWrap = createNoticeWrap()
+  }
+
+  const notice = create(Element, props, NoticeWrap)
+  notice.$on('onClose', notice.remove)
+
+}
+
 const methods = Object.keys(Element.data().iconType)
-const Message = {}
+
+const Notice = {
+  open: (options) => NoticeCreate(options, 'open')
+}
 
 methods.forEach((key) => {
-  Message[key] = (options) => messageCreate(options, key)
+  Notice[key] = (options) => NoticeCreate(options, key)
 })
-
-export default Message
+export default Notice

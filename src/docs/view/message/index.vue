@@ -32,18 +32,18 @@
 
       <RelaxTag name="提示类型">
         <template slot="temp">
-          <x-button type="success" @click="success">显示成功提示</x-button>
-          <x-button type="warning" @click="warning">显示警告提示</x-button>
-          <x-button type="danger" @click="error">显示错误提示</x-button>
+          <x-button @click="success">显示成功提示</x-button>
+          <x-button @click="warning">显示警告提示</x-button>
+          <x-button @click="error">显示错误提示</x-button>
         </template>
         <template slot="desc">
           不同的提示状态：成功、警告、错误。
         </template>
         <textarea slot="code">
           <template>
-            <x-button type="success" @click="success">显示成功提示</x-button>
-            <x-button type="warning" @click="warning">显示警告提示</x-button>
-            <x-button type="danger" @click="error">显示错误提示</x-button>
+            <x-button @click="success">显示成功提示</x-button>
+            <x-button @click="warning">显示警告提示</x-button>
+            <x-button @click="error">显示错误提示</x-button>
           </template>
           <script>
           export default {

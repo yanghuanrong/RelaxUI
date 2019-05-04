@@ -17,7 +17,6 @@
     
     .x-notice-content{
       position: relative;
-      padding-left: 30px;
     }
 
     .x-notice-icon{
@@ -25,6 +24,14 @@
       left: 0;
       top: -2px;
       font-size: 18px;
+
+      &+.x-notice-title{
+        margin-left: 30px;
+
+        &+.x-notice-description{
+          margin-left: 30px;
+        }
+      }
     }
 
     .x-notice-title{
@@ -42,7 +49,7 @@
     .x-notice-close{
       position: absolute;
       right: 0;
-      top: 2px;
+      top: 0;
       color: #999;
       cursor: pointer;
       transition: color .2s;
@@ -57,7 +64,7 @@
 }
 
 .notice-move-enter-active,.notice-move-leave-active{
-  transition: all .2s linear;
+  transition: all .2s ease;
   transform-origin: center top;
 }
 
