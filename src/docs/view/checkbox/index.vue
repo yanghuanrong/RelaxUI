@@ -8,7 +8,7 @@
     </div>
     <div class="card-box">
       <span @click="fn">
-        <x-checkbox v-model="checked" label="卧槽" @change="fv" />
+        <x-checkbox v-model="checked" label="已" @change="fv" />
       </span>
       {{this.checked ? '选中' : '取消'}}
     </div>
