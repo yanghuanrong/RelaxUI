@@ -1,7 +1,8 @@
 {
-  "name": "relax",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue-relax-ui",
+  "version": "1.0.5",
+  "description": "relax-vue",
+  "author": "npm.yanghuanrong",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -50,6 +51,11 @@
     "> 1%",
     "last 2 versions"
   ],
+  "keywords": [
+    "vue-realx",
+    "relax"
+  ],
+  "license": "ISC",
   "lint-staged": {
     "*.{js,vue}": [
       "vue-cli-service lint",
