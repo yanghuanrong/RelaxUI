@@ -107,6 +107,8 @@ export default {
     }
   },
   mounted() {
+    this.getRect();
+
     document.addEventListener("click", e => {
       if (!this.$el.contains(e.target)) {
         this.close();

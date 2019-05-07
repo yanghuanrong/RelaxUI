@@ -1,34 +1,46 @@
 <template >
   <div>
     <div class="topbar">
-      <div class="page-title-box">
-        <h4 class="page-title">Checkbox 多选框</h4>
-        <p class="page-title-decs">多选框</p>
+      <div class="topbar">
+        <div class="page-title-box">
+          <h4 class="page-title">Checkbox 多选框</h4>
+          <p class="page-title-decs">多选框</p>
+        </div>
       </div>
     </div>
-    <div class="card-box">
-      <span @click="fn">
-        <x-checkbox v-model="checked" label="已" @change="fv" />
-      </span>
-      {{this.checked ? '选中' : '取消'}}
+    <div class="components-select-demo">
+      <RelaxTag name="基本用法">
+        <template slot="temp">
+          <x-checkbox v-model="checked" label="Checkbox"/>
+        </template>
+        <template slot="desc">最简单的使用</template>
+        <textarea slot="code">
+        <template>
+          <x-checkbox v-model="checked" label="Checkbox"/>
+        </template>
+
+        <script>
+          export default {
+            data() {
+              return {
+                checked: false
+              };
+            },
+          };
+          </script>
+      </textarea>
+      </RelaxTag>
     </div>
   </div>
 </template>
 
+
 <script>
 export default {
-  data () {
+  data() {
     return {
       checked: false
-    }
+    };
   },
-  methods: {
-    fv (e) {
-      console.log('change 回调', e)
-    },
-    fn (a) {
-      console.log('span 点击')
-    }
-  }
-}
+};
 </script>

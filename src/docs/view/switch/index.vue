@@ -24,16 +24,3 @@
   </div>
   </div>
 </template>
-
-<script>
-export default {
-  data () {
-    return {
-      value1: '',
-      value2: '',
-      value3: '',
-      value4: ''
-    }
-  }
-}
-</script>

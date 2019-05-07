@@ -22,7 +22,7 @@ export default {
     let value = this.$slots.default || this.label
     return <label class="x-checkbox checkbox-primary" onClick={this.stop}>
       <input type="checkbox" name={this.name} disabled={this.disabled} checked={this.checked} />
-      <span>&nbsp;{value}</span>
+      <span>{value}</span>
     </label>
   }
 }
