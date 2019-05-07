@@ -27,6 +27,7 @@
             <x-menu-item name="2-4" to='/input'>Input 输入框</x-menu-item>
             <x-menu-item name="2-5" to='/checkbox'>Checkbox 多选框</x-menu-item>
             <x-menu-item name="2-6" to='/select'>Select 选择器</x-menu-item>
+            <x-menu-item name="2-9" to='/switch'>Switch 开关</x-menu-item>
           </x-menu-group>
           <x-menu-group title="Feedback">
             <x-menu-item name="2-7" to='/message'>Message 消息</x-menu-item>

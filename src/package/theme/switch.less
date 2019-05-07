@@ -1,0 +1,38 @@
+.x-switch {
+  min-width: 44px;
+  height: 22px;
+  position: relative;
+  border: none;
+  border-radius: 20px;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  transition: background-color .3s;
+
+  &::before{
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-radius: 20px;
+    background-color: #fff;
+    transform: translateX(0);
+    transition: .3s;
+  }
+
+  &.x-switch-checked{
+    background-color: @primary;
+
+    &::before{
+      left: 100%;
+      margin-left: -3px;
+      transform: translateX(-100%)
+    }
+  }
+
+  &:active::before{
+    width: 20px;
+  }
+}

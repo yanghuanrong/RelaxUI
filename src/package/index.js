@@ -5,6 +5,7 @@ import Input from './Input'
 import Grid from './Grid'
 import Checkbox from './Checkbox'
 import Select from './Select'
+import Switch from './Switch'
 import Message from './Message'
 import Notice from './Notice'
 import create from './utils/create'
@@ -14,6 +15,7 @@ const components = {
   ...Select,
   ...Grid,
   Icon,
+  Switch,
   Input,
   Checkbox,
 }

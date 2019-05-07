@@ -38,6 +38,10 @@ const router = new Router({
     {
       path: '/notice',
       component: () => import('@/docs/view/notice/index.vue')
+    },
+    {
+      path: '/switch',
+      component: () => import('@/docs/view/switch/index.vue')
     }
   ],
   scrollBehavior (to, from, savedPosition) {
