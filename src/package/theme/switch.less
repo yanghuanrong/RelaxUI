@@ -23,16 +23,44 @@
   }
 
   &.x-switch-checked{
-    background-color: @primary;
+    &.x-switch-primary{
+      background-color: @primary;
+    }
+    &.x-switch-info{
+      background-color: @info;
+    }
+    &.x-switch-danger{
+      background-color: @danger;
+    }
+    &.x-switch-success{
+      background-color: @success;
+    }
 
     &::before{
       left: 100%;
       margin-left: -3px;
       transform: translateX(-100%)
     }
+
+    .x-switch-inner{
+      text-align: left;
+      padding-right: 25px;
+      padding-left: 8px;
+    }
   }
 
   &:active::before{
     width: 21px;
   }
+
+  .x-switch-inner{
+    width: 100%;
+    display: block;
+    padding-right: 8px;
+    padding-left: 25px;
+    text-align: right;
+    color: #FFF;
+    font-size: 12px;
+  }
 }
+
