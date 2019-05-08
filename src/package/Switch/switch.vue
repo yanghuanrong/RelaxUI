@@ -40,9 +40,7 @@ export default {
 
     return <button onClick={this.clickHandle} {...className}>
     <span class="x-switch-inner">
-      <transition name="switch-move">
-        {this.isChecked ? this.$slots.open : this.$slots.close}
-      </transition>
+      {this.isChecked ? this.$slots.open : this.$slots.close}
     </span>
     <div class="x-click-animating-node"></div>
   </button>
