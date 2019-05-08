@@ -99,6 +99,40 @@
         </template>
       </textarea>
     </RelaxTag>
+
+    
+    <RelaxTag name="不可用">
+      <template slot="temp">
+        <div>
+          <x-switch type="danger" :disabled="disabled"></x-switch>
+        </div>
+        <x-button @click="disabled = !disabled">
+          Toggle Disabled
+        </x-button>
+      </template>
+      <template slot="desc">
+        禁用状态
+      </template>
+      <textarea slot="code">
+        <template slot="temp">
+          <x-switch type="danger" :disabled="disabled"></x-switch>
+          <x-button @click="disabled = !disabled">
+            Toggle Disabled
+          </x-button>
+        </template>
+
+        <script>
+          export default {
+            data(){
+              return {
+                disabled: true
+              }
+            }
+          }
+        </script>
+      </textarea>
+    </RelaxTag>
+
   </div>
   </div>
 </template>
@@ -108,7 +142,8 @@ export default {
   data(){
     return {
       status1: false,
-      status2: true
+      status2: true,
+      disabled: true
     }
   },
   methods: {

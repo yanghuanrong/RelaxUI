@@ -3,6 +3,7 @@ export default {
   name: "xSwitch",
   props: {
     value: Boolean,
+    disabled: Boolean,
     type: {
       type: String,
       default: 'primary',
@@ -19,14 +20,15 @@ export default {
   data(){
     return {
       isChecked: this.value,
-      inner: ''
     }
   },
   methods: {
     clickHandle(){
-      this.isChecked = !this.isChecked
-      this.$emit('input', this.isChecked)
-      this.$emit('change', this.isChecked)
+      if(!this.disabled){
+        this.isChecked = !this.isChecked
+        this.$emit('input', this.isChecked)
+        this.$emit('change', this.isChecked)
+      }
     }
   },
   render(){
@@ -37,12 +39,12 @@ export default {
       ]
     }
     this.isChecked && className.class.push('x-switch-checked')
+    this.disabled && className.class.push('x-switch-disabled')
 
     return <button onClick={this.clickHandle} {...className}>
     <span class="x-switch-inner">
       {this.isChecked ? this.$slots.open : this.$slots.close}
     </span>
-    <div class="x-click-animating-node"></div>
   </button>
   }
 }

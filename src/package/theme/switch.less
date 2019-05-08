@@ -36,6 +36,25 @@
       background-color: @success;
     }
 
+    &.x-switch-disabled{
+      &.x-switch-primary{
+        background-color: fade(@primary, 20%);
+      }
+      &.x-switch-info{
+        background-color: fade(@info, 20%);
+      }
+      &.x-switch-danger{
+        background-color: fade(@danger, 20%);
+      }
+      &.x-switch-success{
+        background-color: fade(@success, 20%);
+      }
+
+      &::before{
+        background-color: #FFF;
+      }
+    }
+
     &::before{
       left: 100%;
       margin-left: -3px;
@@ -51,6 +70,15 @@
 
   &:active::before{
     width: 21px;
+  }
+
+  &.x-switch-disabled{
+    cursor: not-allowed;
+    background-color: #efefef;
+
+    &::before{
+      background-color: #ccc;
+    }
   }
 
   .x-switch-inner{
