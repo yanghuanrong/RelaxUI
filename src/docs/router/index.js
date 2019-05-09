@@ -42,6 +42,10 @@ const router = new Router({
     {
       path: '/switch',
       component: () => import('@/docs/view/switch/index.vue')
+    },
+    {
+      path: '/datePicker',
+      component: () => import('@/docs/view/datePicker/index.vue')
     }
   ],
   scrollBehavior (to, from, savedPosition) {
