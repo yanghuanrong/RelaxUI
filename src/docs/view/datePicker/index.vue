@@ -10,6 +10,28 @@
                 <p class="page-title-decs">用于选择一个日期</p>
             </div>
         </div>
+        <RelaxTag name="基础效果">
+            <template slot="temp">
+                <x-datepicker></x-datepicker>
+            </template>
+            <template slot="desc">
+                基础效果
+            </template>
+            <textarea slot="code">
+                <template>
+                    <x-datepicker />
+                </template>
+
+                export default {
+                    data(){
+                        return {
+
+                        }
+                    }
+                }
+
+            </textarea>
+        </RelaxTag>
     </div>
 </template>
 

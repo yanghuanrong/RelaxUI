@@ -4,6 +4,7 @@ import Icon from './Icon'
 import Input from './Input'
 import Grid from './Grid'
 import Checkbox from './Checkbox'
+import Datepicker from './Datepicker'
 import Select from './Select'
 import Switch from './Switch'
 import Message from './Message'
@@ -18,6 +19,7 @@ const components = {
   Switch,
   Input,
   Checkbox,
+  Datepicker,
 }
 
 const install = (Vue) => {
