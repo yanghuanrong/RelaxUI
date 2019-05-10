@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class='x-datepicker' @click.stop='()=> false'>
-            <x-input placeholder="请选择日期" v-model="dateTime" @focus="pickerShow" iconBefore="x-icon-watch" autofocus clearable />
+            <x-input :placeholder="placeholder" v-model="dateTime" @focus="pickerShow" iconBefore="x-icon-watch" clearable />
             <transition name="fade-up" mode="out-in">
                 <div class='x-picker' v-show='isActive'>
                     <div class='x-picker_header x-clearfix'>
@@ -29,6 +29,10 @@
 <script>
 export default {
     name: 'xDatepicker',
+    props: {
+        value:String,
+        placeholder:String
+    },
     data(){
         return {
             dateTime:'',
@@ -122,8 +126,9 @@ export default {
             return day==this.nowTime.day && this.nowTime.mouth == new Date().getMonth()
         },
         changeDay(day){
-            this.dateTime = this.nowTime.year + '-' + this.nowTime.mouth  + '-' + day;
+            this.dateTime = this.nowTime.year + '-' + (this.nowTime.mouth + 1)  + '-' + day;
             this.isActive = false;
+            this.$emit('input', this.dateTime);
         }
     },
     mounted(){

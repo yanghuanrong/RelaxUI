@@ -12,14 +12,20 @@
         </div>
         <RelaxTag name="基础效果">
             <template slot="temp">
-                <x-datepicker></x-datepicker>
+                <x-datepicker
+                    placeholder='选择日期'
+                    v-model="value1"
+                />
             </template>
             <template slot="desc">
-                基础效果
+                <p>选择的值：{{value1?value1:'暂时没有选择日期'}}</p>
             </template>
             <textarea slot="code">
                 <template>
-                    <x-datepicker />
+                    <x-datepicker
+                        placeholder='选择日期'
+                        v-model="value1"
+                    />
                 </template>
             </textarea>
         </RelaxTag>
@@ -30,7 +36,7 @@
 export default {
     data(){
         return {
-
+            value1:''
         }
     }
 }
