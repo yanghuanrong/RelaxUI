@@ -86,26 +86,28 @@
 </style>
 <template>
     <div>
-        <div class='x-datepicker'>
-            <x-input placeholder="请选择日期" v-model="dateTime" iconBefore="x-icon-watch" autofocus clearable />
-            <div class='x-picker'>
-                <div class='x-picker_header x-clearfix'>
-                    <span class='x-icon-chevrons-left x-btn-prve' @click="prveYear"></span>
-                    <span class='x-icon-chevron-left x-btn-prve' @click="prveMouth"></span>
-                    <span>{{nowTime.year}} 年 {{nowTime.mouth + 1}} 月</span>
-                    <span class='x-icon-chevrons-right x-btn-next' @click="nextYear"></span>
-                    <span class='x-icon-chevron-right x-btn-next' @click="nextMouth"></span>
+        <div class='x-datepicker' @click.stop='()=> false'>
+            <x-input placeholder="请选择日期" v-model="dateTime" @focus="pickerShow" iconBefore="x-icon-watch" autofocus clearable />
+            <transition name="fade-up" mode="out-in">
+                <div class='x-picker' v-show='isActive'>
+                    <div class='x-picker_header x-clearfix'>
+                        <span class='x-icon-chevrons-left x-btn-prve' @click="prveYear"></span>
+                        <span class='x-icon-chevron-left x-btn-prve' @click="prveMouth"></span>
+                        <span>{{nowTime.year}} 年 {{nowTime.mouth + 1}} 月</span>
+                        <span class='x-icon-chevrons-right x-btn-next' @click="nextYear"></span>
+                        <span class='x-icon-chevron-right x-btn-next' @click="nextMouth"></span>
+                    </div>
+                    <ul class='x-picker_week x-clearfix'>
+                        <li v-for="(week,index) in 7" :key="week">{{backWeek(index)}}</li> 
+                    </ul>
+                    <ul class='x-picker_day x-clearfix'>
+                        <li v-for='(day,index) in prveMouthDay' :key="50 + index" class='notNowDay'>{{prveMouthBigDay - prveMouthDay + index + 1}}</li>
+                        <li v-for='day in nowMouthBigDay' :key="day" :class='{today:isToDay(day)}' @click='changeDay(day)'>{{day}}</li>
+                        <li v-for='(day,index) in nextMouthDay' :key="100 + index" class='notNowDay'>{{day}}</li>
+                    </ul>
+                    <div class='x-picker_arrow'></div>
                 </div>
-                <ul class='x-picker_week x-clearfix'>
-                    <li v-for="(week,index) in 7" :key="week">{{backWeek(index)}}</li> 
-                </ul>
-                <ul class='x-picker_day x-clearfix'>
-                    <li v-for='(day,index) in prveMouthDay' :key="50 + index" class='notNowDay'>{{prveMouthBigDay - prveMouthDay + index + 1}}</li>
-                    <li v-for='day in nowMouthBigDay' :key="day" :class='{today:isToDay(day)}'>{{day}}</li>
-                    <li v-for='(day,index) in nextMouthDay' :key="100 + index" class='notNowDay'>{{day}}</li>
-                </ul>
-                <div class='x-picker_arrow'></div>
-            </div>
+            </transition>
         </div>
     </div>
 </template>
@@ -117,6 +119,7 @@ export default {
         return {
             dateTime:'',
             nowTime:this.getNowTime(new Date()),
+            isActive:false
         }
     },
     computed:{
@@ -140,6 +143,9 @@ export default {
 
     },
     methods:{
+        pickerShow(){
+            this.isActive = true;
+        },
         getNowTime(date){
             return {
                 year:date.getFullYear(),
@@ -200,10 +206,16 @@ export default {
         },
         isToDay(day){
             return day==this.nowTime.day && this.nowTime.mouth == new Date().getMonth()
+        },
+        changeDay(day){
+            this.dateTime = this.nowTime.year + '-' + this.nowTime.mouth  + '-' + day;
+            this.isActive = false;
         }
     },
     mounted(){
-        
+        document.onclick = ()=>{
+            this.isActive = false;
+        }
     }
 };
 </script>
