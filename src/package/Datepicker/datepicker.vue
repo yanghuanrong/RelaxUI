@@ -17,6 +17,7 @@
 }
 .x-picker_header {
     text-align: center;
+    line-height: 30px;
 }
 .x-picker_week {
     width: 100%;
@@ -34,11 +35,6 @@
 .x-btn-next{
     float: right;
     font-size: 20px;
-}
-.x-clearfix:after{
-    content: '';
-    display: block;
-    clear: both;
 }
 .x-picker_arrow{
     position: absolute;
@@ -65,6 +61,28 @@
     border-top-width: 0px;
     margin-left: -6px;
 }
+.x-picker_day li{
+    list-style: none;
+    float: left;
+    width: calc(100% / 7);
+    text-align: center;
+    line-height: calc(248px / 7);
+    height: calc(248px / 7);
+}
+
+
+.notNowDay{
+    color: #c0c4cc;
+}
+.today {
+    color: #409eff;
+    font-weight: 700;
+}
+.x-clearfix:after{
+    content: '';
+    display: block;
+    clear: both;
+}
 </style>
 <template>
     <div>
@@ -74,12 +92,17 @@
                 <div class='x-picker_header x-clearfix'>
                     <span class='x-icon-chevrons-left x-btn-prve' @click="prveYear"></span>
                     <span class='x-icon-chevron-left x-btn-prve' @click="prveMouth"></span>
-                    <span>{{nowTime.year}} 年 {{nowTime.mouth}} 月</span>
-                    <span class='x-icon-chevron-right x-btn-next' @click="nextMouth"></span>
+                    <span>{{nowTime.year}} 年 {{nowTime.mouth + 1}} 月</span>
                     <span class='x-icon-chevrons-right x-btn-next' @click="nextYear"></span>
+                    <span class='x-icon-chevron-right x-btn-next' @click="nextMouth"></span>
                 </div>
                 <ul class='x-picker_week x-clearfix'>
                     <li v-for="(week,index) in 7" :key="week">{{backWeek(index)}}</li> 
+                </ul>
+                <ul class='x-picker_day x-clearfix'>
+                    <li v-for='(day,index) in prveMouthDay' :key="50 + index" class='notNowDay'>{{prveMouthBigDay - prveMouthDay + index + 1}}</li>
+                    <li v-for='day in nowMouthBigDay' :key="day" :class='{today:isToDay(day)}'>{{day}}</li>
+                    <li v-for='(day,index) in nextMouthDay' :key="100 + index" class='notNowDay'>{{day}}</li>
                 </ul>
                 <div class='x-picker_arrow'></div>
             </div>
@@ -97,19 +120,34 @@ export default {
         }
     },
     computed:{
-        
+        getWeek(){
+            return new Date(this.nowTime.year,this.nowTime.mouth,1).getDay();
+        },
+        prveMouthDay(){
+            console.log(this.getWeek);
+            return this.getWeek==0?7:this.getWeek
+        },
+        prveMouthBigDay(){
+            return this.getYearMonthDayNum(this.nowTime.year,this.nowTime.mouth);
+        },
+        nowMouthBigDay(){
+            return this.getYearMonthDayNum(this.nowTime.year,this.nowTime.mouth + 1);
+        },
+        nextMouthDay(){
+            return 42 - this.nowMouthBigDay - this.prveMouthDay
+        }
+
     },
     methods:{
         getNowTime(date){
             return {
                 year:date.getFullYear(),
-                mouth:date.getMonth() + 1,
+                mouth:date.getMonth(),
                 day:date.getDate(),
                 days:date.getDay(),
             }
         },
         backWeek(index){
-            console.log(index);
             switch(index){
                 case 0:
                     return '日'
@@ -149,6 +187,16 @@ export default {
                 this.nowTime.mouth++;
             }
         },
+        getYearMonthDayNum(year,month){   
+            var   dayNum   =   [31,28,31,30,31,30,31,31,30,31,30,31];   
+            if(new   Date(year,1,29).getDate()==29){   
+                dayNum[1]   =   29;   
+            }   
+            return   dayNum[month-1];   
+        },
+        isToDay(day){
+            return day==this.nowTime.day && this.nowTime.mouth == new Date().getMonth()
+        }
     },
     mounted(){
         
