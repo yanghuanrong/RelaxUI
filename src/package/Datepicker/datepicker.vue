@@ -124,11 +124,12 @@ export default {
             return new Date(this.nowTime.year,this.nowTime.mouth,1).getDay();
         },
         prveMouthDay(){
-            console.log(this.getWeek);
             return this.getWeek==0?7:this.getWeek
         },
         prveMouthBigDay(){
-            return this.getYearMonthDayNum(this.nowTime.year,this.nowTime.mouth);
+            let a = this.getYearMonthDayNum(this.nowTime.year,this.nowTime.mouth);
+            console.log(a);
+            return a;
         },
         nowMouthBigDay(){
             return this.getYearMonthDayNum(this.nowTime.year,this.nowTime.mouth + 1);
@@ -172,27 +173,30 @@ export default {
             this.nowTime.year++;
         },
         prveMouth(){
-            if(this.nowTime.mouth==1){
+            if(this.nowTime.mouth==0){
                 this.nowTime.year--;
-                this.nowTime.mouth = 12;
+                this.nowTime.mouth = 11;
             }else{
                 this.nowTime.mouth--;
             }
         },
         nextMouth(){
-            if(this.nowTime.mouth==12){
+            if(this.nowTime.mouth==11){
                 this.nowTime.year++;
-                this.nowTime.mouth = 1;
+                this.nowTime.mouth = 0;
             }else{
                 this.nowTime.mouth++;
             }
         },
         getYearMonthDayNum(year,month){   
-            var   dayNum   =   [31,28,31,30,31,30,31,31,30,31,30,31];   
-            if(new   Date(year,1,29).getDate()==29){   
-                dayNum[1]   =   29;   
-            }   
-            return   dayNum[month-1];   
+            var dayNum = [31,28,31,30,31,30,31,31,30,31,30,31];   
+            if(new Date(year,1,29).getDate()==29){   
+                dayNum[1] = 29;   
+            }
+            if(month-1<0){
+                month = 12;
+            }
+            return dayNum[month-1];   
         },
         isToDay(day){
             return day==this.nowTime.day && this.nowTime.mouth == new Date().getMonth()
