@@ -24,6 +24,7 @@ export default {
   },
   methods: {
     stop (e) {
+      if(this.disabled) return
       e && e.preventDefault()
       this.checked = !this.checked
       this.$emit('change', this.checked)

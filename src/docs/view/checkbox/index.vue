@@ -31,6 +31,18 @@
       </textarea>
       </RelaxTag>
 
+      <RelaxTag name="禁用">
+        <template slot="temp">
+          <x-checkbox label="Checkbox" disabled/>       
+        </template>
+        <template slot="desc">添加disabled属性 禁用checkbox </template>
+        <textarea slot="code">
+        <template>
+          <x-checkbox label="Checkbox"/>
+        </template>
+      </textarea>
+      </RelaxTag>
+
       <RelaxTag name="Checkbox组">
         <template slot="temp">
           <x-checkbox-group v-model="options">
