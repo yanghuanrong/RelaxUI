@@ -1,7 +1,11 @@
-import Element from './checkbox'
+import {
+  install
+} from '../utils/install'
 
-Element.install = function (Vue) {
-  Vue.component(Element.name, Element)
-}
+import Checkbox from './checkbox'
+import CheckboxGroup from './checkbox-group'
 
-export default Element
+export default install({
+  Checkbox,
+  CheckboxGroup
+})

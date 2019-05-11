@@ -18,7 +18,7 @@ const components = {
   Icon,
   Switch,
   Input,
-  Checkbox,
+  ...Checkbox,
   Datepicker,
 }
 
