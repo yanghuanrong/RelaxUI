@@ -7,11 +7,12 @@ export default {
   props: {
     value: Boolean,
     label: String,
+    checked: Boolean,
     disabled: Boolean
   },
   data () {
     return {
-      checked: this.value
+      checkedVal: this.value
     }
   },
   created(){
@@ -26,16 +27,21 @@ export default {
     stop (e) {
       if(this.disabled) return
       e && e.preventDefault()
-      this.checked = !this.checked
+      this.checkedVal = !this.checkedVal
       this.$emit('change', this.checked)
       this.$emit('input', this.checked)
       this.dispatch('xCheckboxGroup', 'check', this.label)
     }
   },
   render () {
-    let value = this.$slots.default || this.label
-    return <label class="x-checkbox checkbox-primary" onClick={this.stop}>
-      <input type="checkbox" name={this.label} disabled={this.disabled} checked={this.checked} />
+    const value = this.$slots.default || this.label
+    const className = ['x-checkbox']
+    const check = this.checked || this.checkedVal
+    check && className.push('x-checkbox-checked')
+    this.disabled && className.push('x-checkbox-disabled')
+
+    return <label class={className} onClick={this.stop}>
+      <input type="checkbox" name={this.label} disabled={this.disabled}/>
       <span>{value}</span>
     </label>
   }
