@@ -101,11 +101,10 @@
   &.x-checkbox-disabled {
     input[type="checkbox"]+span {
       &::before {
-        background-color: fade(@primary, 20%);
-        border-color: fade(@primary, 20%);
+        background-color: fade(@border, 30%);
+        border-color: @border;
         cursor: not-allowed;
       }
     }
-
   }
 }
