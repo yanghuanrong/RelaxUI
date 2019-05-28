@@ -48,9 +48,9 @@
       <RelaxTag name="Checkbox组">
         <template slot="temp">
           <x-checkbox-group v-model="options">
-            <x-checkbox label="A">Jack</x-checkbox>
-            <x-checkbox label="B">Rick</x-checkbox>
-            <x-checkbox label="C">Xinp</x-checkbox>
+            <x-checkbox label="A">Vue</x-checkbox>
+            <x-checkbox label="B">React</x-checkbox>
+            <x-checkbox label="C">Angular</x-checkbox>
           </x-checkbox-group>
           <div style="margin-top:5px;">
             选中的值：{{options}}
@@ -60,9 +60,9 @@
         <textarea slot="code">
         <template>
           <x-checkbox-group v-model="options">
-            <x-checkbox label="A">Jack</x-checkbox>
-            <x-checkbox label="B">Rick</x-checkbox>
-            <x-checkbox label="C">Xinp</x-checkbox>
+            <x-checkbox label="A">Vue</x-checkbox>
+            <x-checkbox label="B">React</x-checkbox>
+            <x-checkbox label="C">Angular</x-checkbox>
           </x-checkbox-group>
         </template>
 

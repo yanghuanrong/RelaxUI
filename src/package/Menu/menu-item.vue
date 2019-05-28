@@ -11,7 +11,7 @@ export default {
   name: 'xMenuItem',
   mixins: [emit],
   props: {
-    name: String,
+    name: [String, Number],
     to: String
   },
   data () {
