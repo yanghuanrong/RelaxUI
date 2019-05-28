@@ -14,24 +14,21 @@
             <template slot="temp">
                 <x-datepicker
                     placeholder='选择日期'
-                    v-model="value1"
+                    v-model="value"
                 />
             </template>
             <template slot="desc">
-                <p>选择的值：{{value1?value1:'暂时没有选择日期'}}</p>
+                <p>选择的值：{{value?value:'暂时没有选择日期'}}</p>
             </template>
             <textarea slot="code">
                 <template>
-                    <x-datepicker
-                        placeholder='选择日期'
-                        v-model="value1"
-                    />
+                    <x-datepicker placeholder='选择日期' v-model="value"/>
                 </template>
                 <script>
                     export default {
                         data(){
                             return {
-                                value1:''
+                                value:''
                             }
                         }
                     }
@@ -45,7 +42,7 @@
 export default {
     data(){
         return {
-            value1:''
+            value:''
         }
     }
 }

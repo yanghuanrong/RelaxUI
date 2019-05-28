@@ -1,65 +1,76 @@
-<template >
-  <div>
-    <div class="topbar">
-      <div class="page-title-box">
-        <h4 class="page-title">Input 输入框</h4>
-        <p class="page-title-decs">通过鼠标或键盘输入内容，是最基础的表单域的包装</p>
-      </div>
+<template>
+    <div>
+        <div class="topbar">
+            <div class="page-title-box">
+                <h4 class="page-title">Input 输入框</h4>
+                <p class="page-title-decs">通过鼠标或键盘输入内容，是最基础的表单域的包装</p>
+            </div>
+        </div>
+        <RelaxTag name="基本使用">
+            <template slot="temp">
+                <x-input placeholder="请输入" style="width:300px" /> 
+            </template>
+            <template slot="desc">
+                基本用法，可以使用 v-model 实现数据的双向绑定。 <br/>
+                可以直接设置 style 来改变输入框的宽度，默认 100%。
+            </template>
+            <textarea slot="code">
+                <template>
+                    <x-input placeholder="请输入" v-model="value" style="width:300px" />
+                </template>
+                <script>
+                    export default {
+                        data(){
+                            return {
+                                value:''
+                            }
+                        }
+                    }
+                </script>
+            </textarea>
+        </RelaxTag>
+
+        <RelaxTag name="前缀和后缀图标">
+            <template slot="temp">
+                <x-input placeholder="请输入用户名" iconBefore="x-icon-tv" />
+                <br/>
+                <x-input placeholder="请输入用户名" iconAfter="x-icon-tv" />
+            </template>
+            <template slot="desc">
+                通过设置 iconBefore 和 iconAfter 设置前缀及后缀图标
+            </template>
+            <textarea slot="code">
+                <template>
+                    <x-input placeholder="请输入用户名" iconBefore="x-icon-tv" />
+                    <x-input placeholder="请输入用户名" iconAfter="x-icon-tv" />
+                </template>
+            </textarea>
+        </RelaxTag>
+
+        <RelaxTag name="文本域">
+            <template slot="temp">
+                <x-input placeholder="请输入" type="textarea" rows="7" cols="20" maxlength="40" />
+            </template>
+            <template slot="desc">
+                设置 type 属性为 textarea
+            </template>
+            <textarea slot="code">
+                <template>
+                    <x-input placeholder="请输入" type="textarea" rows="7" cols="20" maxlength="40" />
+                </template>
+            </textarea>
+        </RelaxTag>
+        
     </div>
-    <div class="card-box">
-      <div style="width:200px; margin-bottom:10px">
-        <x-input placeholder="请输入用户名" v-model="input" iconBefore="x-icon-search" @input="aa" @focus="as" @blur='br' @keyup.13='wo' autofocus clearable/>
-      </div>
-      <div style="width:200px; margin-bottom:10px">
-        <x-input placeholder="请输入密码" iconBefore="x-icon-unlock" type="password" value="123123" maxlength="10" clearable/>
-      </div>
-      <div style="width:200px; margin-bottom:10px">
-        <x-input placeholder="请输入" iconAfter="x-icon-search" @input="aa"/>
-      </div>
-      <div style="width:200px; margin-bottom:10px">
-        <x-input placeholder="请输入" @input="aa">
-          <template slot="addonAfter">
-            http://
-          </template>
-        </x-input>
-      </div>
-      <div style="width:200px; margin-bottom:10px">
-        <x-input placeholder="请输入用户名" value="123" disabled  @input="aa" @change="hhha"/>
-      </div>
-      <span>{{input}}</span>
-      <div style="width:200px; margin-bottom:10px">
-        <x-input placeholder="请输入" type="textarea" @input="aa" rows="7" cols="20" maxlength="40" />
-      </div>
-    </div>
-  </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      input: '123123'
+    data(){
+        return {
+            value:''
+        }
     }
-  },
-  methods: {
-    hhha (e) {
-      console.log(e)
-    },
-    aa (e) {
-      console.log(e)
-    },
-    as () {
-      console.log('获得焦点')
-    },
-    br () {
-      console.log('失去焦点')
-    },
-    wo () {
-      alert(this.input)
-    },
-    fn () {
-      console.log(1)
-    }
-  }
 }
 </script>
+
