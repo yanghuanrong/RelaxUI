@@ -59,6 +59,13 @@ const component = [{
         text: 'DatePicker 日期选择器'
       },
       component: () => import('@/docs/view/datePicker/index.vue')
+    },
+    {
+      path: '/form',
+      meta: {
+        text: 'Form 表单'
+      },
+      component: () => import('@/docs/view/form/index.vue')
     }
   ]
 }, {

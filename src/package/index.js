@@ -10,16 +10,19 @@ import Switch from './Switch'
 import Message from './Message'
 import Notice from './Notice'
 import create from './utils/create'
+import Form from './Form'
+
 const components = {
   ...Button,
   ...Menu,
   ...Select,
   ...Grid,
+  ...Checkbox,
+  ...Form,
+  Datepicker,
   Icon,
   Switch,
   Input,
-  ...Checkbox,
-  Datepicker,
 }
 
 const install = (Vue) => {
