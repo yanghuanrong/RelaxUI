@@ -1,9 +1,29 @@
 <template>
   <div id="app">
+    <div class="start" ref="loader" v-if="this.loader">
+      <div class="logo-center">
+        <div class="logo-img">
+          <span>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+          </span>
+        </div>
+        <p>一套基于 Vue.js UI 组件库</p>
+      </div>
+    </div>
     <div class="wrapper">
       <div class="sidebar-menu" style="width:220px">
-        <div class="logo">
-          <img src="./assets/logo.png" alt>
+        <div style="padding: 20px">
+          <div class="logo-img">
+            <span>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </span>
+          </div>
         </div>
         <x-menu :all-opend="true">
           <x-menu-item name="1">
@@ -17,9 +37,12 @@
               <span>UI Elements</span>
             </template>
             <x-menu-group :title="menu.title" v-for="(menu, i) in nav" :key="i">
-              <x-menu-item :name="i+'-'+k" :to="submenu.path" v-for="(submenu,k) in menu.route" :key="k">
-                {{submenu.meta.text}}
-              </x-menu-item>
+              <x-menu-item
+                :name="i+'-'+k"
+                :to="submenu.path"
+                v-for="(submenu,k) in menu.route"
+                :key="k"
+              >{{submenu.meta.text}}</x-menu-item>
             </x-menu-group>
           </x-submenu>
         </x-menu>
@@ -32,13 +55,31 @@
 </template>
 
 <script>
-import nav from "./router/routeTemp";
+import nav from "./router/routeTemp"
+import { setTimeout } from 'timers';
+const LOADING = 'loader'
 export default {
   name: "App",
   data() {
     return {
-      nav: nav
-    };
+      nav: nav,
+      loader: true
+    }
+  },
+  created() {
+    const page = localStorage.getItem(LOADING)
+    if(page){
+      this.loader = false
+    }
+  },
+  mounted() {
+    setTimeout(this.closeLoader, 4600)
+  },
+  methods: {
+    closeLoader() {
+      this.loader = false
+      localStorage.setItem(LOADING, true)
+    }
   }
-};
+}
 </script>

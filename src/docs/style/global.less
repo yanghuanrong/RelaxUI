@@ -7,10 +7,211 @@ body,
   height: 100%;
 }
 
+.start {
+  position: fixed;
+  background: #FFF;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  animation:clsoe .6s ease-in 4s;
+  animation-fill-mode: forwards;
+
+  .logo-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    margin-top: -60px;
+    animation:blur .6s ease-in 4s;
+    animation-fill-mode: forwards;
+
+    p{
+      color: #666;
+      margin-top: 10px;
+      opacity: 0;
+      animation:subText .8s ease-in 1.2s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .logo-img {
+
+    &::after{
+      opacity: 0;
+      animation:textShow .4s ease-in .6s;
+      animation-fill-mode: forwards;
+    }
+
+    span {
+      animation:sun 1s linear 0.6s infinite;
+    
+      i:nth-of-type(1) {
+        animation:show 0.2s*1 linear 0.05s * 1;
+        animation-fill-mode: forwards;
+      }
+      i:nth-of-type(2) {
+        animation:show 0.2s*2 linear 0.05s * 2;
+        animation-fill-mode: forwards;
+      }
+      i:nth-of-type(3) {
+        animation:show 0.2s*3 linear 0.05s * 3;
+        animation-fill-mode: forwards;
+      }
+      i:nth-of-type(4) {
+        animation:show 0.2s*4 linear 0.05s * 4;
+        animation-fill-mode: forwards;
+      }
+      i{
+        opacity: 0;
+      }
+    }
+  }
+
+  @keyframes show {
+    from {
+      opacity: 0;
+      filter: blur(10px)
+    }
+
+    to {
+      opacity: 1;
+      filter: blur(0)
+    }
+  }
+
+  @keyframes clsoe {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes textShow {
+    0% {
+      opacity: 0;
+      filter: blur(4px);
+      transform: translateX(-30%)
+    }
+
+    85%{
+      opacity: 1;
+      filter: blur(0);
+      transform: translateX(3%)
+    }
+
+    95%{
+      opacity: 1;
+      filter: blur(0);
+      transform: translateX(-2%)
+    }
+
+    100% {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateX(0)
+    }
+  }
+
+  @keyframes subText{
+    0% {
+      opacity: 0;
+      transform: translateY(20%);
+    }
+    100%{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes sun {
+    0% {
+      transform: rotate(0);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes blur {
+    0% {
+      filter: blur(0);
+    }
+    100%{
+      filter: blur(100px);
+    }
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.logo-img {
+  position: relative;
+  width: 130px;
+
+  &::after {
+    content: "Relax";
+    position: absolute;
+    left: 40px;
+    top: 0;
+    line-height: 36px;
+    font-size: 36px;
+  }
+
+  span {
+    width: 36px;
+    height: 36px;
+    display: block;
+    position: relative;
+  }
+
+  i:nth-of-type(1) {
+    position: absolute;
+    display: block;
+    width: 13px;
+    height: 18px;
+    left: 18px;
+    top: 0;
+    background: url('../assets/01.png')
+  }
+
+  i:nth-of-type(2) {
+    position: absolute;
+    display: block;
+    width: 18px;
+    height: 13px;
+    right: 0;
+    top: 18px;
+    background: url('../assets/02.png')
+  }
+
+  i:nth-of-type(3) {
+    position: absolute;
+    display: block;
+    width: 13px;
+    height: 18px;
+    left: 6px;
+    bottom: 0px;
+    background: url('../assets/03.png')
+  }
+
+  i:nth-of-type(4) {
+    position: absolute;
+    display: block;
+    width: 18px;
+    height: 13px;
+    left: 0;
+    top: 6px;
+    background: url('../assets/04.png')
+  }
 }
 
 .wrapper {
@@ -153,12 +354,12 @@ h6 {
   margin-bottom: 12px;
 }
 
-.components-select-demo .x-select{
+.components-select-demo .x-select {
   margin-right: 8px;
   margin-bottom: 12px;
 }
 
-.components-switch-demo .x-switch{
+.components-switch-demo .x-switch {
   margin-right: 8px;
   margin-bottom: 12px;
 }
@@ -167,66 +368,71 @@ h6 {
 
   margin-bottom: 30px;
 
-  [class^=x-row]{
-    background-color: #FFF; 
+  [class^=x-row] {
+    background-color: #FFF;
     background-image: linear-gradient(90deg, #ededed 4.16666667%, transparent 0, transparent 8.33333333%, #ededed 0, #ededed 12.5%, transparent 0, transparent 16.66666667%, #ededed 0, #ededed 20.83333333%, transparent 0, transparent 25%, #ededed 0, #ededed 29.16666667%, transparent 0, transparent 33.33333333%, #ededed 0, #ededed 37.5%, transparent 0, transparent 41.66666667%, #ededed 0, #ededed 45.83333333%, transparent 0, transparent 50%, #ededed 0, #ededed 54.16666667%, transparent 0, transparent 58.33333333%, #ededed 0, #ededed 62.5%, transparent 0, transparent 66.66666667%, #ededed 0, #ededed 70.83333333%, transparent 0, transparent 75%, #ededed 0, #ededed 79.16666667%, transparent 0, transparent 83.33333333%, #ededed 0, #ededed 87.5%, transparent 0, transparent 91.66666667%, #ededed 0, #ededed 95.83333333%, transparent 0);
     margin-bottom: 5px;
   }
 
-  [class*=x-col]{
+  [class*=x-col] {
     color: #fff;
     padding: 20px 0;
     text-align: center;
     font-size: 16px;
   }
+
   .blue1 {
     background: fade(#4eb7eb, 90%);
   }
+
   .blue2 {
     background: fade(#4eb7eb, 70%);
   }
+
   .blue3 {
     background: fade(#4eb7eb, 50%);
   }
 }
 
-.x-row-style{
-  .x-row{
+.x-row-style {
+  .x-row {
     margin-bottom: 10px;
 
-    &>div{
+    &>div {
       color: #fff;
       padding: 3px 0;
       text-align: center;
       font-size: 12px;
 
-      &:nth-child(odd){
+      &:nth-child(odd) {
         background: fade(#4eb7eb, 90%);
       }
-      &:nth-child(even){
+
+      &:nth-child(even) {
         background: fade(#4eb7eb, 70%);
       }
     }
   }
 
-  &.code-row-bg{
-    .x-row{
+  &.code-row-bg {
+    .x-row {
       background-color: #efefef;
     }
   }
 
-  &.gutter{
-    .x-row{
-      &>div{
+  &.gutter {
+    .x-row {
+      &>div {
         background: transparent !important;
-  
-        &:nth-child(odd){
-          div{
+
+        &:nth-child(odd) {
+          div {
             background: fade(#4eb7eb, 90%);
           }
         }
-        &:nth-child(even){
-          div{
+
+        &:nth-child(even) {
+          div {
             background: fade(#4eb7eb, 70%);
           }
         }
