@@ -15,18 +15,48 @@
   .x-form-item {
     display: flex;
     align-items: center;
+    @h: 20px;
+    margin-bottom: @h + 5px;
 
     .x-form-input-wrapper {
       padding: 0 10px;
       flex: 1;
       position: relative;
-      
+
+      &.x-form-input-wrapper__error{
+        .x-input{
+          border-color: @danger;
+          
+          &:focus{
+            box-shadow: 0 0 0 2px fade(@danger, 30%)
+          }
+        }
+      }
+
+      &.x-form-input-wrapper__success{
+        .x-input{
+          border-color: @success;
+          
+          &:focus{
+            box-shadow: 0 0 0 2px fade(@success, 30%)
+          }
+        }
+      }
+
+      .x-form-error-tips{
+        position: absolute;
+        width: 100%;
+        height: @h;
+        bottom: -@h;
+        color: @danger;
+      }
+
     }
 
     .x-form-lable{
       &.x-form-label-required::before{
         content: "*";
-        color: red;
+        color: @danger;
         margin-right: 5px;
       }
     }
