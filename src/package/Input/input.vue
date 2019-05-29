@@ -1,6 +1,9 @@
 <script>
+import emit from '../utils/emit'
+
 export default {
   name: 'xInput',
+  mixins: [emit],
   data () {
     return {
       currValue: this.value || ''
@@ -30,14 +33,19 @@ export default {
             this.currValue = ''; this.$emit('input', this.currValue)
             this.$refs.input.focus()
           }
-
           return <div class="x-clearable" on-click={clear}><i class="x-icon-x"></i></div>
         }
       }
     },
-    changeEv (e) {
+    inputEvent (e) {
       this.currValue = e.target.value
       this.$emit('input', this.value || this.value === '' ? this.currValue : e)
+    },
+    blurEvent(e){
+      this.dispatch('xFormItem', 'blur', this.currValue)
+    },
+    changeEvent(e){
+      this.dispatch('xFormItem', 'change', this.currValue)
     }
   },
   watch: {
@@ -67,13 +75,13 @@ export default {
     const inputDom = () => {
       if (this.type === 'textarea') {
         return <div class="x-from-textarea">
-          <textarea class="x-textarea" {...inputClass} {...attrs} {...listeners} on-input={this.changeEv} ref='input'></textarea>
+          <textarea class="x-textarea" {...inputClass} {...attrs} {...listeners} on-input={this.inputEvent} on-blur={this.blurEvent} on-change={this.changeEvent} ref='input'></textarea>
           { this.$attrs.maxlength ? <span class='x-textarea-maxlength'>{this.currValue.length}/{this.$attrs.maxlength}</span> : '' }
         </div>
       } else {
         return <div class="x-from-input">
           { this.iconAfter ? <span class='x-icon-path-affter'><i class={this.iconAfter}></i></span> : '' }
-          <input class="x-input" type={this.type} value={this.currValue} {...inputClass} {...attrs} {...listeners} on-input={this.changeEv} ref='input'/>
+          <input class="x-input" type={this.type} value={this.currValue} {...inputClass} {...attrs} {...listeners} on-input={this.inputEvent} on-blur={this.blurEvent} on-change={this.changeEvent} ref='input'/>
           { this.clearDom() }
           { this.iconBefore ? <span class='x-icon-path-before'><i class={this.iconBefore}></i></span> : '' }
         </div>

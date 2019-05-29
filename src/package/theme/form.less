@@ -19,6 +19,16 @@
     .x-form-input-wrapper {
       padding: 0 10px;
       flex: 1;
+      position: relative;
+      
+    }
+
+    .x-form-lable{
+      &.x-form-label-required::before{
+        content: "*";
+        color: red;
+        margin-right: 5px;
+      }
     }
   }
 }
