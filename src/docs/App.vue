@@ -10,12 +10,13 @@
             <i></i>
           </span>
         </div>
-        <p>一套基于 Vue.js UI 组件库</p>
+        <p>一套基于 Vue.js UI组件库</p>
       </div>
     </div>
     <div class="wrapper">
       <div class="sidebar-menu" style="width:220px">
         <div style="padding: 20px">
+        <router-link to="/">
           <div class="logo-img">
             <span>
               <i></i>
@@ -24,6 +25,7 @@
               <i></i>
             </span>
           </div>
+          </router-link>
         </div>
         <x-menu :all-opend="true">
           <x-menu-item name="1">
@@ -57,7 +59,7 @@
 <script>
 import nav from "./router/routeTemp"
 import { setTimeout } from 'timers';
-const LOADING = 'loader'
+const LOADING = 'RelaxUI'
 export default {
   name: "App",
   data() {
@@ -67,10 +69,10 @@ export default {
     }
   },
   created() {
-    const page = localStorage.getItem(LOADING)
-    if(page){
-      this.loader = false
-    }
+    // const page = localStorage.getItem(LOADING)
+    // if(page){
+    //   this.loader = false
+    // }
   },
   mounted() {
     setTimeout(this.closeLoader, 4600)

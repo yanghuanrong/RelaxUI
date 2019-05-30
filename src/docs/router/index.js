@@ -6,7 +6,10 @@ import '@/docs/style/nprogress.css'
 
 Vue.use(Router)
 
-const routes = []
+const routes = [{
+  path: '/',
+  component: () => import('@/docs/view/home/index.vue')
+}]
 
 routeTemp.forEach((item) => {
   routes.push(...item.route)
@@ -14,8 +17,11 @@ routeTemp.forEach((item) => {
 
 const router = new Router({
   routes: routes,
-  scrollBehavior () {
-    return { x: 0, y: 0 }
+  scrollBehavior() {
+    return {
+      x: 0,
+      y: 0
+    }
   }
 })
 
