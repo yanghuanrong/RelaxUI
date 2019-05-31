@@ -58,7 +58,8 @@
 
 <script>
 import nav from "./router/routeTemp"
-import { setTimeout } from 'timers';
+import Cookies from 'js-cookie'
+
 const LOADING = 'RelaxUI'
 export default {
   name: "App",
@@ -69,10 +70,10 @@ export default {
     }
   },
   created() {
-    // const page = localStorage.getItem(LOADING)
-    // if(page){
-    //   this.loader = false
-    // }
+    const page = Cookies.get(LOADING)
+    if(page){
+      this.loader = false
+    }
   },
   mounted() {
     setTimeout(this.closeLoader, 4600)
@@ -80,7 +81,7 @@ export default {
   methods: {
     closeLoader() {
       this.loader = false
-      localStorage.setItem(LOADING, true)
+      Cookies.set(LOADING, 'true', { expires: 1 });
     }
   }
 }
