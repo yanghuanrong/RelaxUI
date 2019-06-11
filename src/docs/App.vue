@@ -71,7 +71,7 @@ export default {
   },
   created() {
     const page = Cookies.get(LOADING)
-    if(page){
+    if (page) {
       this.loader = false
     }
   },

@@ -13,6 +13,13 @@ const component = [{
         text: 'Icon 图标'
       },
       component: () => import('@/docs/view/icon/index.vue')
+    },
+    {
+      path: '/badge',
+      meta: {
+        text: 'Badge 标记'
+      },
+      component: () => import('@/docs/view/badge/index.vue')
     }
   ]
 }, {

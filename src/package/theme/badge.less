@@ -1,0 +1,42 @@
+.x-badge{
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+
+  .x-btn{
+    margin: 0;
+  }
+
+  .x-badge-num{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    transform: translate(100%, -50%);
+
+    border-radius: 10px;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 6px;
+    text-align: center;
+    white-space: nowrap;
+
+    &.x-badge-danger{
+      background-color: @danger;
+    }
+    &.x-badge-primary{
+      background-color: @primary;
+    }
+    &.x-badge-warning{
+      background-color: @warning;
+    }
+    &.x-badge-info{
+      background-color: @info;
+    }
+    &.x-badge-success{
+      background-color: @success;
+    }
+  }
+}

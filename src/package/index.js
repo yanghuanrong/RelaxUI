@@ -11,6 +11,7 @@ import Message from './Message'
 import Notice from './Notice'
 import create from './utils/create'
 import Form from './Form'
+import Badge from './Badge'
 
 const components = {
   ...Button,
@@ -19,6 +20,7 @@ const components = {
   ...Grid,
   ...Checkbox,
   ...Form,
+  Badge,
   Datepicker,
   Icon,
   Switch,
