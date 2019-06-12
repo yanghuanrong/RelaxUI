@@ -10,15 +10,15 @@
   .x-badge-num{
     position: absolute;
     top: 0px;
-    right: 10px;
-    transform: translate(100%, -50%);
+    right: -10px;
+    transform: translateY(-50%);
 
     border-radius: 10px;
     color: #fff;
     display: inline-block;
     font-size: 12px;
-    height: 18px;
-    line-height: 18px;
+    height: 16px;
+    line-height: 16px;
     padding: 0 6px;
     text-align: center;
     white-space: nowrap;
@@ -37,6 +37,13 @@
     }
     &.x-badge-success{
       background-color: @success;
+    }
+
+    &.x-badge-dot{
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      right: -5px;
     }
   }
 }

@@ -29,7 +29,8 @@
         </x-badge>
       </template>
       <template slot="desc">
-        按钮可以根据<i>type</i>来设置不同的颜色，提供了5种类型的标记<i>primary</i><i>success</i><i>info</i><i>danger</i><i>warning</i>
+        定义value属性，它接受Number或者String <br/>
+        标记可以根据<i>type</i>来设置不同的颜色，提供了5种类型的标记<i>primary</i><i>success</i><i>info</i><i>danger</i><i>warning</i>
       </template>
       <textarea slot="code">
         <template>
@@ -50,6 +51,74 @@
           </x-badge>
           <x-badge :value="2" type="warning">
             <x-button type='warning' plain>warning</x-button>
+          </x-badge>
+        </template>
+      </textarea>
+    </RelaxTag>
+
+    <RelaxTag name="最大值">
+      <template slot="temp">
+        <x-badge :value="120" :max="99">
+          <x-button type='primary' plain>primary</x-button>
+        </x-badge>
+        <x-badge :value="21" :max="10">
+          <x-button type='warning' plain>warning</x-button>
+        </x-badge>
+      </template>
+      <template slot="desc">
+        可自定义最大值
+      </template>
+      <textarea slot="code">
+        <template>
+          <x-badge :value="120" :max="99">
+            <x-button type='primary' plain>primary</x-button>
+          </x-badge>
+          <x-badge :value="21" :max="10">
+            <x-button type='warning' plain>warning</x-button>
+          </x-badge>
+        </template>
+      </textarea>
+    </RelaxTag>
+
+    <RelaxTag name="自定义内容">
+      <template slot="temp">
+        <x-badge value="New">
+          <x-button type='primary' plain>primary</x-button>
+        </x-badge>
+        <x-badge value="Hot">
+          <x-button type='warning' plain>warning</x-button>
+        </x-badge>
+      </template>
+      <template slot="desc">
+        可以显示数字以外的文本内容。
+      </template>
+      <textarea slot="code">
+        <template>
+          <x-badge value="New">
+            <x-button type='primary' plain>primary</x-button>
+          </x-badge>
+          <x-badge value="Hot">
+            <x-button type='warning' plain>warning</x-button>
+          </x-badge>
+        </template>
+      </textarea>
+    </RelaxTag>
+
+    <RelaxTag name="小红点">
+      <template slot="temp">
+        <x-badge dot>评论</x-badge>
+        <x-badge dot>
+          <x-button type='warning' plain>消息</x-button>
+        </x-badge>
+      </template>
+      <template slot="desc">
+        以红点的形式标注需要关注的内容
+      </template>
+      <textarea slot="code">
+        <template>
+          <x-badge dot>评论</x-badge>
+          <x-badge dot>
+            <x-button type='warning' plain>消息</x-button>
           </x-badge>
         </template>
       </textarea>

@@ -1,8 +1,8 @@
 <template>
   <div class="x-badge">
     <slot></slot>
-    <span class="x-badge-num" :class="'x-badge-' + type">
-      {{value}}
+    <span class="x-badge-num" :class="['x-badge-' + type, dot && 'x-badge-dot']">
+      {{val}}
     </span>
   </div>
 </template>
@@ -11,7 +11,9 @@
 export default {
   name: 'xBadge',
   props:{
-    value: Number,
+    value: [Number, String],
+    max: Number,
+    dot: Boolean,
     type: {
       type: String,
       default: 'danger',
@@ -23,6 +25,11 @@ export default {
           'info',
           'danger',
         ].some(item => value === item)
+    }
+  },
+  computed:{
+    val(){
+      return this.value > this.max ? this.max + '+' : this.value
     }
   }
 }
