@@ -20,6 +20,13 @@ const component = [{
         text: 'Badge 标记'
       },
       component: () => import('@/docs/view/badge/index.vue')
+    },
+    {
+      path: '/drag',
+      meta: {
+        text: 'Drag 拖拽'
+      },
+      component: () => import('@/docs/view/drag/index.vue')
     }
   ]
 }, {
