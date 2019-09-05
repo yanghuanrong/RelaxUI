@@ -1,20 +1,29 @@
 <template>
   <div class='x-drag-group' @mousedown="move">
     <slot></slot>
-    <div class="x-select" :style="{
+    <div class="x-drag-multiple" :style="{
       width: selectStyle.w + 'px',
       height: selectStyle.h + 'px',
       top: selectStyle.y + 'px',
       left: selectStyle.x + 'px',
-    }" v-show="isTouch"></div>
+    }" v-show="isTouch" v-if="multiple"></div>
   </div>
 </template>
 <script>
+import emit from '../utils/emit'
+
 export default {
   name: 'xDragGroup',
   provide () {
     return {
       stage: this
+    }
+  },
+  mixins: [emit],
+  props:{
+    multiple: {
+      type: Boolean,
+      default: false,
     }
   },
   data(){
@@ -34,11 +43,25 @@ export default {
   mounted(){
     this.w = this.$el.offsetWidth
     this.h = this.$el.offsetHeight
-    console.log(this)
+    
+    this.multipleBroadcast()
   },
   methods:{
-
+    multipleBroadcast(){
+      this.$on('dragDown', (e) => {
+        this.broadcast('xDrag', 'multipleDown', e)
+      })
+      this.$on('dragMove', (e) => {
+        this.broadcast('xDrag', 'multipleMove', e)
+      })
+      this.$on('dragUp', (e) => {
+        this.broadcast('xDrag', 'multipleUp', e)
+      })
+    },
     move(e){
+      if(!this.multiple){
+        return
+      }
       this.isTouch = true
 
       const touchX = e.pageX

@@ -9,7 +9,7 @@
     <div class="components-button-demo">
     <RelaxTag name="拖拽">
       <template slot="temp">
-          <x-dragGroup style="height: 500px; height: 500px; position:relative; background: #ccc;">
+          <x-dragGroup multiple style="height: 500px; height: 500px; position:relative; background: #ccc;">
             <x-drag>
               <div style="width: 40px; height: 40px; background: #000;"></div>
             </x-drag>
@@ -23,7 +23,7 @@
       </template>
       <textarea slot="code">
         <template>
-          <x-dragGroup style="height: 500px; height: 500px; position:relative; background: #ccc;">
+          <x-dragGroup multiple style="height: 500px; height: 500px; position:relative; background: #ccc;">
             <x-drag>
               <div style="width: 40px; height: 40px; background: #000;"></div>
             </x-drag>

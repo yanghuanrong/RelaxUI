@@ -11,10 +11,12 @@
 
 <script>
 import {casks} from '../utils/collision'
+import emit from '../utils/emit'
 
 export default {
   name: 'xDrag',
   inject: ["stage"],
+  mixins: [emit],
   data () {
     return {
       select: false,
@@ -27,6 +29,8 @@ export default {
   mounted(){
     this.w = this.$el.offsetWidth
     this.h = this.$el.offsetWidth
+
+    this.multipleNotice()
   },
   watch:{
     'stage.selectStyle':{
@@ -42,34 +46,55 @@ export default {
     }
   },
   methods: {
+    multipleNotice(){
+        let touchX
+        let touchY
+        this.$on('multipleDown', (e) => {
+          if(this.select){
+            touchX = e.pageX - this.x
+            touchY = e.pageY - this.y
+          }
+        })
+        this.$on('multipleMove', (ev) => {
+          if(this.select){
+            let x = ev.pageX - touchX
+            let y = ev.pageY - touchY
+
+            if(x < 0){
+              x = 0
+            }
+            if(x > this.stage.w - this.w){
+              x = this.stage.w - this.w
+            }
+            if(y < 0){
+              y = 0
+            }
+            if(y > this.stage.h - this.h){
+              y = this.stage.h - this.h
+            }
+
+            this.x = x
+            this.y = y
+          }
+        })
+        this.$on('multipleUp', (ev) => {
+          touchX = null
+          touchY = null
+        })
+    },
     move(e){
       e.preventDefault()
 
-      const touchX = e.pageX - this.x
-      const touchY = e.pageY - this.y
+      this.select = true
+      this.dispatch('xDragGroup', 'dragDown', e)
 
       document.onmousemove = (ev) => {
-        let x = ev.pageX - touchX
-        let y = ev.pageY - touchY
-
-        if(x < 0){
-          x = 0
-        }
-        if(x > this.stage.w - this.w){
-          x = this.stage.w - this.w
-        }
-        if(y < 0){
-          y = 0
-        }
-        if(y > this.stage.h - this.h){
-          y = this.stage.h - this.h
-        }
-
-        this.x = x
-        this.y = y
+          this.dispatch('xDragGroup', 'dragMove', ev)
       }
 
-      document.onmouseup= () => {
+      document.onmouseup= (e) => {
+        this.dispatch('xDragGroup', 'dragUp', e)
+        this.select = false
         document.onmousemove = null
       }
     }
