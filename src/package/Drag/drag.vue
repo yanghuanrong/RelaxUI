@@ -15,8 +15,6 @@ export default {
   data () {
     return {
       select: false,
-      stageW: null,
-      stageH: null,
       w: null,
       h: null,
       x: 0,
@@ -24,19 +22,15 @@ export default {
     }
   },
   mounted(){
-    this.stageW = this.stage.$el.offsetWidth
-    this.stageH = this.stage.$el.offsetHeight
     this.w = this.$el.offsetWidth
     this.h = this.$el.offsetWidth
   },
   methods: {
     move(e){
+      e.preventDefault()
+
       const touchX = e.pageX - this.x
       const touchY = e.pageY - this.y
-
-      document.onmousedown = (e) => {
-        e.preventDefault()
-      }
 
       document.onmousemove = (ev) => {
         let x = ev.pageX - touchX
@@ -45,14 +39,14 @@ export default {
         if(x < 0){
           x = 0
         }
-        if(x > this.stageW - this.w){
-          x = this.stageW - this.w
+        if(x > this.stage.w - this.w){
+          x = this.stage.w - this.w
         }
         if(y < 0){
           y = 0
         }
-        if(y > this.stageH - this.h){
-          y = this.stageH - this.h
+        if(y > this.stage.h - this.h){
+          y = this.stage.h - this.h
         }
 
         this.x = x
@@ -61,7 +55,6 @@ export default {
 
       document.onmouseup= () => {
         document.onmousemove = null
-        document.onmousedown = null
       }
     }
   },
