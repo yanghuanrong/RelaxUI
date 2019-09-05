@@ -1,6 +1,7 @@
 <template>
   <div
-   class="x-drag" 
+   class="x-drag"
+   :class="{'x-drag-select': select}" 
    :style="{top:y+'px', left: x+'px'}"
     @mousedown.stop="move"
   >
@@ -9,6 +10,8 @@
 </template>
 
 <script>
+import {casks} from '../utils/collision'
+
 export default {
   name: 'xDrag',
   inject: ["stage"],
@@ -24,6 +27,19 @@ export default {
   mounted(){
     this.w = this.$el.offsetWidth
     this.h = this.$el.offsetWidth
+  },
+  watch:{
+    'stage.selectStyle':{
+      handler: function(n,o) {
+        if(o.state === 'touch'){
+          this.select = false
+        }
+        if(o.state === 'move' && casks(o, this)){
+          this.select = true
+        }
+      },
+      deep: true
+    }
   },
   methods: {
     move(e){

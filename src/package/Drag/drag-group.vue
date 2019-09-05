@@ -24,6 +24,7 @@ export default {
         y: 0,
         w: 0,
         h: 0,
+        state: null
       },
       isTouch: false,
       w: null,
@@ -33,14 +34,17 @@ export default {
   mounted(){
     this.w = this.$el.offsetWidth
     this.h = this.$el.offsetHeight
+    console.log(this)
   },
   methods:{
+
     move(e){
       this.isTouch = true
 
       const touchX = e.pageX
       const touchY = e.pageY
 
+      this.selectStyle.state = 'touch'
       this.selectStyle.x = touchX - this.$el.offsetLeft
       this.selectStyle.y = touchY - this.$el.offsetTop
       
@@ -52,6 +56,8 @@ export default {
       }
 
       document.onmousemove = (ev) => {
+        this.selectStyle.state = 'move'
+
         let w = ev.pageX - touchX
         let h = ev.pageY - touchY
         
@@ -86,11 +92,13 @@ export default {
           this.selectStyle.y = y
           this.selectStyle.h = h
         }
-    
+
+
       }
 
       document.onmouseup= () => {
-        
+        this.selectStyle.state = 'up'
+
         this.isTouch = false
 
         this.selectStyle.w = 0
