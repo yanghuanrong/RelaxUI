@@ -583,5 +583,5 @@ const calendar = {
     return calendar.solar2lunar(cY,cM,cD);
   }
 };
-module.exports=calendar
+export default calendar
 

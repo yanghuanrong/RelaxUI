@@ -84,10 +84,11 @@ export default {
     },
     methods:{
         emitData(day){
+            let d = day < 10 ? `0${day}` : day
             return {
-                date: day,
+                date: d,
                 data: {
-                    day: this.nowTime.year + '-' + (this.nowTime.mouth + 1)  + '-' + day, 
+                    day: this.nowTime.year + '-' + (this.nowTime.mouth + 1)  + '-' + d, 
                     type: this.nowTime.month 
                 }
             }
@@ -148,7 +149,8 @@ export default {
             return day==this.nowTime.day && this.nowTime.mouth == new Date().getMonth()
         },
         changeDay(day){
-            this.dateTime = this.nowTime.year + '-' + (this.nowTime.mouth + 1)  + '-' + day;
+            let d = day < 10 ? `0${day}` : day
+            this.dateTime = this.nowTime.year + '-' + (this.nowTime.mouth + 1)  + '-' + d;
             this.isActive = false;
             this.$emit('input', this.dateTime);
         }
