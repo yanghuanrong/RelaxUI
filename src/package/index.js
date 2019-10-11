@@ -5,6 +5,7 @@ import Input from './Input'
 import Grid from './Grid'
 import Checkbox from './Checkbox'
 import Datepicker from './Datepicker'
+import Calendar from './Calendar'
 import Select from './Select'
 import Switch from './Switch'
 import Message from './Message'
@@ -24,6 +25,7 @@ const components = {
   ...Drag,
   Badge,
   Datepicker,
+  Calendar,
   Icon,
   Switch,
   Input,

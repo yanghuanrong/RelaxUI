@@ -1,0 +1,78 @@
+.x-calendar {
+  width: 100%;
+  position: relative;
+}
+.x-calendar {
+  width: 100%;
+  padding: 15px;
+  // border: 1px solid #e4e7ed;
+  // border-radius: 5px;
+  // background: #fff;
+  // z-index: 999;
+}
+.x-calendar_header {
+  text-align: center;
+  line-height: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  align-items: center;
+
+  .x-calendar_header__title{
+    font-size: 16px;
+  }  
+}
+
+.x-calendar_week {
+  width: 100%;
+  margin-bottom: 10px;
+  li{
+    float: left;
+    width: calc(100% / 7);
+    list-style: none;
+    text-align: center; 
+  }
+}
+.x-btn-prve{
+  float: left;
+  font-size: 20px;
+}
+.x-btn-next{
+  float: right;
+  font-size: 20px;
+}
+.x-calendar_month li{
+  list-style: none;
+  float: left;
+  text-align: center;
+  width: calc(100% / 7);
+  padding: 5px;
+
+  &.today{
+    .x-calendar_day{
+      border-color: @primary;
+    }
+  }
+
+  .x-calendar_day{
+    border-top: 2px solid @border;
+    .x-calendar_day__value{
+      padding: 4px 10px;
+      text-align: right;
+    }
+    .x-calendar_day__content{
+      height: 40px;
+      overflow-y: auto;
+    }
+  }
+}
+.notNowDay{
+  color: @border;
+}
+
+.x-clearfix:after{
+  content: '';
+  display: block;
+  clear: both;
+}

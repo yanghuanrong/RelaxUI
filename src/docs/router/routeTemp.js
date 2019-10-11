@@ -75,6 +75,13 @@ const component = [{
       component: () => import('@/docs/view/datePicker/index.vue')
     },
     {
+      path: '/calendar',
+      meta: {
+        text: 'Calendar 日历'
+      },
+      component: () => import('@/docs/view/calendar/index.vue')
+    },
+    {
       path: '/form',
       meta: {
         text: 'Form 表单'
