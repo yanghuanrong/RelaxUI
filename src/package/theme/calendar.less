@@ -27,11 +27,13 @@
 .x-calendar_week {
   width: 100%;
   margin-bottom: 10px;
+  font-size: 16px;
+  text-align: center; 
+  
   li{
     float: left;
     width: calc(100% / 7);
     list-style: none;
-    text-align: center; 
   }
 }
 .x-btn-prve{
@@ -57,13 +59,26 @@
 
   .x-calendar_day{
     border-top: 2px solid @border;
+    position: relative;
+
     .x-calendar_day__value{
-      padding: 4px 10px;
-      text-align: right;
+      padding: 2px 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p:nth-of-type(1){
+        font-size: 14px
+      }
+      p:nth-of-type(2){
+        color: @border;
+      }
     }
     .x-calendar_day__content{
-      height: 40px;
+      height: 65px;
+      text-align: left;
       overflow-y: auto;
+      margin: 0 5px;
     }
   }
 }

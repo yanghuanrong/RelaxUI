@@ -14,9 +14,7 @@
             <template slot="temp">
                 <x-calendar v-model="value">
                     <template v-slot='{date, data}'>
-                        <p v-if="date === 12">明天</p>
-                        <p v-if="date === 14" style="color:red">休</p>
-                        <p v-if="data.day === '2019-10-15'" style="color:red">生日</p>
+                        <p v-if="data.day === '2019-10-31'" style="color:red">生日</p>
                     </template>
                 </x-calendar>
             </template>
@@ -27,9 +25,7 @@
                 <template>
                     <x-calendar>
                         <template v-slot='{date, data}'>
-                            <p v-if="date === 12">明天</p>
-                            <p v-if="date === 14" style="color:red">休</p>
-                            <p v-if="data.day === '2019-10-15'" style="color:red">生日</p>
+                            <p v-if="data.day === '2019-10-31'" style="color:red">生日</p>
                         </template>
                     </x-calendar>
                 </template>
