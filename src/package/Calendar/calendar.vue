@@ -74,6 +74,8 @@ function repair(d){
     return d < 10 ? `0${d}` : d
 }
 
+
+
 export default {
     name: 'xCalendar',
     props: {
@@ -83,18 +85,14 @@ export default {
         'x-calendarDay': CalendarDay
     },
     data(){
-        const nowTime = this.getNowTime(new Date())
-
-        const y = nowTime.year
-        const m = repair(nowTime.month + 1)
-        const d = repair(new Date().getDate())
-        const dateTime = y + '-' + m + '-' + d
-        
         return {
-            dateTime: dateTime,
+            dateTime: '',
             active: '',
-            nowTime: nowTime,
+            nowTime: this.getNowTime(new Date()),
         }
+    },
+    created(){
+        this.dateTime = this.getToday()
     },
     computed:{
         getWeek(){
@@ -181,6 +179,7 @@ export default {
         changeNowMonth(){
             this.nowTime.year = this.nowMonth.year
             this.nowTime.month = this.nowMonth.month
+            this.dateTime = this.getToday()
         },
 
         // 选中的日期
@@ -201,6 +200,12 @@ export default {
         },
         isToDay(day){
             return day == this.nowTime.day && this.nowTime.month == new Date().getMonth()
+        },
+        getToday(){
+            const y = this.nowTime.year
+            const m = repair(this.nowTime.month + 1)
+            const d = repair(new Date().getDate())
+            return y + '-' + m + '-' + d
         },
         getNowTime(date){
             return {
