@@ -5,7 +5,7 @@
                 <div class="x-calendar_header__title">{{nowTime.year}} 年 {{nowTime.month + 1}} 月</div>
                 <x-buttonGroup>
                     <x-button plain @click="changePrevMonth">上个月</x-button>
-                    <x-button plain @click="changeNowMonth">本月</x-button>
+                    <x-button plain @click="changeNowMonth">今日</x-button>
                     <x-button plain @click="changeNextMonth">下个月</x-button>
                 </x-buttonGroup>
             </div>
