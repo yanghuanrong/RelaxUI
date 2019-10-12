@@ -74,8 +74,6 @@ function repair(d){
     return d < 10 ? `0${d}` : d
 }
 
-
-
 export default {
     name: 'xCalendar',
     props: {
@@ -95,17 +93,19 @@ export default {
         this.dateTime = this.getToday()
     },
     computed:{
-        getWeek(){
-            return new Date(this.nowTime.year,this.nowTime.month,1).getDay();
-        },
         prveMonthDay(){
-            return this.getWeek == 0 ? 7 : this.getWeek
+            const getWeek = new Date(this.nowTime.year,this.nowTime.month,1).getDay()
+            return getWeek || 7
         },
         prveMonthBigDay(){
             return this.getYearMonthDayNum(this.nowTime.year,this.nowTime.month);
         },
         nowMonthBigDay(){
             return this.getYearMonthDayNum(this.nowTime.year,this.nowTime.month + 1);
+        },
+        nextMonthDay(){
+            const CELL = 42
+            return CELL - this.nowMonthBigDay - this.prveMonthDay
         },
         prveMonth(){
             let year = this.nowTime.year
@@ -135,9 +135,6 @@ export default {
                 month ++
             }
             return {year, month}
-        },
-        nextMonthDay(){
-            return 42 - this.nowMonthBigDay - this.prveMonthDay
         }
     },
     methods:{
@@ -215,7 +212,7 @@ export default {
                 days:date.getDay(),
             }
         },
-        getYearMonthDayNum(year,month){   
+        getYearMonthDayNum(year, month){   
             var dayNum = [31,28,31,30,31,30,31,31,30,31,30,31];   
             if(new Date(year,1,29).getDate() == 29){   
                 dayNum[1] = 29;   
