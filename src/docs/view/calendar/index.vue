@@ -34,7 +34,53 @@
                 </script>
             </textarea>
         </RelaxTag>
+
+          <div class="relax-document">
+    <div class="document-title">
+      <h4>Attributes</h4>
     </div>
+    <table class="document-api">
+      <thead>
+        <th>属性</th>
+        <th>说明</th>
+        <th>类型</th>
+        <th>默认值</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>value / v-model</td>
+          <td>绑定值</td>
+          <td>string</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="document-title">
+      <h4>dateCell scoped slot 参数</h4>
+    </div>
+    <table class="document-event">
+      <thead>
+        <th>参数</th>
+        <th>说明</th>
+        <th>类型</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>date</td>
+          <td>单元格代表的日期</td>
+          <td>string</td>
+        </tr>
+        <tr>
+          <td>date</td>
+          <td>{day, holiday, lunar ,week} <br> day 是格式化的日期，格式为 yyyy-MM-dd<br> holiday 是节日<br> lunar 是农历<br> week 是当前所属的星期 </td>
+          <td>object</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+    </div>
+    
 </template>
 
 <script>

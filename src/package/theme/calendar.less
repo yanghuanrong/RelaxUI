@@ -28,12 +28,12 @@
   width: 100%;
   margin-bottom: 10px;
   font-size: 16px;
-  text-align: center; 
   
   li{
     float: left;
     width: calc(100% / 7);
     list-style: none;
+    padding: 0 10px;
   }
 }
 .x-btn-prve{
@@ -49,20 +49,31 @@
   float: left;
   text-align: center;
   width: calc(100% / 7);
-  padding: 5px;
+  padding:0px 5px;
 
   &.today{
     .x-calendar_day{
       border-color: @primary;
     }
   }
+  &.active{
+    .x-calendar_day{
+      background: fade(@primary, 10%);
+
+      .x-calendar_day__value p:nth-of-type(1){
+        color: @primary;
+      }
+    }
+  }
 
   .x-calendar_day{
     border-top: 2px solid @border;
     position: relative;
+    cursor: pointer;
+    transition: .2s;
 
     .x-calendar_day__value{
-      padding: 2px 5px;
+      padding: 5px 5px;
       display: flex;
       justify-content: space-between;
       align-items: center;
