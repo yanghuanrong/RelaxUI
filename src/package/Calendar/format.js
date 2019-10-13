@@ -514,11 +514,12 @@ const calendar = {
    }
    for (var i in calendar.sFtv) {
      if (calendar.sFtv[i].match(/^(\d{2})(.{2})(.+)$/)) {
-       if(month == RegExp.$1 && day == RegExp.$2){
+       if(m == RegExp.$1 && d == RegExp.$2){
          old_str = RegExp.$3
         }
       }
     }
+    // console.log(y, day)
     for (var i in calendar.lFtv) {
       if (calendar.lFtv[i].match(/^(\d{2})(.{2})(.+)$/)) {
         if(month == RegExp.$1 && day == RegExp.$2){

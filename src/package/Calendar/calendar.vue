@@ -37,6 +37,8 @@
 import CalendarDay from './calendar-day'
 import calendar from './format'
 
+console.log(calendar.solar2lunar('2019', '10', '01'))
+
 function repair(d){
     return d < 10 ? `0${d}` : d
 }
@@ -141,7 +143,8 @@ export default {
     methods:{
         // 暴露给用户的数据
         emitData(props){
-            const data = calendar.lunar2solar(props.y, props.m, props.d)
+            
+            const data = calendar.solar2lunar(props.y, props.m, props.d)
             const y = props.y
             const m = repair(props.m)
             const d = repair(props.d)

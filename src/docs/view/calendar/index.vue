@@ -13,7 +13,8 @@
       <template slot="temp">
         <x-calendar v-model="value">
           <template v-slot="{date, data}">
-            <p v-if="data.day === '2019-10-31'" style="color:red">生日</p>
+            <p v-if="data.day === '2019-10-31'" style="color:green">生日</p>
+            <p v-if="data.week === '星期日'" style="color:red">{{data.week}}</p>
           </template>
         </x-calendar>
       </template>
@@ -24,7 +25,8 @@
                 <template>
                     <x-calendar>
                         <template v-slot='{date, data}'>
-                            <p v-if="data.day === '2019-10-31'" style="color:red">生日</p>
+                            <p v-if="data.day === '2019-10-31'" style="color:green">生日</p>
+                            <p v-if="data.week === '星期日'" style="color:red">休</p>
                         </template>
                     </x-calendar>
                 </template>
@@ -70,7 +72,7 @@
             <td>string</td>
           </tr>
           <tr>
-            <td>date</td>
+            <td>data</td>
             <td>
               {day, holiday, lunar ,week}
               <br />day 是格式化的日期，格式为 yyyy-MM-dd
