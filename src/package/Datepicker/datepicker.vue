@@ -49,7 +49,6 @@ export default {
         },
         prveMouthBigDay(){
             let a = this.getYearMonthDayNum(this.nowTime.year,this.nowTime.mouth);
-            console.log(a);
             return a;
         },
         nowMouthBigDay(){

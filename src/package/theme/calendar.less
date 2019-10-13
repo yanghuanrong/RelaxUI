@@ -36,14 +36,7 @@
     padding: 0 10px;
   }
 }
-.x-btn-prve{
-  float: left;
-  font-size: 20px;
-}
-.x-btn-next{
-  float: right;
-  font-size: 20px;
-}
+
 .x-calendar_month li{
   list-style: none;
   float: left;
@@ -55,6 +48,9 @@
     .x-calendar_day{
       border-color: @primary;
     }
+  }
+  &.Prev,&.Next{
+    color: @border;
   }
   &.active{
     .x-calendar_day{
@@ -93,9 +89,7 @@
     }
   }
 }
-.notNowDay{
-  color: @border;
-}
+
 
 .x-clearfix:after{
   content: '';

@@ -13,51 +13,18 @@
                 <li v-for="(week,index) in 7" :key="week">{{backWeek(index)}}</li>
             </ul>
             <ul class='x-calendar_month x-clearfix'>
-                <!--上个月-->
-                <li 
-                v-for='(day,index) in prveMonthDay' :key="50 + index" 
-                class='notNowDay' 
-                :class="{active: isAactiveDay(prveMonthBigDay - prveMonthDay + index + 1, prveMonth)}"
-                @click='changeDay({
-                    y: prveMonth.year,
-                    m: prveMonth.month,
-                    d: prveMonthBigDay - prveMonthDay + index + 1,
-                    type: "Prev",
-                })'>
-                    <x-calendarDay :value='emitData(prveMonthBigDay - prveMonthDay + index + 1, prveMonth)'>
+                <li v-for='(item,index) in calendarData' :key="index" 
+                :class="[
+                    item.type,
+                    {
+                        active: isAactiveDay(item),
+                        today: isToDay(item)
+                    }
+                ]"
+                @click='changeDay(item)'>
+                    <x-calendarDay :value='emitData(item)'>
                         <template>
-                            <slot v-bind="emitData(prveMonthBigDay - prveMonthDay + index + 1, prveMonth)"></slot>
-                        </template>
-                    </x-calendarDay>
-                </li>
-                <!--本月-->
-                <li v-for='day in nowMonthBigDay' :key="day" 
-                :class='{today:isToDay(day), active: isAactiveDay(day, nowTime)}' 
-                @click='changeDay({
-                    y: nowTime.year,
-                    m: nowTime.month,
-                    d: day,
-                    type: "Now", 
-                })'>
-                    <x-calendarDay :value='emitData(day, nowTime)'>
-                        <template>
-                            <slot v-bind="emitData(day, nowTime)"></slot>
-                        </template>
-                    </x-calendarDay>
-                </li>
-                <!--下个月-->
-                <li v-for='(day,index) in nextMonthDay' :key="100 + index" 
-                class='notNowDay' 
-                :class="{active: isAactiveDay(day, nextMonth)}"
-                @click='changeDay({
-                    y: nextMonth.year,
-                    m: nextMonth.month,
-                    d: day,
-                    type: "Next", 
-                })'>
-                    <x-calendarDay :value='emitData(day, nextMonth)'>
-                        <template>
-                            <slot v-bind="emitData(day, nextMonth)"></slot>
+                            <slot v-bind="emitData(item)"></slot>
                         </template>
                     </x-calendarDay>
                 </li>
@@ -93,21 +60,55 @@ export default {
         this.dateTime = this.getToday()
     },
     computed:{
-        prveMonthDay(){
-            const getWeek = new Date(this.nowTime.year,this.nowTime.month,1).getDay()
-            return getWeek || 7
-        },
-        prveMonthBigDay(){
-            return this.getYearMonthDayNum(this.nowTime.year,this.nowTime.month);
-        },
-        nowMonthBigDay(){
-            return this.getYearMonthDayNum(this.nowTime.year,this.nowTime.month + 1);
-        },
-        nextMonthDay(){
+        calendarData(){
+            const getWeek = new Date(this.nowTime.year, this.nowTime.month, 1).getDay() || 7
+            const nowMonthBigDay = this.getYearMonthDayNum(this.nowTime.year,this.nowTime.month + 1);
+            const prevMonthBigDay = this.getYearMonthDayNum(this.nowTime.year,this.nowTime.month)
+
             const CELL = 42
-            return CELL - this.nowMonthBigDay - this.prveMonthDay
+            const nextMonthDay = CELL - nowMonthBigDay - getWeek
+            const nowMonthDay = this.getYearMonthDayNum(this.nowTime.year, this.nowTime.month + 1)
+            const prevMonthDay = CELL - nowMonthDay - nextMonthDay
+
+            const prevMonth = this.prevMonth
+            const nowMonth = this.nowTime
+            const nextMonth = this.nextMonth
+
+            const CellData = []
+
+            for(let i = prevMonthDay; i > 0; i--) {
+                const day = prevMonthBigDay - (i - 1)
+                CellData.push({
+                    y: prevMonth.year,
+                    m: prevMonth.month + 1,
+                    d: day,
+                    type: 'Prev'
+                })
+            }
+
+            for(let i = 1; i <= nowMonthDay; i++){
+                const day = i
+                CellData.push({
+                    y: nowMonth.year,
+                    m: nowMonth.month + 1,
+                    d: day,
+                    type: 'Now'
+                })
+            }
+
+            for(let i = 1; i <= nextMonthDay; i++){
+                const day = i
+                CellData.push({
+                    y: nextMonth.year,
+                    m: nextMonth.month + 1,
+                    d: day,
+                    type: 'Next'
+                })
+            }
+
+            return CellData
         },
-        prveMonth(){
+        prevMonth(){
             let year = this.nowTime.year
             let month = this.nowTime.month
             if(month == 0){
@@ -139,12 +140,12 @@ export default {
     },
     methods:{
         // 暴露给用户的数据
-        emitData(day, {month, year}){
-            const y = year
-            const m = repair(month + 1)
-            const d = repair(day)
+        emitData(props){
+            const data = calendar.lunar2solar(props.y, props.m, props.d)
+            const y = props.y
+            const m = repair(props.m)
+            const d = repair(props.d)
             
-            const data = calendar.lunar2solar(year, month + 1, day)
             return {
                 date: d,
                 data: {
@@ -158,8 +159,8 @@ export default {
 
         // 上个月的事件方法
         changePrevMonth(){
-            this.nowTime.year = this.prveMonth.year
-            this.nowTime.month = this.prveMonth.month
+            this.nowTime.year = this.prevMonth.year
+            this.nowTime.month = this.prevMonth.month
             const month = repair(this.nowTime.month + 1)
             this.dateTime = this.nowTime.year + '-' + month + '-01'
         },
@@ -180,23 +181,20 @@ export default {
         },
 
         // 选中的日期
-        changeDay(data){
-            if(data.type !== 'Now'){
-                this['change'+ data.type +'Month']()
+        changeDay({y, m, d, type}){
+            if(type !== 'Now'){
+                this['change'+ type +'Month']()
             }
-            const m = repair(data.m + 1)
-            const d = repair(data.d)
-            this.dateTime = data.y + '-' + m + '-' + d
+            this.dateTime = y + '-' + m + '-' + repair(d)
             this.$emit('input', this.dateTime);
         },
-        isAactiveDay(day, {year, month}){
-            const y = year
-            const m = repair(month + 1)
-            const d = repair(day)
-            return this.dateTime === (y + '-' + m + '-' + d)
+        isAactiveDay({y, m, d}){
+            const date = y + '-' + m + '-' + repair(d)
+            return this.dateTime === date
         },
-        isToDay(day){
-            return day == this.nowTime.day && this.nowTime.month == new Date().getMonth()
+        isToDay({y, m, d}){
+            const date = y + '-' + m + '-' + d
+            return date === this.getToday()
         },
         getToday(){
             const y = this.nowTime.year
