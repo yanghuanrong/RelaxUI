@@ -145,7 +145,6 @@ export default {
             const y = props.y
             const m = repair(props.m)
             const d = repair(props.d)
-            
             return {
                 date: d,
                 data: {
@@ -185,16 +184,15 @@ export default {
             if(type !== 'Now'){
                 this['change'+ type +'Month']()
             }
-            this.dateTime = y + '-' + m + '-' + repair(d)
+            this.dateTime = y + '-' + repair(m) + '-' + repair(d)
             this.$emit('input', this.dateTime);
         },
         isAactiveDay({y, m, d}){
-            const date = y + '-' + m + '-' + repair(d)
+            const date = y + '-' + repair(m) + '-' + repair(d)
             return this.dateTime === date
         },
-        isToDay({y, m, d}){
-            const date = y + '-' + m + '-' + d
-            return date === this.getToday()
+        isToDay({d}){
+            return d === this.nowTime.day && this.nowTime.month == new Date().getMonth()
         },
         getToday(){
             const y = this.nowTime.year
