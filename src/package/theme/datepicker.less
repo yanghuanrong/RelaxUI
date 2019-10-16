@@ -29,6 +29,7 @@
     width: calc(100% / 7);
     list-style: none;
     text-align: center;
+    margin-bottom: 5px;
   }
 
   .x-btn-prve {
@@ -40,28 +41,43 @@
     float: right;
     font-size: 20px;
   }
-
-  .x-picker_day li {
-    list-style: none;
-    float: left;
-    width: calc(100% / 7);
-    text-align: center;
-    line-height: calc(248px / 7);
-    height: calc(248px / 7);
-  }
-
-  .notNowDay {
-    color: #c0c4cc;
-  }
-
-  .today {
-    color: @primary;
-    font-weight: 700;
-  }
-
-  .x-clearfix:after {
-    content: '';
-    display: block;
-    clear: both;
+  .x-picker_day{
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      list-style: none;
+      width: calc(100% / 7);
+      text-align: center;
+      line-height: calc(248px / 7);
+      height: calc(248px / 7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+  
+      &.today {
+        color: @primary;
+        font-weight: 700;
+      }
+      &.Prev,&.Next{
+        color: @border;
+      }
+      &.active{
+        span{
+          background: @primary;
+          color: #FFF;
+        }
+      }
+      span{
+        width: 24px;
+        line-height: 2;
+        margin: 0 auto;
+        height: 24px;
+        display: block;
+        border-radius: 100%;
+        text-align: center;
+      }
+      
+    }
   }
 }
