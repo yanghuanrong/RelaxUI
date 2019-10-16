@@ -19,7 +19,6 @@
                         <li v-for='day in nowMouthBigDay' :key="day" :class='{today:isToDay(day)}' @click='changeDay(day)'>{{day}}</li>
                         <li v-for='(day,index) in nextMouthDay' :key="100 + index" class='notNowDay'>{{day}}</li>
                     </ul>
-                    <div class='x-picker_arrow'></div>
                 </div>
             </transition>
         </div>
@@ -36,8 +35,8 @@ export default {
     data(){
         return {
             dateTime:'',
-            nowTime:this.getNowTime(new Date()),
-            isActive:false
+            nowTime: this.getNowTime(new Date()),
+            isActive: false
         }
     },
     computed:{
