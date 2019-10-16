@@ -6,18 +6,18 @@
                 <div class='x-picker' v-show='isActive'>
                     <div class='x-picker_header x-clearfix'>
                         <span class='x-icon-chevrons-left x-btn-prve' @click="prveYear"></span>
-                        <span class='x-icon-chevron-left x-btn-prve' @click="prveMouth"></span>
-                        <span>{{nowTime.year}} 年 {{nowTime.mouth + 1}} 月</span>
+                        <span class='x-icon-chevron-left x-btn-prve' @click="prveMonth"></span>
+                        <span>{{nowTime.year}} 年 {{nowTime.month + 1}} 月</span>
                         <span class='x-icon-chevrons-right x-btn-next' @click="nextYear"></span>
-                        <span class='x-icon-chevron-right x-btn-next' @click="nextMouth"></span>
+                        <span class='x-icon-chevron-right x-btn-next' @click="nextMonth"></span>
                     </div>
                     <ul class='x-picker_week x-clearfix'>
                         <li v-for="(week,index) in 7" :key="week">{{backWeek(index)}}</li> 
                     </ul>
                     <ul class='x-picker_day x-clearfix'>
-                        <li v-for='(day,index) in prveMouthDay' :key="50 + index" class='notNowDay'>{{prveMouthBigDay - prveMouthDay + index + 1}}</li>
-                        <li v-for='day in nowMouthBigDay' :key="day" :class='{today:isToDay(day)}' @click='changeDay(day)'>{{day}}</li>
-                        <li v-for='(day,index) in nextMouthDay' :key="100 + index" class='notNowDay'>{{day}}</li>
+                        <li v-for='(day,index) in prveMonthDay' :key="50 + index" class='notNowDay'>{{prveMonthBigDay - prveMonthDay + index + 1}}</li>
+                        <li v-for='day in nowMonthBigDay' :key="day" :class='{today:isToDay(day)}' @click='changeDay(day)'>{{day}}</li>
+                        <li v-for='(day,index) in nextMonthDay' :key="100 + index" class='notNowDay'>{{day}}</li>
                     </ul>
                 </div>
             </transition>
@@ -41,20 +41,20 @@ export default {
     },
     computed:{
         getWeek(){
-            return new Date(this.nowTime.year,this.nowTime.mouth,1).getDay();
+            return new Date(this.nowTime.year,this.nowTime.month,1).getDay();
         },
-        prveMouthDay(){
+        prveMonthDay(){
             return this.getWeek==0?7:this.getWeek
         },
-        prveMouthBigDay(){
-            let a = this.getYearMonthDayNum(this.nowTime.year,this.nowTime.mouth);
+        prveMonthBigDay(){
+            let a = this.getYearMonthDayNum(this.nowTime.year,this.nowTime.month);
             return a;
         },
-        nowMouthBigDay(){
-            return this.getYearMonthDayNum(this.nowTime.year,this.nowTime.mouth + 1);
+        nowMonthBigDay(){
+            return this.getYearMonthDayNum(this.nowTime.year,this.nowTime.month + 1);
         },
-        nextMouthDay(){
-            return 42 - this.nowMouthBigDay - this.prveMouthDay
+        nextMonthDay(){
+            return 42 - this.nowMonthBigDay - this.prveMonthDay
         }
 
     },
@@ -65,7 +65,7 @@ export default {
         getNowTime(date){
             return {
                 year:date.getFullYear(),
-                mouth:date.getMonth(),
+                month:date.getMonth(),
                 day:date.getDate(),
                 days:date.getDay(),
             }
@@ -94,20 +94,20 @@ export default {
         nextYear(){
             this.nowTime.year++;
         },
-        prveMouth(){
-            if(this.nowTime.mouth==0){
+        prveMonth(){
+            if(this.nowTime.month==0){
                 this.nowTime.year--;
-                this.nowTime.mouth = 11;
+                this.nowTime.month = 11;
             }else{
-                this.nowTime.mouth--;
+                this.nowTime.month--;
             }
         },
-        nextMouth(){
-            if(this.nowTime.mouth==11){
+        nextMonth(){
+            if(this.nowTime.month==11){
                 this.nowTime.year++;
-                this.nowTime.mouth = 0;
+                this.nowTime.month = 0;
             }else{
-                this.nowTime.mouth++;
+                this.nowTime.month++;
             }
         },
         getYearMonthDayNum(year,month){   
@@ -121,10 +121,10 @@ export default {
             return dayNum[month-1];   
         },
         isToDay(day){
-            return day==this.nowTime.day && this.nowTime.mouth == new Date().getMonth()
+            return day==this.nowTime.day && this.nowTime.month == new Date().getMonth()
         },
         changeDay(day){
-            this.dateTime = this.nowTime.year + '-' + (this.nowTime.mouth + 1)  + '-' + day;
+            this.dateTime = this.nowTime.year + '-' + (this.nowTime.month + 1)  + '-' + day;
             this.isActive = false;
             this.$emit('input', this.dateTime);
         }
