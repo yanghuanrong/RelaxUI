@@ -10,7 +10,7 @@
             <i></i>
           </span>
         </div>
-        <p>一套基于 Vue.js UI组件库</p>
+        <p>一套基于 Vue.js 的 UI组件库</p>
       </div>
     </div>
     <div class="wrapper">
