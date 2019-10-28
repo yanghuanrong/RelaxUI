@@ -21,19 +21,21 @@
       font-weight: bold;
       font-family: "Roboto", sans-serif;
     }
-    .logo-description{
+
+    .logo-description {
       color: #666;
       margin-top: -10px;
       margin-bottom: 40px;
       font-size: 16px;
       font-family: "Lato", sans-serif;
     }
-    .github{
+
+    .github {
       margin-bottom: 60px;
     }
   }
 
-  .element{
+  .element {
     position: absolute;
     left: 0;
     top: 0;
@@ -41,133 +43,233 @@
     bottom: 0;
     z-index: -1;
 
-    div{
+    div {
       position: absolute;
     }
 
-    .element1{
-      left: 40px;
-      bottom: 150px;
-      border-radius: 100%;
-      width: 35px;
-      height: 35px;
-      background-image: linear-gradient(135deg, #ffff6b, #22e78b;)
+    // 三角
+    .triangle {
+      background-color: #ed4c65;
+      text-align: left;
+      filter: blur(0.5px);
+      position: absolute;
+      top:1em;
+      left: 1.3em;
     }
-    .element2{
-      left: 10px;
-      bottom: -30px;
-      transform: rotate(-45deg);
-      border-radius: 35px;
-      width: 200px;
-      height: 15px;
+
+    .triangle:before,
+    .triangle:after {
+      content: '';
+      position: absolute;
+      background-color: inherit;
+    }
+
+    .triangle,
+    .triangle:before,
+    .triangle:after {
+      width: 3.4em;
+      height: 3.4em;
+      border-top-right-radius: 30%;
+    }
+
+    .triangle {
+      transform: rotate(-60deg) skewX(-30deg) scale(1, .866);
+    }
+
+    .triangle:before {
+      transform: rotate(-135deg) skewX(-45deg) scale(1.414, .707) translate(0, -50%);
+    }
+
+    .triangle:after {
+      transform: rotate(135deg) skewY(-45deg) scale(.707, 1.414) translate(50%);
+    }
+
+    .triangle-rotate {
+      width: 6em;
+      height: 6em;
+      animation: trianglerotate ease-in-out 10s infinite;
+    }
+    .triangle-move {
+      bottom: 20%;
+      left: 13%;
+      width: 6em;
+      height: 6em;
+      animation: trianglemove ease-in-out 10s infinite;
+    }
+
+    @keyframes trianglemove {
+      0% {
+        transform: translateY(0);
+      }
+      10%{
+        transform: translateY(0);
+      }
+      45%{
+        transform: translateY(3em);
+      }
+      55%{
+        transform: translateY(3em);
+      }
+      90%{
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes trianglerotate {
+      0% {
+        transform: rotate(30deg);
+      }
+      10%{
+        transform: rotate(30deg);
+      }
+      45%{
+        transform: rotate(-30deg);
+      }
+      55%{
+        transform: rotate(-30deg);
+      }
+      90%{
+        transform: rotate(30deg);
+      }
+      100% {
+        transform: rotate(30deg);
+      }
+    }
+
+    .ellipse {
+      background-color: #f1f3f4;
+      width: 13em;
+      height: 7.5em;
+      border-radius: 7em;
+      filter: blur(0.6px);
+      left: -5em;
+      top: 50%;
       transform-origin: left center;
-      background-image: linear-gradient(135deg, #2fdd98, #1563f7;)
+      animation: ellipse linear 28s infinite;
     }
-    .element3{
-      left: 50px;
-      bottom: -30px;
-      transform: rotate(-45deg);
-      border-radius: 35px;
-      transform-origin: left center;
-      width: 400px;
-      height: 20px;
-      background-image: linear-gradient(135deg, #2fdd98, #ffe461;)
+
+    @keyframes ellipse {
+      0% {
+        transform: rotate(40deg)
+      }
+
+      5% {
+        transform: rotate(40deg)
+      }
+
+      48% {
+        transform: rotate(-40deg)
+      }
+
+      52% {
+        transform: rotate(-40deg)
+      }
+
+      95% {
+        transform: rotate(40deg)
+      }
+
+      100% {
+        transform: rotate(40deg)
+      }
     }
-    .element4{
-      left: 90px;
-      bottom: -30px;
-      transform: rotate(-45deg);
-      border-radius: 35px;
-      transform-origin: left center;
-      width: 300px;
-      height: 5px;
-      background-image: linear-gradient(135deg, #ffe461, #2fdd98;)
+
+    .square {
+      background-color: fade(#0e9635, 85%);
+      width: 24em;
+      height: 24em;
+      border-radius: 2em;
+      filter: blur(0.6px);
+      right: -20em;
+      bottom: 12%;
+      animation: square linear 35s infinite;
     }
-    .element5{
-      right: 10px;
-      top: -30px;
-      transform: rotate(-45deg);
-      border-radius: 35px;
-      width: 200px;
-      height: 15px;
-      transform-origin: right center;
-      background-image: linear-gradient(135deg, #2fdd98, #1563f7;)
+
+    @keyframes square {
+      from {
+        transform: rotate(0)
+      }
+
+      to {
+        transform: rotate(360deg)
+      }
     }
-    .element6{
-      right: 120px;
-      top: -30px;
-      transform: rotate(-45deg);
-      border-radius: 35px;
-      transform-origin: right center;
-      width: 400px;
-      height: 20px;
-      background-image: linear-gradient(135deg, #2fdd98, #ffe461;)
+
+    .round {
+      background-color: #f1f3f4;
+      width: 8em;
+      height: 8em;
+      border-radius: 100em;
+      filter: blur(0.6px);
+      right: 3em;
+      bottom: 11%;
     }
-    .element7{
-      right: 90px;
-      top: -10px;
-      transform: rotate(-45deg);
-      border-radius: 35px;
-      transform-origin: right center;
-      width: 300px;
-      height: 5px;
-      background-image: linear-gradient(135deg, #ffe461, #2fdd98;)
+
+    .combination{
+      width: 7em;
+      height: 6em;
+      top: 19%;
+      left: 13%;
+      filter: blur(0.6px);
+      background: orange;
+      background-size: 1em 1em, 1em 1em;
+      background-image: linear-gradient(#FFF 0.75em, transparent 0px), linear-gradient(90deg, #FFF 0.75em, transparent 0px);
     }
-    .element8{
-      right: 180px;
-      top: -10px;
-      transform: rotate(-45deg);
-      border-radius: 35px;
-      transform-origin: right center;
-      width: 200px;
-      height: 5px;
-      background-image: linear-gradient(135deg, #ffe461, #ed4c65;)
-    }
-    .element9{
-      right: 40px;
-      top: 150px;
+
+    .combination::after{
+      content: "";
       border-radius: 100%;
-      width: 60px;
-      height: 60px;
-      background-image: linear-gradient(90deg, #2bde8a, #1a65fe;)
+      width: 3em;
+      height: 3em;
+      background: fade(#49b0e6, 90%);
+      position: absolute;
+      animation: combination ease-in 10s infinite;
     }
-    .element10{
-      right: 340px;
-      top: 20px;
-      width: 0;
-      height: 0;
-      transform: rotate(-30deg);
-      border-left: 30px solid #ed4c65;
-      border-top: 40px solid transparent;
-      border-bottom: 20px solid transparent;
+
+    @keyframes combination {
+      0% {
+        transform: translate(-2em, -1.5em)
+      }
+      50%{
+        transform: translate(0em, 0em)
+      }
+      100% {
+        transform: translate(-2em, -1.5em)
+      }
     }
-    .element11{
-      left: 40px;
-      top: 10px;
+
+    .semicirce{
+      width:15em;
+      height:15em;
+      filter: blur(0.6px);
+      right: 20%;
+      top: -15%;
+      animation: semicirce ease-in 10s infinite;
+    }
+
+    .semicirce::after{
+      content: "";
+      height: inherit;
+      width: inherit;
       border-radius: 100%;
-      width: 30px;
-      height: 30px;
-      background-image: linear-gradient(90deg, #2bde8a, #1a65fe;)
+      background-color:#f9bc0b;
+      display: block;
     }
-    .element12{
-      left: 340px;
-      top: 20px;
-      width: 0;
-      height: 0;
-      transform: rotate(-80deg);
-      border-left: 50px solid #ed4c65;
-      border-top: 40px solid transparent;
-      border-bottom: 20px solid transparent;
+
+    @keyframes semicirce {
+      0% {
+        transform: translateY(20%)
+      }
+      50%{
+        transform: translateY(0)
+      }
+      100% {
+        transform: translateY(20%)
+      }
     }
-    .element13{
-      left: 10px;
-      top: -10px;
-      transform: rotate(-45deg);
-      border-radius: 35px;
-      transform-origin: right center;
-      width: 200px;
-      height: 5px;
-      background-image: linear-gradient(135deg, #ffe461, #2fdd98;)
-    }
+
   }
 }

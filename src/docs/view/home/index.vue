@@ -18,7 +18,18 @@
       </div>
     </div>
     <div class="element">
-      <div class="element1"></div>
+      <div class="triangle-move">
+        <div class="triangle-rotate">
+          <div class='triangle'></div>
+        </div>
+      </div>
+      <div class='ellipse'></div>
+      <div class='round'></div>
+      <div class='square'></div>
+      <div class='combination'></div>
+      <div class='semicirce'></div>
+      <!-- <div class='semicircle'></div> -->
+      <!-- <div class="element1"></div>
       <div class="element2"></div>
       <div class="element3"></div>
       <div class="element4"></div>
@@ -30,7 +41,7 @@
       <div class="element10"></div>
       <div class="element11"></div>
       <div class="element12"></div>
-      <div class="element13"></div>
+      <div class="element13"></div> -->
     </div>
   </div>
 </template>
