@@ -33,6 +33,7 @@ export default {
     loading: Boolean
   },
   render() {
+    
     const className = {
       class: [
         this.type && 'x-btn-' + this.type,
@@ -56,9 +57,8 @@ export default {
     const listeners = {
       on: !(this.loading || this.disabled) ? this.$listeners : null
     };
-
     return (
-      <button type='button' {...listeners} class='x-btn' {...className}>
+      <button type='button' {...listeners}class='x-btn' {...className}>
         {this.icon !== '' ? <i class={this.icon} /> : ''}
         {this.loading && <i class='x-icon-loader' />}
         {slots.length ? <span>{this.$slots.default}</span> : ''}

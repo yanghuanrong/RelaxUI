@@ -13,7 +13,7 @@
       </div>
       <div>
         <router-link to="/button">
-          <x-button type='primary' size="lg" round>开始使用</x-button>
+          <x-button type='primary' size="lg" round style="padding-left:44px; padding-right: 44px;">开始使用</x-button>
         </router-link>
       </div>
     </div>
