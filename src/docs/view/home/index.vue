@@ -28,20 +28,6 @@
       <div class='square'></div>
       <div class='combination'></div>
       <div class='semicirce'></div>
-      <!-- <div class='semicircle'></div> -->
-      <!-- <div class="element1"></div>
-      <div class="element2"></div>
-      <div class="element3"></div>
-      <div class="element4"></div>
-      <div class="element5"></div>
-      <div class="element6"></div>
-      <div class="element7"></div>
-      <div class="element8"></div>
-      <div class="element9"></div>
-      <div class="element10"></div>
-      <div class="element11"></div>
-      <div class="element12"></div>
-      <div class="element13"></div> -->
     </div>
   </div>
 </template>
