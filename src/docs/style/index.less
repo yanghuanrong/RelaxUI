@@ -7,7 +7,7 @@
   background: #FFF;
 
   .content {
-    width: 360px;
+    width: 540px;
     position: absolute;
     left: 50%;
     top: 20%;
@@ -31,23 +31,52 @@
     }
 
     .github {
-      margin-bottom: 60px;
+      margin-bottom: 100px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 14px;
 
-      li{
-        list-style: none;
-        margin: 0 20px;
+      .x-btn{
+        width: 100px;
+        margin: 0 15px;
 
-        .number{
-          margin-left: 5px;
-          text-transform: capitalize;
+        &:hover{
+          background: fade(#2d7bf4, 5%);
+          color: #2d7bf4;
         }
       }
     }
   }
+
+.contributors{
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+
+  .title{
+    margin-bottom: 15px;
+    color: #666;
+  }
+
+  ul{
+    display: flex;
+
+    li{
+      list-style: none;
+      position: relative;
+      margin-right: 10px;
+    }
+
+  }
+  
+  
+  img{
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+  }
+}
 
   .element {
     position: absolute;

@@ -7,8 +7,15 @@ export function jsonp (params) {
   const url = params.url + '?' + params.jsonp + '=' + callback
   script.setAttribute('src', url);
   body.appendChild(script);
-  window[callback] = function (res) {
-    body.removeChild(script)
-    params.success(res)
-  }
+
+  return new Promise((resove, reject) => {
+    try {
+      window[callback] = function (res) {
+        body.removeChild(script)
+        resove(res)
+      }
+    } catch (error) {
+      reject(error)
+    }
+  })
 }
