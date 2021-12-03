@@ -42,10 +42,10 @@ export default {
     this.disabled && className.class.push('x-switch-disabled')
 
     return <button onClick={this.clickHandle} {...className}>
-    <span class="x-switch-inner">
-      {this.isChecked ? this.$slots.open : this.$slots.close}
-    </span>
-  </button>
+      <span class="x-switch-inner">
+        {this.isChecked ? this.$slots.open : this.$slots.close}
+      </span>
+    </button>
   }
 }
 </script>

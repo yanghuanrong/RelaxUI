@@ -87,6 +87,13 @@ const component = [{
         text: 'Form 表单'
       },
       component: () => import('@/docs/view/form/index.vue')
+    },
+    {
+      path: '/table',
+      meta: {
+        text: 'Table 表格'
+      },
+      component: () => import('@/docs/view/table/index.vue')
     }
   ]
 }, {

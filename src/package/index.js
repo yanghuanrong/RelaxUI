@@ -14,6 +14,7 @@ import create from './utils/create'
 import Form from './Form'
 import Badge from './Badge'
 import Drag from './Drag'
+import Table from './Table'
 
 const components = {
   ...Button,
@@ -29,6 +30,7 @@ const components = {
   Icon,
   Switch,
   Input,
+  Table
 }
 
 const install = (Vue) => {

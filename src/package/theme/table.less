@@ -1,0 +1,70 @@
+.x-table {
+  overflow-x: auto;
+  background: #fff;
+  width: 100%;
+  font-size: .28rem;
+  table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  &.border {
+    border: 0.02rem solid #EFEFEF;
+    border-radius: .08rem;
+  }
+  colgroup {
+    display: table-column-group;
+  }
+  thead {
+    tr {
+      display: table-row;
+      border-bottom: .02rem solid #EFEFEF;
+      th {
+        text-align: center;
+        height: .8rem;
+        border-right: .02rem solid #EFEFEF;
+        padding: 0rem;
+        box-sizing: border-box;
+        word-break: break-all;
+        background: rgba(227, 229, 236, .2);
+      }
+    }
+  }
+  tbody {
+    tr {
+      display: table-row;
+      border-bottom: .02rem solid #EFEFEF;
+      td {
+        padding: .2rem .18rem .18rem .2rem;
+        border-right: .02rem solid #EFEFEF;
+        height: 100%;
+        box-sizing: border-box;
+        overflow-wrap: break-word;
+        &.buttonBox {
+          padding: .2rem 0 .18rem;
+          text-align: center;
+        }
+        &.flexButton {
+          .button {
+            width: 1.12rem;
+          }
+          
+        }
+        .a_link {
+          color: #516EEC;
+          text-decoration: underline;
+        }
+        .button {
+          width: 1.28rem;
+          height: .48rem;
+          color: #fff;
+          border-radius: .04rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
