@@ -6,107 +6,56 @@
         <p class="page-title-decs">表格用来展示批量列表数据</p>
       </div>
     </div>
-    <div class="components-button-demo">
-    <RelaxTag name="用法">
-      <template slot="temp">
-        <xTable></xTable>
-      </template>
-      <template slot="desc">
-        按钮可以根据<i>type</i>来设置不同的颜色，提供了6种类型的按钮<i>primary</i><i>success</i><i>info</i><i>danger</i><i>warning</i>
-      </template>
-      <textarea slot="code">
-        <template>
-          <x-button>default</x-button>
-          <x-button type='primary'>primary</x-button>
-          <x-button type='success'>success</x-button>
-          <x-button type='info'>info</x-button>
-          <x-button type='danger'>danger</x-button>
-          <x-button type='danger'>danger</x-button>
-          <x-button type='warning'>warning</x-button>
+    <div class="components-table-demo">
+      <RelaxTag name="用法">
+        <template slot="temp">
+          <xTable :columns="columns" :list="list">
+            <a slot="name" slot-scope="{ record, keyName }">
+              {{ record[keyName] }}
+            </a>
+            <x-button slot="button" slot-scope="{ record, keyName }" @click="actionClick(record)">{{record.name}}</x-button>
+          </xTable>
         </template>
-      </textarea>
-    </RelaxTag>
-</div>
-  
-  <div class="relax-document">
-    <div class="document-title">
-      <h4>API</h4>
+        <template slot="desc">
+          <div>通过设置<i>columns</i>自定义表格，根据<i>columns</i>中的<i>slot</i>属性来对应<i>xTable</i>使用过程中插入的slot</div>
+        </template>
+        <textarea slot="code">
+          暂无演示
+        </textarea>
+      </RelaxTag>
     </div>
-    <table class="document-api">
-      <thead>
-        <th>属性</th>
-        <th>说明</th>
-        <th>类型</th>
-        <th>默认值</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>type</td>
-          <td>设置按钮类型，可选值为 primary success info danger warning</td>
-          <td>string</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>plain</td>
-          <td>设置按钮镂空状态</td>
-          <td>boolean</td>
-          <td>false</td>
-        </tr>
-        <tr>
-          <td>loading</td>
-          <td>设置按钮载入状态</td>
-          <td>boolean</td>
-          <td>false</td>
-        </tr>
-        <tr>
-          <td>round</td>
-          <td>设置按钮圆角状态</td>
-          <td>boolean</td>
-          <td>false</td>
-        </tr>
-        <tr>
-          <td>disabled</td>
-          <td>按钮失效状态</td>
-          <td>boolean</td>
-          <td>false</td>
-        </tr>
-        <tr>
-          <td>size</td>
-          <td>设置按钮尺寸, 可选值为 sm lg</td>
-          <td>string</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td><span>icon</span></td>
-          <td>设置按钮的图标类型</td>
-          <td>string</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>block</td>
-          <td>将按钮宽度调整为其父宽度的选项</td>
-          <td>boolean</td>
-          <td>false</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="document-title">
-      <h4>事件</h4>
-    </div>
-    <table class="document-event">
-      <thead>
-        <th>事件名称</th>
-        <th>说明</th>
-        <th>回调函数</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>click</td>
-          <td>点击按钮时的回调</td>
-          <td>(event) => void</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="relax-document">
+      <div class="document-title">
+        <h4>columns API</h4>
+      </div>
+      <table class="document-api">
+        <thead>
+          <th>属性</th>
+          <th>说明</th>
+          <th>类型</th>
+          <th>默认值</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>dataIndex</td>
+            <td>设置当前项的获取key值，也用来绑定vue key</td>
+            <td>string</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>title</td>
+            <td>当前项标题</td>
+            <td>string</td>
+            <td>必填</td>
+          </tr>
+          <tr>
+            <td>slot</td>
+            <td>设置当前项需要使用的slot类型，该类型可以自定义选择通过从xTable插入的任意slot类型，如果没有展示默认样式</td>
+            <td>string</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
@@ -115,16 +64,46 @@
 export default {
   data () {
     return {
-      loading: false,
+      columns: [{
+        dataIndex: 'name',
+        slot: 'name',
+        title: '姓名'
+      }, {
+        dataIndex: 'age',
+        title: '年龄'
+      }, {
+        dataIndex: 'address',
+        title: '地址'
+      }, {
+        dataIndex: 'action',
+        slot: 'button',
+        title: '操作'
+      }],
+      list: [
+        {
+          key: '1',
+          name: '张三',
+          age: 28,
+          address: '上海陆家嘴某写字楼11楼24号上海陆家嘴某写字楼11楼24号'
+        },
+        {
+          key: '2',
+          name: '李四',
+          age: 17,
+          address: '北京天安门幸福小区44号'
+        },
+        {
+          key: '3',
+          name: '王五',
+          age: 88,
+          address: '深圳鹅厂总部11楼'
+        },
+      ]
     }
   },
   methods: {
-    enterLoading(){
-      this.loading = true
-
-      setTimeout(() => {
-        this.loading = false
-      }, 2000)
+    actionClick(e) {
+      console.log(e)
     }
   }
 }

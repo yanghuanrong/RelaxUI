@@ -20,49 +20,36 @@
       display: table-row;
       border-bottom: .02rem solid #EFEFEF;
       th {
-        text-align: center;
-        height: .8rem;
-        border-right: .02rem solid #EFEFEF;
-        padding: 0rem;
+        text-align: left;
+        padding: 16px;
+        background: #fafafa;
         box-sizing: border-box;
         word-break: break-all;
-        background: rgba(227, 229, 236, .2);
       }
     }
   }
   tbody {
     tr {
       display: table-row;
-      border-bottom: .02rem solid #EFEFEF;
+      border-bottom: 1px solid #EFEFEF;
+      cursor: pointer;
+      transition: background .5s;
+      &:hover {
+        background: rgba(24, 144, 255, 0.1);
+      }
       td {
-        padding: .2rem .18rem .18rem .2rem;
-        border-right: .02rem solid #EFEFEF;
+        padding: 16px;
         height: 100%;
         box-sizing: border-box;
         overflow-wrap: break-word;
-        &.buttonBox {
-          padding: .2rem 0 .18rem;
-          text-align: center;
-        }
-        &.flexButton {
-          .button {
-            width: 1.12rem;
-          }
-          
-        }
-        .a_link {
-          color: #516EEC;
-          text-decoration: underline;
-        }
-        .button {
-          width: 1.28rem;
-          height: .48rem;
-          color: #fff;
-          border-radius: .04rem;
+        >div {
+          height: 100%;
           display: flex;
           align-items: center;
-          justify-content: center;
-          margin: 0 auto;
+          >a {
+            text-decoration: none;
+            color: #1890ff;
+          }
         }
       }
     }
